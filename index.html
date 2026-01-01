@@ -7,17 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blood-red: #74070E;
-            --vanilla: #F4E3B2;
-            --drab-brown: #45462A;
-            --cinereous: #947268;
-            --black-bean: #310E10;
+            --pearl: #C6AE73;
+            --antique: #AD9664;
+            --slit: #6B5B2D;
+            --gold: #AD8330;
+            --velvet: #2E311A;
             --white: #FFFFFF;
+            --light-cream: #F5F1E8;
             
-            --shadow-sm: 0 2px 12px rgba(49, 14, 16, 0.08);
-            --shadow-md: 0 4px 20px rgba(49, 14, 16, 0.12);
-            --shadow-lg: 0 8px 32px rgba(49, 14, 16, 0.16);
-            --shadow-xl: 0 16px 48px rgba(49, 14, 16, 0.2);
+            --shadow-sm: 0 2px 12px rgba(46, 49, 26, 0.08);
+            --shadow-md: 0 4px 20px rgba(46, 49, 26, 0.12);
+            --shadow-lg: 0 8px 32px rgba(46, 49, 26, 0.16);
+            --shadow-xl: 0 16px 48px rgba(46, 49, 26, 0.2);
         }
 
         * {
@@ -28,8 +29,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--vanilla);
-            color: var(--black-bean);
+            background: var(--light-cream);
+            color: var(--velvet);
             line-height: 1.7;
             overflow-x: hidden;
             letter-spacing: 0.3px;
@@ -38,7 +39,7 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
-            color: var(--black-bean);
+            color: var(--velvet);
             letter-spacing: 0.5px;
         }
 
@@ -61,7 +62,7 @@
         /* Navigation */
         .navbar {
             background: var(--white);
-            border-bottom: 2px solid var(--drab-brown);
+            border-bottom: 3px solid var(--gold);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -76,21 +77,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid var(--drab-brown);
+            border-bottom: 1px solid var(--antique);
         }
 
         .logo {
             font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: 4px;
-            color: var(--black-bean);
+            color: var(--velvet);
             cursor: pointer;
             transition: all 0.4s ease;
             font-family: 'Cormorant Garamond', serif;
         }
 
         .logo:hover {
-            color: var(--blood-red);
+            color: var(--gold);
             transform: scale(1.05);
         }
 
@@ -108,10 +109,12 @@
             display: flex;
             gap: 2rem;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
-            color: var(--cinereous);
+            color: var(--slit);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 600;
@@ -129,12 +132,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--blood-red);
+            background: var(--gold);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--blood-red);
+            color: var(--gold);
         }
 
         .nav-links a:hover::after {
@@ -143,9 +146,9 @@
 
         /* Buttons */
         .btn-primary {
-            background: var(--black-bean);
-            color: var(--vanilla);
-            border: 2px solid var(--black-bean);
+            background: var(--velvet);
+            color: var(--pearl);
+            border: 2px solid var(--velvet);
             padding: 0.8rem 1.8rem;
             font-size: 0.85rem;
             font-weight: 700;
@@ -159,16 +162,17 @@
         }
 
         .btn-primary:hover {
-            background: var(--blood-red);
-            border-color: var(--blood-red);
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--velvet);
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--black-bean);
-            border: 2px solid var(--drab-brown);
+            color: var(--velvet);
+            border: 2px solid var(--slit);
             padding: 0.8rem 1.8rem;
             font-size: 0.85rem;
             font-weight: 700;
@@ -181,17 +185,17 @@
         }
 
         .btn-outline:hover {
-            background: var(--black-bean);
-            color: var(--vanilla);
-            border-color: var(--black-bean);
+            background: var(--velvet);
+            color: var(--pearl);
+            border-color: var(--velvet);
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-accent {
-            background: var(--blood-red);
-            color: var(--vanilla);
-            border: 2px solid var(--blood-red);
+            background: var(--gold);
+            color: var(--velvet);
+            border: 2px solid var(--gold);
             padding: 1rem 2.5rem;
             font-size: 0.95rem;
             font-weight: 700;
@@ -204,8 +208,9 @@
         }
 
         .btn-accent:hover {
-            background: var(--black-bean);
-            border-color: var(--black-bean);
+            background: var(--velvet);
+            border-color: var(--velvet);
+            color: var(--pearl);
             transform: translateY(-3px);
             box-shadow: var(--shadow-xl);
         }
@@ -215,12 +220,12 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 700;
             padding: 0.8rem 1.6rem;
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--slit);
             transition: all 0.3s ease;
             background: var(--white);
             margin-bottom: 2rem;
@@ -229,9 +234,9 @@
         }
 
         .back-button:hover {
-            background: var(--black-bean);
-            color: var(--vanilla);
-            border-color: var(--black-bean);
+            background: var(--velvet);
+            color: var(--pearl);
+            border-color: var(--velvet);
             transform: translateX(-5px);
         }
 
@@ -241,7 +246,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--black-bean) 0%, var(--drab-brown) 100%);
+            background: linear-gradient(135deg, var(--velvet) 0%, var(--slit) 100%);
             text-align: center;
             padding: 6rem 2rem;
             position: relative;
@@ -256,8 +261,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(116, 7, 14, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(116, 7, 14, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(198, 174, 115, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(173, 131, 48, 0.1) 0%, transparent 50%);
         }
 
         .hero-content {
@@ -270,19 +275,19 @@
             font-size: 5rem;
             font-weight: 700;
             letter-spacing: 2px;
-            color: var(--vanilla);
+            color: var(--pearl);
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out;
             line-height: 1.2;
         }
 
         .hero-content .highlight {
-            color: var(--blood-red);
+            color: var(--gold);
         }
 
         .hero-content p {
             font-size: 1.3rem;
-            color: var(--cinereous);
+            color: var(--antique);
             margin-bottom: 3rem;
             font-weight: 400;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
@@ -290,54 +295,182 @@
             letter-spacing: 0.5px;
         }
 
-        /* Advanced Search Bar */
+        /* Modern Search Section */
         .search-section {
             background: var(--white);
-            padding: 2.5rem 3rem;
-            box-shadow: var(--shadow-lg);
-            border: 2px solid var(--drab-brown);
-            margin: -4rem auto 4rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            border: 3px solid var(--gold);
+            margin: -5rem auto 5rem;
             max-width: 1200px;
             position: relative;
             z-index: 10;
+            border-radius: 12px;
         }
 
-        .search-grid {
+        .search-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .search-header h3 {
+            font-size: 2rem;
+            color: var(--velvet);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .search-header p {
+            color: var(--slit);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .search-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .search-tab {
+            padding: 0.8rem 2rem;
+            background: var(--light-cream);
+            border: 2px solid var(--antique);
+            color: var(--slit);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+
+        .search-tab:hover,
+        .search-tab.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--velvet);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-content {
+            display: none;
+        }
+
+        .search-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .search-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+            border: 2px solid var(--antique);
+            background: var(--light-cream);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--velvet);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(173, 131, 48, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3rem;
+            color: var(--gold);
+        }
+
+        .filter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        .search-group {
+        .filter-group {
             display: flex;
             flex-direction: column;
         }
 
-        .search-group label {
+        .filter-group label {
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--black-bean);
+            color: var(--velvet);
             margin-bottom: 0.6rem;
         }
 
-        .search-group select,
-        .search-group input {
-            padding: 0.9rem 1.2rem;
-            border: 2px solid var(--drab-brown);
-            background: var(--vanilla);
+        .filter-group select,
+        .filter-group input {
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--antique);
+            background: var(--light-cream);
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             transition: all 0.3s ease;
+            border-radius: 6px;
         }
 
-        .search-group select:focus,
-        .search-group input:focus {
+        .filter-group select:focus,
+        .filter-group input:focus {
             outline: none;
-            border-color: var(--blood-red);
-            box-shadow: 0 0 0 3px rgba(116, 7, 14, 0.1);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(173, 131, 48, 0.1);
+        }
+
+        .quick-filters {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .quick-filter {
+            padding: 0.6rem 1.5rem;
+            background: var(--light-cream);
+            border: 2px solid var(--antique);
+            color: var(--slit);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .quick-filter:hover,
+        .quick-filter.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--velvet);
+            transform: scale(1.05);
         }
 
         /* Section */
@@ -356,7 +489,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             letter-spacing: 1px;
-            color: var(--black-bean);
+            color: var(--velvet);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -370,11 +503,11 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: var(--blood-red);
+            background: var(--gold);
         }
 
         .section-header p {
-            color: var(--cinereous);
+            color: var(--slit);
             font-size: 1.15rem;
             margin-top: 2.5rem;
             line-height: 1.9;
@@ -393,12 +526,12 @@
         .about-text h3 {
             font-size: 2.8rem;
             margin-bottom: 2rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             letter-spacing: 1px;
         }
 
         .about-text p {
-            color: var(--cinereous);
+            color: var(--slit);
             font-size: 1.05rem;
             line-height: 2;
             margin-bottom: 1.5rem;
@@ -418,19 +551,19 @@
             background-position: center;
             transition: transform 0.5s ease;
             box-shadow: var(--shadow-md);
-            border: 3px solid var(--drab-brown);
+            border: 3px solid var(--gold);
+            border-radius: 8px;
         }
 
         .artwork-img:hover {
             transform: scale(1.08);
             box-shadow: var(--shadow-xl);
-            border-color: var(--blood-red);
         }
 
         /* How It Works */
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -441,19 +574,20 @@
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
-            border-top: 4px solid var(--blood-red);
-            border: 2px solid var(--drab-brown);
+            border-top: 4px solid var(--gold);
+            border: 2px solid var(--antique);
+            border-radius: 8px;
         }
 
         .step-card:hover {
             transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--blood-red);
+            border-color: var(--gold);
         }
 
         .step-number {
             font-size: 3.5rem;
-            color: var(--blood-red);
+            color: var(--gold);
             font-weight: 700;
             font-family: 'Cormorant Garamond', serif;
             margin-bottom: 1.5rem;
@@ -462,12 +596,12 @@
         .step-card h4 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             letter-spacing: 0.5px;
         }
 
         .step-card p {
-            color: var(--cinereous);
+            color: var(--slit);
             font-size: 0.95rem;
             line-height: 1.7;
             letter-spacing: 0.3px;
@@ -476,7 +610,7 @@
         /* Why Choose Us */
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -486,14 +620,15 @@
             padding: 3rem;
             box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
-            border-left: 5px solid var(--blood-red);
-            border: 2px solid var(--drab-brown);
+            border-left: 5px solid var(--gold);
+            border: 2px solid var(--antique);
+            border-radius: 8px;
         }
 
         .benefit-card:hover {
             transform: translateX(12px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--blood-red);
+            border-color: var(--gold);
         }
 
         .benefit-icon {
@@ -504,12 +639,12 @@
         .benefit-card h4 {
             font-size: 1.5rem;
             margin-bottom: 1.2rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             letter-spacing: 0.5px;
         }
 
         .benefit-card p {
-            color: var(--cinereous);
+            color: var(--slit);
             line-height: 1.8;
             letter-spacing: 0.3px;
         }
@@ -517,7 +652,7 @@
         /* Registration Choice */
         .registration-choice {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 4rem;
             max-width: 1100px;
             margin: 5rem auto;
@@ -528,11 +663,12 @@
             padding: 4rem 3rem;
             text-align: center;
             box-shadow: var(--shadow-xl);
-            border: 3px solid var(--drab-brown);
+            border: 3px solid var(--antique);
             transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            border-radius: 12px;
         }
 
         .choice-card::before {
@@ -542,7 +678,7 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: var(--blood-red);
+            background: var(--gold);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -552,7 +688,7 @@
         }
 
         .choice-card:hover {
-            border-color: var(--blood-red);
+            border-color: var(--gold);
             transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
         }
@@ -563,24 +699,25 @@
             background-size: cover;
             background-position: center;
             margin-bottom: 2rem;
-            border: 3px solid var(--drab-brown);
+            border: 3px solid var(--antique);
             transition: all 0.4s ease;
+            border-radius: 8px;
         }
 
         .choice-card:hover .choice-image {
-            border-color: var(--blood-red);
+            border-color: var(--gold);
             transform: scale(1.05);
         }
 
         .choice-card h3 {
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             letter-spacing: 0.8px;
         }
 
         .choice-card p {
-            color: var(--cinereous);
+            color: var(--slit);
             margin-bottom: 2.5rem;
             line-height: 1.8;
             letter-spacing: 0.3px;
@@ -597,15 +734,16 @@
             background: var(--white);
             padding: 3.5rem;
             box-shadow: var(--shadow-xl);
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--antique);
             margin-bottom: 2.5rem;
+            border-radius: 8px;
         }
 
         .form-section h3 {
             font-size: 2rem;
             margin-bottom: 2.5rem;
-            color: var(--black-bean);
-            border-bottom: 3px solid var(--blood-red);
+            color: var(--velvet);
+            border-bottom: 3px solid var(--gold);
             padding-bottom: 1.2rem;
             letter-spacing: 0.8px;
         }
@@ -623,7 +761,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.8rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
@@ -635,20 +773,21 @@
         .form-group select {
             width: 100%;
             padding: 1.1rem 1.4rem;
-            border: 2px solid var(--drab-brown);
-            background: var(--vanilla);
+            border: 2px solid var(--antique);
+            background: var(--light-cream);
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            color: var(--black-bean);
+            color: var(--velvet);
+            border-radius: 6px;
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--blood-red);
-            box-shadow: 0 0 0 3px rgba(116, 7, 14, 0.1);
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(173, 131, 48, 0.1);
         }
 
         .form-group textarea {
@@ -674,30 +813,31 @@
 
         .helper-text {
             font-size: 0.8rem;
-            color: var(--cinereous);
+            color: var(--slit);
             margin-top: 0.5rem;
             font-style: italic;
             letter-spacing: 0.2px;
         }
 
         .file-upload {
-            border: 3px dashed var(--drab-brown);
+            border: 3px dashed var(--antique);
             padding: 2.5rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: var(--vanilla);
+            background: var(--light-cream);
+            border-radius: 8px;
         }
 
         .file-upload:hover {
-            border-color: var(--blood-red);
+            border-color: var(--gold);
             background: var(--white);
         }
 
         /* Auction Cards */
         .auction-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -706,14 +846,15 @@
             background: var(--white);
             box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--antique);
             overflow: hidden;
+            border-radius: 12px;
         }
 
         .auction-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--blood-red);
+            border-color: var(--gold);
         }
 
         .auction-image {
@@ -728,13 +869,14 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background: var(--blood-red);
-            color: var(--vanilla);
+            background: var(--gold);
+            color: var(--velvet);
             padding: 0.5rem 1.2rem;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
+            border-radius: 4px;
         }
 
         .auction-info {
@@ -744,12 +886,12 @@
         .auction-info h4 {
             font-size: 1.6rem;
             margin-bottom: 0.5rem;
-            color: var(--black-bean);
+            color: var(--velvet);
         }
 
         .auction-artist {
             font-size: 0.9rem;
-            color: var(--cinereous);
+            color: var(--slit);
             font-style: italic;
             margin-bottom: 1rem;
         }
@@ -759,8 +901,8 @@
             justify-content: space-between;
             margin: 1.5rem 0;
             padding: 1rem 0;
-            border-top: 1px solid var(--drab-brown);
-            border-bottom: 1px solid var(--drab-brown);
+            border-top: 1px solid var(--antique);
+            border-bottom: 1px solid var(--antique);
         }
 
         .auction-detail-item {
@@ -769,7 +911,7 @@
 
         .auction-detail-label {
             font-size: 0.75rem;
-            color: var(--cinereous);
+            color: var(--slit);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.3rem;
@@ -778,14 +920,14 @@
         .auction-detail-value {
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--blood-red);
+            color: var(--gold);
             font-family: 'Cormorant Garamond', serif;
         }
 
         .countdown-timer {
             text-align: center;
             font-size: 1.1rem;
-            color: var(--black-bean);
+            color: var(--velvet);
             font-weight: 600;
             margin: 1rem 0;
         }
@@ -796,10 +938,10 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--black-bean);
-            color: var(--vanilla);
+            background: var(--velvet);
+            color: var(--pearl);
             padding: 1.5rem 3rem;
-            box-shadow: 0 -4px 20px rgba(49, 14, 16, 0.3);
+            box-shadow: 0 -4px 20px rgba(46, 49, 26, 0.3);
             z-index: 999;
             display: none;
         }
@@ -814,16 +956,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .bid-bar-info h4 {
             font-size: 1.3rem;
-            color: var(--vanilla);
+            color: var(--pearl);
             margin-bottom: 0.3rem;
         }
 
         .bid-bar-info p {
-            color: var(--cinereous);
+            color: var(--antique);
             font-size: 0.9rem;
         }
 
@@ -831,22 +975,24 @@
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .bid-input {
             padding: 0.9rem 1.5rem;
-            border: 2px solid var(--drab-brown);
-            background: var(--vanilla);
+            border: 2px solid var(--antique);
+            background: var(--light-cream);
             font-size: 1rem;
             font-weight: 600;
             width: 180px;
-            color: var(--black-bean);
+            color: var(--velvet);
+            border-radius: 6px;
         }
 
         /* Artist Profile */
         .artist-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -856,34 +1002,35 @@
             padding: 2.5rem;
             text-align: center;
             box-shadow: var(--shadow-md);
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--antique);
             transition: all 0.4s ease;
             cursor: pointer;
+            border-radius: 12px;
         }
 
         .artist-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-xl);
-            border-color: var(--blood-red);
+            border-color: var(--gold);
         }
 
         .artist-avatar {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--cinereous), var(--drab-brown));
+            background: linear-gradient(135deg, var(--antique), var(--slit));
             margin: 0 auto 1.5rem;
-            border: 4px solid var(--drab-brown);
+            border: 4px solid var(--gold);
         }
 
         .artist-card h4 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            color: var(--black-bean);
+            color: var(--velvet);
         }
 
         .artist-specialty {
-            color: var(--cinereous);
+            color: var(--slit);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
         }
@@ -893,7 +1040,7 @@
             justify-content: space-around;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--drab-brown);
+            border-top: 1px solid var(--antique);
         }
 
         .artist-stat {
@@ -903,13 +1050,13 @@
         .artist-stat-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--blood-red);
+            color: var(--gold);
             font-family: 'Cormorant Garamond', serif;
         }
 
         .artist-stat-label {
             font-size: 0.75rem;
-            color: var(--cinereous);
+            color: var(--slit);
             text-transform: uppercase;
         }
 
@@ -922,14 +1069,16 @@
         .faq-item {
             background: var(--white);
             margin-bottom: 1.5rem;
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--antique);
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .faq-item:hover {
             box-shadow: var(--shadow-md);
-            border-color: var(--blood-red);
+            border-color: var(--gold);
         }
 
         .faq-question {
@@ -939,14 +1088,14 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: var(--black-bean);
+            color: var(--velvet);
             font-size: 1.05rem;
             letter-spacing: 0.3px;
         }
 
         .faq-answer {
             padding: 0 2rem 1.8rem 2rem;
-            color: var(--cinereous);
+            color: var(--slit);
             line-height: 1.8;
             display: none;
             letter-spacing: 0.3px;
@@ -958,7 +1107,7 @@
 
         .faq-icon {
             font-size: 1.5rem;
-            color: var(--blood-red);
+            color: var(--gold);
             transition: transform 0.3s ease;
         }
 
@@ -971,27 +1120,28 @@
             background: var(--white);
             padding: 3rem;
             margin-bottom: 3rem;
-            border: 2px solid var(--drab-brown);
+            border: 2px solid var(--antique);
             box-shadow: var(--shadow-md);
+            border-radius: 8px;
         }
 
         .policy-section h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
-            color: var(--black-bean);
-            border-bottom: 3px solid var(--blood-red);
+            color: var(--velvet);
+            border-bottom: 3px solid var(--gold);
             padding-bottom: 1rem;
         }
 
         .policy-section h4 {
             font-size: 1.3rem;
             margin: 2rem 0 1rem;
-            color: var(--black-bean);
+            color: var(--velvet);
         }
 
         .policy-section p,
         .policy-section li {
-            color: var(--cinereous);
+            color: var(--slit);
             line-height: 1.9;
             margin-bottom: 1rem;
             letter-spacing: 0.3px;
@@ -1004,7 +1154,7 @@
 
         .policy-section li::before {
             content: '• ';
-            color: var(--blood-red);
+            color: var(--gold);
             font-weight: 700;
             margin-right: 0.8rem;
         }
@@ -1028,17 +1178,18 @@
             z-index: 2000;
             animation: slideInRight 0.5s ease-out;
             max-width: 400px;
-            border: 2px solid var(--drab-brown);
-            border-left: 5px solid var(--blood-red);
+            border: 2px solid var(--antique);
+            border-left: 5px solid var(--gold);
+            border-radius: 8px;
         }
 
         /* Footer */
         .footer {
-            background: var(--black-bean);
-            color: var(--vanilla);
+            background: var(--velvet);
+            color: var(--pearl);
             padding: 4rem 0 2rem;
             margin-top: 6rem;
-            border-top: 4px solid var(--blood-red);
+            border-top: 4px solid var(--gold);
         }
 
         .footer-container {
@@ -1055,13 +1206,13 @@
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            color: var(--blood-red);
+            color: var(--gold);
             letter-spacing: 0.8px;
         }
 
         .footer-section a {
             display: block;
-            color: var(--cinereous);
+            color: var(--antique);
             text-decoration: none;
             margin-bottom: 0.8rem;
             font-size: 0.95rem;
@@ -1070,12 +1221,12 @@
         }
 
         .footer-section a:hover {
-            color: var(--blood-red);
+            color: var(--gold);
             padding-left: 8px;
         }
 
         .footer-section p {
-            color: var(--cinereous);
+            color: var(--antique);
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
             letter-spacing: 0.3px;
@@ -1084,8 +1235,8 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid var(--drab-brown);
-            color: var(--cinereous);
+            border-top: 1px solid var(--slit);
+            color: var(--antique);
             font-size: 0.9rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1097,13 +1248,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .navbar-bottom {
-                flex-direction: column;
-                gap: 1rem;
                 padding: 1.5rem 2rem;
             }
 
             .nav-links {
-                flex-direction: column;
                 gap: 1rem;
             }
             
@@ -1131,13 +1279,40 @@
                 grid-template-columns: 1fr;
             }
 
-            .search-grid {
+            .search-section {
+                padding: 2rem 1.5rem;
+                margin: -3rem 1rem 3rem;
+            }
+
+            .search-tabs {
+                flex-direction: column;
+            }
+
+            .search-tab {
+                width: 100%;
+                text-align: center;
+            }
+
+            .search-row {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-grid {
                 grid-template-columns: 1fr;
             }
 
             .bid-bar-content {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .bid-bar-action {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .bid-input {
+                flex: 1;
             }
         }
     </style>
@@ -1171,57 +1346,100 @@
             </div>
         </section>
 
-        <!-- Advanced Search Bar -->
+        <!-- Modern Search Section -->
         <div class="section">
             <div class="search-section">
-                <div class="search-grid">
-                    <div class="search-group">
-                        <label>Price Range</label>
-                        <select>
-                            <option value="">All Prices</option>
-                            <option value="under-5k">Under $5,000</option>
-                            <option value="5k-20k">$5,000 - $20,000</option>
-                            <option value="20k-50k">$20,000 - $50,000</option>
-                            <option value="over-50k">Over $50,000</option>
-                        </select>
+                <div class="search-header">
+                    <h3>Discover Your Next Masterpiece</h3>
+                    <p>Search by keyword, filter by category, or explore curated collections</p>
+                </div>
+
+                <!-- Search Tabs -->
+                <div class="search-tabs">
+                    <div class="search-tab active" onclick="switchSearchTab('quick')">Quick Search</div>
+                    <div class="search-tab" onclick="switchSearchTab('advanced')">Advanced Filters</div>
+                    <div class="search-tab" onclick="switchSearchTab('category')">By Category</div>
+                </div>
+
+                <!-- Quick Search -->
+                <div class="search-content active" id="quick-search">
+                    <div class="search-row">
+                        <div class="search-input-wrapper">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" class="search-input" placeholder="Search by artwork title, artist name, or style...">
+                        </div>
+                        <button class="btn-accent">Search</button>
                     </div>
-                    <div class="search-group">
-                        <label>Sort By</label>
-                        <select>
-                            <option value="ending-soon">Ending Soon</option>
-                            <option value="highest-bid">Highest Bid</option>
-                            <option value="newest">Newest</option>
-                            <option value="lowest-price">Lowest Price</option>
-                        </select>
+                    <div class="quick-filters">
+                        <div class="quick-filter">Ending Soon</div>
+                        <div class="quick-filter">New Arrivals</div>
+                        <div class="quick-filter">Under $5,000</div>
+                        <div class="quick-filter">Abstract</div>
+                        <div class="quick-filter">Contemporary</div>
+                        <div class="quick-filter">Landscape</div>
                     </div>
-                    <div class="search-group">
-                        <label>Artist</label>
-                        <input type="text" placeholder="Search by artist name">
+                </div>
+
+                <!-- Advanced Filters -->
+                <div class="search-content" id="advanced-search">
+                    <div class="filter-grid">
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <select>
+                                <option value="">All Prices</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-20k">$5,000 - $20,000</option>
+                                <option value="20k-50k">$20,000 - $50,000</option>
+                                <option value="over-50k">Over $50,000</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort By</label>
+                            <select>
+                                <option value="ending-soon">Ending Soon</option>
+                                <option value="highest-bid">Highest Bid</option>
+                                <option value="newest">Newest</option>
+                                <option value="lowest-price">Lowest Price</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Medium</label>
+                            <select>
+                                <option value="">All Mediums</option>
+                                <option value="oil">Oil on Canvas</option>
+                                <option value="acrylic">Acrylic</option>
+                                <option value="watercolor">Watercolor</option>
+                                <option value="sculpture">Sculpture</option>
+                                <option value="digital">Digital Art</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Style</label>
+                            <select>
+                                <option value="">All Styles</option>
+                                <option value="abstract">Abstract</option>
+                                <option value="contemporary">Contemporary</option>
+                                <option value="landscape">Landscape</option>
+                                <option value="portrait">Portrait</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="search-group">
-                        <label>Medium</label>
-                        <select>
-                            <option value="">All Mediums</option>
-                            <option value="oil">Oil on Canvas</option>
-                            <option value="acrylic">Acrylic</option>
-                            <option value="watercolor">Watercolor</option>
-                            <option value="sculpture">Sculpture</option>
-                            <option value="digital">Digital Art</option>
-                        </select>
-                    </div>
-                    <div class="search-group">
-                        <label>Style</label>
-                        <select>
-                            <option value="">All Styles</option>
-                            <option value="abstract">Abstract</option>
-                            <option value="contemporary">Contemporary</option>
-                            <option value="landscape">Landscape</option>
-                            <option value="portrait">Portrait</option>
-                        </select>
-                    </div>
-                    <div class="search-group">
-                        <label>&nbsp;</label>
-                        <button class="btn-accent" style="width: 100%; padding: 0.9rem;">Search</button>
+                    <button class="btn-accent" style="width: 100%; margin-top: 1.5rem;">Apply Filters</button>
+                </div>
+
+                <!-- Category Search -->
+                <div class="search-content" id="category-search">
+                    <div class="quick-filters">
+                        <div class="quick-filter">🎨 Abstract</div>
+                        <div class="quick-filter">🖼️ Contemporary</div>
+                        <div class="quick-filter">🌄 Landscape</div>
+                        <div class="quick-filter">👤 Portrait</div>
+                        <div class="quick-filter">🗿 Sculpture</div>
+                        <div class="quick-filter">💻 Digital Art</div>
+                        <div class="quick-filter">🌊 Impressionism</div>
+                        <div class="quick-filter">🎭 Expressionism</div>
+                        <div class="quick-filter">🔲 Minimalism</div>
+                        <div class="quick-filter">🌈 Pop Art</div>
                     </div>
                 </div>
             </div>
@@ -1237,10 +1455,10 @@
                     <p>Join 50,000+ collectors and 1,200+ artists from 85 countries in building meaningful art collections.</p>
                 </div>
                 <div class="artwork-showcase">
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #947268, #45462A);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #74070E, #310E10);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #310E10, #45462A);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #F4E3B2, #947268);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #AD9664, #6B5B2D);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #AD8330, #2E311A);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #2E311A, #6B5B2D);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #C6AE73, #AD9664);"></div>
                 </div>
             </div>
         </section>
@@ -1317,9 +1535,9 @@
 
         <!-- CTA -->
         <section class="section" style="text-align: center;">
-            <div style="background: var(--white); padding: 5rem 3rem; box-shadow: var(--shadow-xl); border: 3px solid var(--drab-brown);">
+            <div style="background: var(--white); padding: 5rem 3rem; box-shadow: var(--shadow-xl); border: 3px solid var(--gold); border-radius: 12px;">
                 <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Start Your Journey Today</h2>
-                <p style="font-size: 1.2rem; color: var(--cinereous); margin-bottom: 3rem; line-height: 1.9;">Choose your path and join our exclusive community</p>
+                <p style="font-size: 1.2rem; color: var(--slit); margin-bottom: 3rem; line-height: 1.9;">Choose your path and join our exclusive community</p>
                 <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;" onclick="navigateTo('register-choice')">Get Started</a>
             </div>
         </section>
@@ -1335,13 +1553,13 @@
             </div>
             <div class="registration-choice">
                 <div class="choice-card" onclick="navigateTo('buyer-registration')">
-                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(116, 7, 14, 0.8), rgba(49, 14, 16, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>'); background-size: cover; background-position: center;"></div>
+                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(173, 131, 48, 0.8), rgba(46, 49, 26, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>'); background-size: cover; background-position: center;"></div>
                     <h3>Buyer Registration</h3>
                     <p>Register as a collector to bid on exceptional artworks and build your collection</p>
                     <button class="btn-primary">Register as Buyer</button>
                 </div>
                 <div class="choice-card" onclick="navigateTo('seller-registration')">
-                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(116, 7, 14, 0.8), rgba(49, 14, 16, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>'); background-size: cover; background-position: center;"></div>
+                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(173, 131, 48, 0.8), rgba(46, 49, 26, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>'); background-size: cover; background-position: center;"></div>
                     <h3>Seller Registration</h3>
                     <p>Register as an artist to showcase and sell your artwork to collectors worldwide</p>
                     <button class="btn-accent">Register as Seller</button>
@@ -1355,8 +1573,8 @@
         <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--black-bean);">Buyer Registration</h2>
-                <p style="color: var(--cinereous); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to create your collector account</p>
+                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--velvet);">Buyer Registration</h2>
+                <p style="color: var(--slit); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to create your collector account</p>
             </div>
 
             <form onsubmit="submitBuyerRegistration(event)">
@@ -1606,8 +1824,8 @@
         <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
             <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--black-bean);">Seller Registration</h2>
-                <p style="color: var(--cinereous); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to start selling your artwork</p>
+                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--velvet);">Seller Registration</h2>
+                <p style="color: var(--slit); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to start selling your artwork</p>
             </div>
 
             <form onsubmit="submitSellerRegistration(event)">
@@ -1842,7 +2060,7 @@
                         <label>High-Resolution Images *</label>
                         <div class="file-upload">
                             <p style="font-weight: 700; margin-bottom: 0.8rem;">📁 Upload Images</p>
-                            <small style="color: var(--cinereous);">Upload 5-10 high-resolution images (JPG, PNG, Max 10MB each)</small>
+                            <small style="color: var(--slit);">Upload 5-10 high-resolution images (JPG, PNG, Max 10MB each)</small>
                             <input type="file" multiple accept="image/*" style="display: none;">
                         </div>
                     </div>
@@ -1949,7 +2167,7 @@
                 </div>
 
                 <button type="submit" class="btn-accent" style="width: 100%; padding: 1.3rem; font-size: 1.05rem; margin-top: 2rem;">Submit Application</button>
-                <p style="text-align: center; margin-top: 2rem; color: var(--cinereous); letter-spacing: 0.3px;">Your application will be reviewed within 5-7 business days</p>
+                <p style="text-align: center; margin-top: 2rem; color: var(--slit); letter-spacing: 0.3px;">Your application will be reviewed within 5-7 business days</p>
             </form>
         </div>
     </div>
@@ -1958,8 +2176,8 @@
     <div id="login" class="page-section">
         <section class="form-section" style="max-width: 550px; margin: 6rem auto; padding: 4rem;">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem; color: var(--black-bean);">Sign In</h2>
-            <p style="text-align: center; color: var(--cinereous); margin-bottom: 3rem; letter-spacing: 0.4px;">Welcome back to ARTÉHAUS</p>
+            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem; color: var(--velvet);">Sign In</h2>
+            <p style="text-align: center; color: var(--slit); margin-bottom: 3rem; letter-spacing: 0.4px;">Welcome back to ARTÉHAUS</p>
             
             <form onsubmit="loginUser(event)">
                 <div class="form-group">
@@ -1979,13 +2197,13 @@
                 
                 <button type="submit" class="btn-accent" style="width: 100%; margin-top: 2rem; padding: 1.2rem;">Sign In</button>
                 
-                <p style="text-align: center; margin-top: 2rem; color: var(--cinereous);">
-                    <a href="javascript:void(0)" style="color: var(--blood-red); font-weight: 700; text-decoration: none;">Forgot password?</a>
+                <p style="text-align: center; margin-top: 2rem; color: var(--slit);">
+                    <a href="javascript:void(0)" style="color: var(--gold); font-weight: 700; text-decoration: none;">Forgot password?</a>
                 </p>
 
-                <p style="text-align: center; margin-top: 2.5rem; color: var(--cinereous);">
+                <p style="text-align: center; margin-top: 2.5rem; color: var(--slit);">
                     Don't have an account? 
-                    <a href="javascript:void(0)" onclick="navigateTo('register-choice')" style="color: var(--blood-red); font-weight: 700; text-decoration: none;">Register</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('register-choice')" style="color: var(--gold); font-weight: 700; text-decoration: none;">Register</a>
                 </p>
             </form>
         </section>
@@ -2007,23 +2225,23 @@
             </div>
 
             <!-- Live Statistics -->
-            <div style="background: var(--white); padding: 2.5rem; margin-bottom: 4rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+            <div style="background: var(--white); padding: 2.5rem; margin-bottom: 4rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); border-radius: 12px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">24</div>
-                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Active Auctions</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">24</div>
+                        <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 0.8px;">Active Auctions</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">156</div>
-                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Bids Today</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">156</div>
+                        <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 0.8px;">Bids Today</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">+18%</div>
-                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Avg Bid Increase</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">+18%</div>
+                        <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 0.8px;">Avg Bid Increase</div>
                     </div>
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">2.4K</div>
-                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Views Today</div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">2.4K</div>
+                        <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 0.8px;">Views Today</div>
                     </div>
                 </div>
             </div>
@@ -2031,7 +2249,7 @@
             <!-- Auction Grid -->
             <div class="auction-grid">
                 <div class="auction-card" onclick="navigateTo('auction-detail')">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #947268, #45462A);">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #AD9664, #6B5B2D);">
                         <div class="auction-badge">LIVE</div>
                     </div>
                     <div class="auction-info">
@@ -2053,7 +2271,7 @@
                 </div>
 
                 <div class="auction-card">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #74070E, #310E10);">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #AD8330, #2E311A);">
                         <div class="auction-badge">ENDING SOON</div>
                     </div>
                     <div class="auction-info">
@@ -2075,7 +2293,7 @@
                 </div>
 
                 <div class="auction-card">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #310E10, #45462A);">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #2E311A, #6B5B2D);">
                         <div class="auction-badge">LIVE</div>
                     </div>
                     <div class="auction-info">
@@ -2107,51 +2325,51 @@
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem;">
                 <!-- Left: Artwork Image -->
                 <div>
-                    <div style="width: 100%; height: 600px; background: linear-gradient(135deg, #947268, #45462A); border: 3px solid var(--drab-brown); box-shadow: var(--shadow-xl); margin-bottom: 2rem;"></div>
+                    <div style="width: 100%; height: 600px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 3px solid var(--gold); box-shadow: var(--shadow-xl); margin-bottom: 2rem; border-radius: 8px;"></div>
                     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
-                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
-                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
-                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); cursor: pointer; border-radius: 6px;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); cursor: pointer; border-radius: 6px;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); cursor: pointer; border-radius: 6px;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); cursor: pointer; border-radius: 6px;"></div>
                     </div>
                 </div>
 
                 <!-- Right: Auction Details -->
                 <div>
-                    <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-xl);">
-                        <div style="background: var(--blood-red); color: var(--vanilla); padding: 0.6rem 1.5rem; display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem;">LIVE AUCTION</div>
+                    <div style="background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-xl); border-radius: 12px;">
+                        <div style="background: var(--gold); color: var(--velvet); padding: 0.6rem 1.5rem; display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem; border-radius: 4px;">LIVE AUCTION</div>
                         
-                        <h2 style="font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--black-bean);">Untitled Composition</h2>
-                        <p style="font-size: 1.1rem; color: var(--cinereous); font-style: italic; margin-bottom: 2rem;">by Sarah Mitchell</p>
+                        <h2 style="font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--velvet);">Untitled Composition</h2>
+                        <p style="font-size: 1.1rem; color: var(--slit); font-style: italic; margin-bottom: 2rem;">by Sarah Mitchell</p>
                         
-                        <div style="border-top: 2px solid var(--drab-brown); border-bottom: 2px solid var(--drab-brown); padding: 1.5rem 0; margin-bottom: 2rem;">
+                        <div style="border-top: 2px solid var(--antique); border-bottom: 2px solid var(--antique); padding: 1.5rem 0; margin-bottom: 2rem;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                                <span style="color: var(--cinereous); font-size: 0.9rem;">Medium:</span>
-                                <span style="color: var(--black-bean); font-weight: 600;">Oil on Canvas</span>
+                                <span style="color: var(--slit); font-size: 0.9rem;">Medium:</span>
+                                <span style="color: var(--velvet); font-weight: 600;">Oil on Canvas</span>
                             </div>
                             <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                                <span style="color: var(--cinereous); font-size: 0.9rem;">Dimensions:</span>
-                                <span style="color: var(--black-bean); font-weight: 600;">36 x 48 inches</span>
+                                <span style="color: var(--slit); font-size: 0.9rem;">Dimensions:</span>
+                                <span style="color: var(--velvet); font-weight: 600;">36 x 48 inches</span>
                             </div>
                             <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                                <span style="color: var(--cinereous); font-size: 0.9rem;">Year:</span>
-                                <span style="color: var(--black-bean); font-weight: 600;">2024</span>
+                                <span style="color: var(--slit); font-size: 0.9rem;">Year:</span>
+                                <span style="color: var(--velvet); font-weight: 600;">2024</span>
                             </div>
                             <div style="display: flex; justify-content: space-between;">
-                                <span style="color: var(--cinereous); font-size: 0.9rem;">Framed:</span>
-                                <span style="color: var(--black-bean); font-weight: 600;">Yes</span>
+                                <span style="color: var(--slit); font-size: 0.9rem;">Framed:</span>
+                                <span style="color: var(--velvet); font-weight: 600;">Yes</span>
                             </div>
                         </div>
 
                         <div style="text-align: center; margin-bottom: 2rem;">
-                            <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Current Bid</div>
-                            <div style="font-size: 3.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">$12,500</div>
-                            <div style="font-size: 0.9rem; color: var(--cinereous); margin-top: 0.5rem;">23 bids • Starting bid: $8,000</div>
+                            <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Current Bid</div>
+                            <div style="font-size: 3.5rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">$12,500</div>
+                            <div style="font-size: 0.9rem; color: var(--slit); margin-top: 0.5rem;">23 bids • Starting bid: $8,000</div>
                         </div>
 
-                        <div style="background: var(--vanilla); padding: 1.5rem; margin-bottom: 2rem; border: 2px solid var(--drab-brown); text-align: center;">
-                            <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Time Remaining</div>
-                            <div style="font-size: 2rem; font-weight: 700; color: var(--black-bean);">2h 34m 18s</div>
+                        <div style="background: var(--light-cream); padding: 1.5rem; margin-bottom: 2rem; border: 2px solid var(--antique); text-align: center; border-radius: 8px;">
+                            <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Time Remaining</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--velvet);">2h 34m 18s</div>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
@@ -2163,20 +2381,20 @@
                         <button class="btn-accent" style="width: 100%; padding: 1.3rem; font-size: 1.1rem; margin-bottom: 1rem;">Place Bid Now</button>
                         <button class="btn-outline" style="width: 100%; padding: 1.1rem;">Add to Watchlist</button>
 
-                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--drab-brown);">
-                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--black-bean);">Bid History</h4>
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--antique);">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--velvet);">Bid History</h4>
                             <div style="max-height: 200px; overflow-y: auto;">
-                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
-                                    <span style="color: var(--cinereous);">Bidder #23</span>
-                                    <span style="color: var(--blood-red); font-weight: 700;">$12,500</span>
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--antique);">
+                                    <span style="color: var(--slit);">Bidder #23</span>
+                                    <span style="color: var(--gold); font-weight: 700;">$12,500</span>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
-                                    <span style="color: var(--cinereous);">Bidder #18</span>
-                                    <span style="color: var(--blood-red); font-weight: 700;">$12,000</span>
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--antique);">
+                                    <span style="color: var(--slit);">Bidder #18</span>
+                                    <span style="color: var(--gold); font-weight: 700;">$12,000</span>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
-                                    <span style="color: var(--cinereous);">Bidder #12</span>
-                                    <span style="color: var(--blood-red); font-weight: 700;">$11,500</span>
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--antique);">
+                                    <span style="color: var(--slit);">Bidder #12</span>
+                                    <span style="color: var(--gold); font-weight: 700;">$11,500</span>
                                 </div>
                             </div>
                         </div>
@@ -2185,27 +2403,27 @@
             </div>
 
             <!-- Artwork Description -->
-            <div style="margin-top: 4rem; background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean);">About This Artwork</h3>
-                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
+            <div style="margin-top: 4rem; background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); border-radius: 12px;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--velvet);">About This Artwork</h3>
+                <p style="color: var(--slit); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
                     This stunning abstract composition explores the interplay of light and shadow through bold brushstrokes and a carefully curated color palette. The artist's masterful technique creates depth and movement, inviting viewers to discover new details with each viewing.
                 </p>
-                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px;">
+                <p style="color: var(--slit); line-height: 1.9; letter-spacing: 0.3px;">
                     Created in 2024, this piece represents the artist's mature period and has been exhibited in several prestigious galleries. Certificate of authenticity included.
                 </p>
             </div>
 
             <!-- Shipping & Policies -->
-            <div style="margin-top: 2rem; background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean);">Shipping & Policies</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <div style="margin-top: 2rem; background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); border-radius: 12px;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--velvet);">Shipping & Policies</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                     <div>
-                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--black-bean);">Shipping</h4>
-                        <p style="color: var(--cinereous); line-height: 1.8; letter-spacing: 0.3px;">Professional packaging and insured shipping included. Estimated delivery: 7-14 business days.</p>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--velvet);">Shipping</h4>
+                        <p style="color: var(--slit); line-height: 1.8; letter-spacing: 0.3px;">Professional packaging and insured shipping included. Estimated delivery: 7-14 business days.</p>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--black-bean);">Returns</h4>
-                        <p style="color: var(--cinereous); line-height: 1.8; letter-spacing: 0.3px;">14-day return policy for authenticity concerns. Full refund if artwork is not as described.</p>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--velvet);">Returns</h4>
+                        <p style="color: var(--slit); line-height: 1.8; letter-spacing: 0.3px;">14-day return policy for authenticity concerns. Full refund if artwork is not as described.</p>
                     </div>
                 </div>
             </div>
@@ -2246,7 +2464,7 @@
                     <div class="artist-avatar"></div>
                     <h4>Sarah Mitchell</h4>
                     <p class="artist-specialty">Abstract • Contemporary</p>
-                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Award-winning abstract artist exploring color and form through bold compositions.</p>
+                    <p style="color: var(--slit); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Award-winning abstract artist exploring color and form through bold compositions.</p>
                     <div class="artist-stats">
                         <div class="artist-stat">
                             <div class="artist-stat-value">24</div>
@@ -2267,7 +2485,7 @@
                     <div class="artist-avatar"></div>
                     <h4>James Chen</h4>
                     <p class="artist-specialty">Landscape • Oil Painting</p>
-                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Master landscape painter capturing the beauty of natural environments.</p>
+                    <p style="color: var(--slit); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Master landscape painter capturing the beauty of natural environments.</p>
                     <div class="artist-stats">
                         <div class="artist-stat">
                             <div class="artist-stat-value">18</div>
@@ -2288,7 +2506,7 @@
                     <div class="artist-avatar"></div>
                     <h4>Maria Rodriguez</h4>
                     <p class="artist-specialty">Urban Art • Mixed Media</p>
-                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Contemporary artist blending urban themes with traditional techniques.</p>
+                    <p style="color: var(--slit); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Contemporary artist blending urban themes with traditional techniques.</p>
                     <div class="artist-stats">
                         <div class="artist-stat">
                             <div class="artist-stat-value">31</div>
@@ -2313,81 +2531,81 @@
         <section class="section">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back to Artists</a>
             
-            <div style="background: var(--white); padding: 4rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-xl); margin-bottom: 3rem;">
+            <div style="background: var(--white); padding: 4rem; border: 2px solid var(--antique); box-shadow: var(--shadow-xl); margin-bottom: 3rem; border-radius: 12px;">
                 <div style="display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start;">
                     <div class="artist-avatar" style="width: 200px; height: 200px;"></div>
                     <div>
-                        <h2 style="font-size: 3rem; margin-bottom: 0.8rem; color: var(--black-bean);">Sarah Mitchell</h2>
-                        <p style="font-size: 1.2rem; color: var(--cinereous); font-style: italic; margin-bottom: 2rem;">Abstract • Contemporary Artist</p>
+                        <h2 style="font-size: 3rem; margin-bottom: 0.8rem; color: var(--velvet);">Sarah Mitchell</h2>
+                        <p style="font-size: 1.2rem; color: var(--slit); font-style: italic; margin-bottom: 2rem;">Abstract • Contemporary Artist</p>
                         
-                        <div style="display: flex; gap: 3rem; margin-bottom: 2rem;">
+                        <div style="display: flex; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap;">
                             <div>
-                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">24</div>
-                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Artworks</div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">24</div>
+                                <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase;">Artworks</div>
                             </div>
                             <div>
-                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">156</div>
-                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Sales</div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">156</div>
+                                <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase;">Sales</div>
                             </div>
                             <div>
-                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">4.9★</div>
-                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Rating</div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">4.9★</div>
+                                <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase;">Rating</div>
                             </div>
                             <div>
-                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">12</div>
-                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Exhibitions</div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--gold); font-family: 'Cormorant Garamond', serif;">12</div>
+                                <div style="font-size: 0.85rem; color: var(--slit); text-transform: uppercase;">Exhibitions</div>
                             </div>
                         </div>
 
                         <div style="display: flex; gap: 1rem;">
-                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">📷</a>
-                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">🌐</a>
-                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">📧</a>
+                            <a href="#" style="color: var(--gold); font-size: 1.5rem; text-decoration: none;">📷</a>
+                            <a href="#" style="color: var(--gold); font-size: 1.5rem; text-decoration: none;">🌐</a>
+                            <a href="#" style="color: var(--gold); font-size: 1.5rem; text-decoration: none;">📧</a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Biography -->
-            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md); margin-bottom: 3rem;">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Biography</h3>
-                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); margin-bottom: 3rem; border-radius: 12px;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--velvet); border-bottom: 3px solid var(--gold); padding-bottom: 1rem;">Biography</h3>
+                <p style="color: var(--slit); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
                     Sarah Mitchell is an internationally recognized abstract artist whose work explores the intersection of color, form, and emotion. With over 15 years of practice, her distinctive style has been featured in galleries across North America and Europe.
                 </p>
-                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px;">
+                <p style="color: var(--slit); line-height: 1.9; letter-spacing: 0.3px;">
                     Her work is characterized by bold brushstrokes, vibrant color palettes, and a deep understanding of composition. Sarah holds an MFA from the Rhode Island School of Design and has received numerous awards for her contributions to contemporary art.
                 </p>
             </div>
 
             <!-- Certificates & Awards -->
-            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md); margin-bottom: 3rem;">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Certificates & Awards</h3>
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); margin-bottom: 3rem; border-radius: 12px;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--velvet); border-bottom: 3px solid var(--gold); padding-bottom: 1rem;">Certificates & Awards</h3>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
-                        <strong style="color: var(--black-bean);">2023</strong> - Best Contemporary Artist, International Art Fair
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--antique); color: var(--slit);">
+                        <strong style="color: var(--velvet);">2023</strong> - Best Contemporary Artist, International Art Fair
                     </li>
-                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
-                        <strong style="color: var(--black-bean);">2022</strong> - Excellence in Abstract Art, National Gallery Award
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--antique); color: var(--slit);">
+                        <strong style="color: var(--velvet);">2022</strong> - Excellence in Abstract Art, National Gallery Award
                     </li>
-                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
-                        <strong style="color: var(--black-bean);">2021</strong> - MFA, Rhode Island School of Design
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--antique); color: var(--slit);">
+                        <strong style="color: var(--velvet);">2021</strong> - MFA, Rhode Island School of Design
                     </li>
-                    <li style="padding: 1rem 0; color: var(--cinereous);">
-                        <strong style="color: var(--black-bean);">2020</strong> - Emerging Artist Grant, Arts Foundation
+                    <li style="padding: 1rem 0; color: var(--slit);">
+                        <strong style="color: var(--velvet);">2020</strong> - Emerging Artist Grant, Arts Foundation
                     </li>
                 </ul>
             </div>
 
             <!-- Portfolio -->
-            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
-                <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Portfolio</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <div style="height: 300px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown);"></div>
-                    <div style="height: 300px; background: linear-gradient(135deg, #74070E, #310E10); border: 2px solid var(--drab-brown);"></div>
-                    <div style="height: 300px; background: linear-gradient(135deg, #310E10, #45462A); border: 2px solid var(--drab-brown);"></div>
-                    <div style="height: 300px; background: linear-gradient(135deg, #F4E3B2, #947268); border: 2px solid var(--drab-brown);"></div>
-                    <div style="height: 300px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown);"></div>
-                    <div style="height: 300px; background: linear-gradient(135deg, #74070E, #310E10); border: 2px solid var(--drab-brown);"></div>
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--antique); box-shadow: var(--shadow-md); border-radius: 12px;">
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--velvet); border-bottom: 3px solid var(--gold); padding-bottom: 1rem;">Portfolio</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="height: 300px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); border-radius: 8px;"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #AD8330, #2E311A); border: 2px solid var(--antique); border-radius: 8px;"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #2E311A, #6B5B2D); border: 2px solid var(--antique); border-radius: 8px;"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #C6AE73, #AD9664); border: 2px solid var(--antique); border-radius: 8px;"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #AD9664, #6B5B2D); border: 2px solid var(--antique); border-radius: 8px;"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #AD8330, #2E311A); border: 2px solid var(--antique); border-radius: 8px;"></div>
                 </div>
             </div>
         </section>
@@ -2755,12 +2973,24 @@
             faqItem.classList.toggle('active');
         }
 
+        function switchSearchTab(tabName) {
+            // Remove active class from all tabs and contents
+            document.querySelectorAll('.search-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.search-content').forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Show corresponding content
+            document.getElementById(tabName + '-search').classList.add('active');
+        }
+
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 8px 32px rgba(49, 14, 16, 0.2)';
+                navbar.style.boxShadow = '0 8px 32px rgba(46, 49, 26, 0.2)';
             } else {
-                navbar.style.boxShadow = '0 4px 20px rgba(49, 14, 16, 0.12)';
+                navbar.style.boxShadow = '0 4px 20px rgba(46, 49, 26, 0.12)';
             }
         });
 
