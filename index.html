@@ -34,6 +34,35 @@
             line-height: 1.6;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+
         .navbar {
             background: var(--color-white);
             border-bottom: 1px solid var(--color-border);
@@ -42,6 +71,7 @@
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            transition: all 0.3s;
         }
 
         .nav-container {
@@ -58,6 +88,12 @@
             font-weight: 400;
             letter-spacing: 3px;
             color: var(--color-primary);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: var(--color-accent);
         }
 
         .nav-links {
@@ -71,7 +107,23 @@
             text-decoration: none;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
@@ -123,6 +175,25 @@
             background: linear-gradient(135deg, var(--color-pastel-pink) 0%, var(--color-pastel-peach) 50%, var(--color-pastel-lavender) 100%);
             text-align: center;
             padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            background-size: 200% 200%;
+            animation: shimmer 3s infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
@@ -131,6 +202,7 @@
             letter-spacing: 2px;
             color: var(--color-primary);
             margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out;
         }
 
         .hero-content p {
@@ -138,12 +210,14 @@
             color: var(--color-text);
             margin-bottom: 2.5rem;
             font-weight: 300;
+            animation: fadeIn 1s ease-out 0.2s backwards;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
+            animation: fadeIn 1s ease-out 0.4s backwards;
         }
 
         .featured {
@@ -170,15 +244,15 @@
         .auction-card {
             background: var(--color-white);
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .auction-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(212, 165, 165, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(212, 165, 165, 0.3);
         }
 
         .auction-card:nth-child(1) .auction-image {
@@ -197,6 +271,11 @@
             aspect-ratio: 4/5;
             background: var(--color-pastel-pink);
             margin-bottom: 0;
+            transition: transform 0.3s;
+        }
+
+        .auction-card:hover .auction-image {
+            transform: scale(1.05);
         }
 
         .auction-info {
@@ -240,6 +319,169 @@
             border-radius: 20px;
         }
 
+        /* Auction Detail Page */
+        .auction-detail {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .detail-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .detail-info {
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .detail-info h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .current-bid {
+            font-size: 2rem;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin: 1.5rem 0;
+        }
+
+        .bid-form {
+            margin: 2rem 0;
+        }
+
+        .bid-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .bid-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .bid-history {
+            margin-top: 2rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .bid-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .timer {
+            background: var(--color-pastel-pink);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .timer-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Dashboard */
+        .dashboard {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        .dashboard-section {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .auction-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.3s;
+        }
+
+        .auction-list-item:hover {
+            background: var(--color-bg);
+        }
+
         .trust {
             background: linear-gradient(135deg, var(--color-pastel-lavender) 0%, var(--color-pastel-blue) 100%);
             padding: 6rem 2rem;
@@ -271,6 +513,11 @@
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
         }
 
         .trust-item h3 {
@@ -305,11 +552,12 @@
             background: var(--color-white);
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
 
         .step:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
 
         .step:nth-child(1) {
@@ -373,7 +621,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1rem;
             border-radius: 6px;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
@@ -381,6 +629,7 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.1);
         }
 
         .form-group textarea {
@@ -475,9 +724,25 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--color-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            z-index: 2000;
+            animation: slideIn 0.5s ease-out;
+            max-width: 350px;
+        }
+
+        .notification.success {
+            border-left: 4px solid var(--color-pastel-green);
+        }
+
+        .notification.error {
+            border-left: 4px solid #FF6B6B;
         }
 
         @media (max-width: 768px) {
@@ -497,20 +762,30 @@
                 margin: 3rem auto;
                 padding: 2rem 1.5rem;
             }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">ARTÉHAUS</div>
+            <div class="logo" onclick="showPage('home')">ARTÉHAUS</div>
             <div class="nav-links">
                 <a href="#home" onclick="showPage('home')">Home</a>
                 <a href="#live" onclick="showPage('live')">Live Auctions</a>
                 <a href="#how" onclick="showPage('how')">How It Works</a>
                 <a href="#apply" onclick="showPage('apply')">Apply as Artist</a>
-                <a href="#register" class="btn-outline" onclick="showPage('register')">Register</a>
-                <a href="#login" class="btn-primary" onclick="showPage('login')">Login</a>
+                <a href="#dashboard" onclick="showPage('dashboard')" id="dashboardLink" style="display:none;">Dashboard</a>
+                <a href="#register" class="btn-outline" onclick="showPage('register')" id="registerBtn">Register</a>
+                <a href="#login" class="btn-primary" onclick="showPage('login')" id="loginBtn">Login</a>
+                <a href="#" class="btn-primary" onclick="logout()" id="logoutBtn" style="display:none;">Logout</a>
             </div>
         </div>
     </nav>
@@ -531,7 +806,7 @@
         <section class="featured">
             <h2>Featured Auctions</h2>
             <div class="auction-grid">
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Untitled Composition</h3>
@@ -542,7 +817,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Abstract Horizon</h3>
@@ -553,7 +828,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Urban Reflections</h3>
@@ -588,12 +863,119 @@
         </section>
     </div>
 
+    <!-- AUCTION DETAIL PAGE -->
+    <div id="detail" class="page-section">
+        <section class="auction-detail fade-in">
+            <div class="detail-grid">
+                <div class="detail-image"></div>
+                <div class="detail-info">
+                    <h1>Untitled Composition</h1>
+                    <p class="artist">by Sarah Mitchell</p>
+                    
+                    <div class="timer">
+                        <small>Time Remaining</small>
+                        <div class="timer-value" id="countdown">02:45:30</div>
+                    </div>
+
+                    <div class="current-bid">
+                        Current Bid: $<span id="currentBidAmount">12,500</span>
+                    </div>
+
+                    <div class="bid-form">
+                        <input type="number" class="bid-input" id="bidInput" placeholder="Enter your bid" min="12600">
+                        <button class="btn-primary" style="width:100%;" onclick="placeBid()">Place Bid</button>
+                    </div>
+
+                    <div style="margin: 2rem 0; padding: 1.5rem; background: var(--color-bg); border-radius: 8px;">
+                        <h3 style="margin-bottom: 1rem;">Artwork Details</h3>
+                        <p><strong>Medium:</strong> Oil on Canvas</p>
+                        <p><strong>Size:</strong> 48" x 36"</p>
+                        <p><strong>Year:</strong> 2024</p>
+                        <p><strong>Condition:</strong> Excellent</p>
+                    </div>
+
+                    <div class="bid-history">
+                        <h3>Bid History</h3>
+                        <div id="bidHistoryList">
+                            <div class="bid-item">
+                                <span><strong>User_234</strong><br><small>2 min ago</small></span>
+                                <span class="price">$12,500</span>
+                            </div>
+                            <div class="bid-item">
+                                <span><strong>ArtLover_89</strong><br><small>5 min ago</small></span>
+                                <span class="price">$12,200</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div id="dashboard" class="page-section">
+        <section class="dashboard fade-in">
+            <div class="dashboard-header">
+                <h1>Dashboard</h1>
+                <button class="btn-primary" onclick="showPage('apply')">+ List New Artwork</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Bids</h3>
+                    <div class="stat-value">3</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Won Auctions</h3>
+                    <div class="stat-value">7</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Spent</h3>
+                    <div class="stat-value">$45K</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Watchlist</h3>
+                    <div class="stat-value">12</div>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>My Active Bids</h2>
+                <div class="auction-list-item">
+                    <div>
+                        <h3>Untitled Composition</h3>
+                        <p>Current Bid: $12,500 • Your Bid: $12,500</p>
+                    </div>
+                    <span class="status" style="background: var(--color-pastel-green);">Winning</span>
+                </div>
+                <div class="auction-list-item">
+                    <div>
+                        <h3>Abstract Horizon</h3>
+                        <p>Current Bid: $9,200 • Your Bid: $8,500</p>
+                    </div>
+                    <span class="status" style="background: #FFE5D9;">Outbid</span>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Watchlist</h2>
+                <div class="auction-list-item">
+                    <div>
+                        <h3>Forest Meditation</h3>
+                        <p>Starting at $7,000 • Starts in 2 hours</p>
+                    </div>
+                    <button class="btn-outline">View</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- LIVE AUCTIONS PAGE -->
     <div id="live" class="page-section">
         <section class="live-auctions-section">
             <h2 style="font-size: 2.5rem; font-weight: 300; text-align: center; color: var(--color-primary); margin-bottom: 3rem;">Live Auctions</h2>
             <div class="auction-grid">
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-pastel-peach));"></div>
                     <div class="auction-info">
                         <span class="live-badge">🔴 LIVE NOW</span>
@@ -605,7 +987,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));"></div>
                     <div class="auction-info">
                         <span class="live-badge">🔴 LIVE NOW</span>
@@ -617,7 +999,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card">
+                <div class="auction-card fade-in" onclick="showPage('detail')">
                     <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-green), var(--color-pastel-blue));"></div>
                     <div class="auction-info">
                         <h3>Forest Meditation</h3>
@@ -637,22 +1019,22 @@
         <section class="how-it-works">
             <h2 style="font-size: 2.5rem; font-weight: 300; text-align: center; color: var(--color-primary);">How It Works</h2>
             <div class="steps">
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">01</div>
                     <h3>Register</h3>
                     <p>Create your account as a buyer or artist</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">02</div>
                     <h3>Browse</h3>
                     <p>Explore curated auctions and upcoming events</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">03</div>
                     <h3>Bid</h3>
                     <p>Place bids in real-time during live auctions</p>
                 </div>
-                <div class="step">
+                <div class="step fade-in">
                     <div class="step-number">04</div>
                     <h3>Acquire</h3>
                     <p>Secure payment and authenticated delivery</p>
@@ -663,9 +1045,9 @@
 
     <!-- APPLY AS ARTIST PAGE -->
     <div id="apply" class="page-section">
-        <section class="form-section">
+        <section class="form-section fade-in">
             <h2>Apply as Artist</h2>
-            <form>
+            <form onsubmit="submitArtistApplication(event)">
                 <div class="form-group">
                     <label>Full Name</label>
                     <input type="text" required>
@@ -698,20 +1080,20 @@
 
     <!-- BUYER REGISTRATION PAGE -->
     <div id="register" class="page-section">
-        <section class="form-section">
+        <section class="form-section fade-in">
             <h2>Buyer Registration</h2>
-            <form>
+            <form onsubmit="registerUser(event)">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" required>
+                    <input type="text" id="regName" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" required>
+                    <input type="email" id="regEmail" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" required>
+                    <input type="password" id="regPassword" required>
                 </div>
                 <div class="form-group">
                     <label>Phone Number</label>
@@ -728,16 +1110,16 @@
 
     <!-- LOGIN PAGE -->
     <div id="login" class="page-section">
-        <section class="form-section">
+        <section class="form-section fade-in">
             <h2>Login</h2>
-            <form>
+            <form onsubmit="loginUser(event)">
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" required>
+                    <input type="email" id="loginEmail" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" required>
+                    <input type="password" id="loginPassword" required>
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
                 <p style="text-align: center; margin-top: 1rem;">
@@ -777,13 +1159,123 @@
     </footer>
 
     <script>
+        // Backend Functionality Simulation
+        let currentBid = 12500;
+        let timeRemaining = 9930; // seconds
+
         function showPage(pageId) {
             document.querySelectorAll('.page-section').forEach(section => {
                 section.classList.remove('active');
             });
             document.getElementById(pageId).classList.add('active');
-            window.scrollTo(0, 0);
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `<strong>${type === 'success' ? '✓' : '✗'}</strong> ${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'fadeIn 0.3s ease-out reverse';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        function placeBid() {
+            const bidInput = document.getElementById('bidInput');
+            const bidAmount = parseInt(bidInput.value);
+            
+            if (bidAmount <= currentBid) {
+                showNotification('Bid must be higher than current bid!', 'error');
+                return;
+            }
+            
+            currentBid = bidAmount;
+            document.getElementById('currentBidAmount').textContent = currentBid.toLocaleString();
+            
+            const bidHistory = document.getElementById('bidHistoryList');
+            const newBid = document.createElement('div');
+            newBid.className = 'bid-item';
+            newBid.innerHTML = `
+                <span><strong>You</strong><br><small>Just now</small></span>
+                <span class="price">$${bidAmount.toLocaleString()}</span>
+            `;
+            bidHistory.insertBefore(newBid, bidHistory.firstChild);
+            
+            bidInput.value = '';
+            showNotification('Bid placed successfully!');
+        }
+
+        function registerUser(event) {
+            event.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            localStorage.setItem('user', JSON.stringify({name, email, password}));
+            showNotification('Registration successful! Please login.');
+            setTimeout(() => showPage('login'), 1500);
+        }
+
+        function loginUser(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            const user = JSON.parse(localStorage.getItem('user'));
+            
+            if (user && user.email === email && user.password === password) {
+                localStorage.setItem('loggedIn', 'true');
+                updateAuthUI();
+                showNotification('Login successful!');
+                setTimeout(() => showPage('dashboard'), 1500);
+            } else {
+                showNotification('Invalid credentials!', 'error');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            updateAuthUI();
+            showNotification('Logged out successfully!');
+            showPage('home');
+        }
+
+        function updateAuthUI() {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            document.getElementById('loginBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
+            document.getElementById('registerBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
+            document.getElementById('logoutBtn').style.display = isLoggedIn ? 'inline-block' : 'none';
+            document.getElementById('dashboardLink').style.display = isLoggedIn ? 'inline-block' : 'none';
+        }
+
+        function submitArtistApplication(event) {
+            event.preventDefault();
+            showNotification('Application submitted! We will review and contact you soon.');
+            setTimeout(() => showPage('home'), 2000);
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            if (timeRemaining > 0) {
+                timeRemaining--;
+                const hours = Math.floor(timeRemaining / 3600);
+                const minutes = Math.floor((timeRemaining % 3600) / 60);
+                const seconds = timeRemaining % 60;
+                
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) {
+                    countdownEl.textContent = 
+                        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }
+        }
+
+        // Initialize
+        updateAuthUI();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
