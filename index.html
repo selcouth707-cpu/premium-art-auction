@@ -7,13 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #2C2C2C;
-            --color-secondary: #8B7355;
-            --color-accent: #C9A87C;
-            --color-bg: #FAFAF8;
+            --color-primary: #4A5568;
+            --color-secondary: #B8A398;
+            --color-accent: #D4A5A5;
+            --color-bg: #F7F4F3;
             --color-white: #FFFFFF;
-            --color-text: #4A4A4A;
-            --color-border: #E8E8E6;
+            --color-text: #5A5A5A;
+            --color-border: #E8DFD8;
+            --color-pastel-pink: #F5D5D8;
+            --color-pastel-blue: #D5E5F5;
+            --color-pastel-green: #D8E8D5;
+            --color-pastel-lavender: #E5D5F5;
+            --color-pastel-peach: #FFE5D9;
         }
 
         * {
@@ -36,6 +41,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
@@ -69,11 +75,11 @@
         }
 
         .nav-links a:hover {
-            color: var(--color-secondary);
+            color: var(--color-accent);
         }
 
         .btn-primary {
-            background: var(--color-primary);
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
             color: var(--color-white);
             border: none;
             padding: 0.7rem 1.8rem;
@@ -83,16 +89,18 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 165, 165, 0.2);
         }
 
         .btn-primary:hover {
-            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 165, 165, 0.3);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--color-primary);
-            border: 1px solid var(--color-primary);
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent);
             padding: 0.7rem 1.8rem;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -103,7 +111,7 @@
         }
 
         .btn-outline:hover {
-            background: var(--color-primary);
+            background: var(--color-accent);
             color: var(--color-white);
         }
 
@@ -112,7 +120,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(44,44,44,0.1), rgba(44,44,44,0.1)), var(--color-border);
+            background: linear-gradient(135deg, var(--color-pastel-pink) 0%, var(--color-pastel-peach) 50%, var(--color-pastel-lavender) 100%);
             text-align: center;
             padding: 4rem 2rem;
         }
@@ -162,17 +170,37 @@
         .auction-card {
             background: var(--color-white);
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .auction-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(212, 165, 165, 0.2);
+        }
+
+        .auction-card:nth-child(1) .auction-image {
+            background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));
+        }
+
+        .auction-card:nth-child(2) .auction-image {
+            background: linear-gradient(135deg, var(--color-pastel-green), var(--color-pastel-blue));
+        }
+
+        .auction-card:nth-child(3) .auction-image {
+            background: linear-gradient(135deg, var(--color-pastel-peach), var(--color-pastel-pink));
         }
 
         .auction-image {
             aspect-ratio: 4/5;
-            background: var(--color-border);
-            margin-bottom: 1.5rem;
+            background: var(--color-pastel-pink);
+            margin-bottom: 0;
+        }
+
+        .auction-info {
+            padding: 1.5rem;
         }
 
         .auction-info h3 {
@@ -199,17 +227,21 @@
 
         .price {
             font-size: 1.1rem;
-            color: var(--color-secondary);
+            color: var(--color-accent);
+            font-weight: 600;
         }
 
         .status {
             font-size: 0.85rem;
             letter-spacing: 1px;
             color: var(--color-text);
+            background: var(--color-pastel-pink);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
         }
 
         .trust {
-            background: var(--color-white);
+            background: linear-gradient(135deg, var(--color-pastel-lavender) 0%, var(--color-pastel-blue) 100%);
             padding: 6rem 2rem;
             margin-top: 6rem;
         }
@@ -235,6 +267,10 @@
 
         .trust-item {
             text-align: center;
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         .trust-item h3 {
@@ -266,18 +302,46 @@
         .step {
             text-align: center;
             padding: 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step:nth-child(1) {
+            border-top: 4px solid var(--color-pastel-pink);
+        }
+
+        .step:nth-child(2) {
+            border-top: 4px solid var(--color-pastel-blue);
+        }
+
+        .step:nth-child(3) {
+            border-top: 4px solid var(--color-pastel-green);
+        }
+
+        .step:nth-child(4) {
+            border-top: 4px solid var(--color-pastel-lavender);
         }
 
         .step-number {
             font-size: 3rem;
             color: var(--color-accent);
             margin-bottom: 1rem;
+            font-weight: 300;
         }
 
         .form-section {
             max-width: 600px;
             margin: 6rem auto;
-            padding: 0 2rem;
+            padding: 3rem 2rem;
+            background: var(--color-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
         }
 
         .form-section h2 {
@@ -305,9 +369,18 @@
             width: 100%;
             padding: 0.8rem;
             border: 1px solid var(--color-border);
-            background: var(--color-white);
+            background: var(--color-bg);
             font-family: 'Cormorant Garamond', serif;
             font-size: 1rem;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
         }
 
         .form-group textarea {
@@ -316,7 +389,7 @@
         }
 
         .footer {
-            background: var(--color-primary);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #5A6A7A 100%);
             color: var(--color-white);
             padding: 4rem 0 2rem;
             margin-top: 6rem;
@@ -355,7 +428,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--color-accent);
+            color: var(--color-pastel-peach);
         }
 
         .footer-section p {
@@ -384,6 +457,29 @@
             display: block;
         }
 
+        .live-auctions-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .live-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -395,6 +491,11 @@
             
             .hero-buttons {
                 flex-direction: column;
+            }
+
+            .form-section {
+                margin: 3rem auto;
+                padding: 2rem 1.5rem;
             }
         }
     </style>
@@ -481,6 +582,50 @@
                     <div class="trust-item">
                         <h3>Authenticity Guaranteed</h3>
                         <p>Certificate of authenticity with every purchase</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LIVE AUCTIONS PAGE -->
+    <div id="live" class="page-section">
+        <section class="live-auctions-section">
+            <h2 style="font-size: 2.5rem; font-weight: 300; text-align: center; color: var(--color-primary); margin-bottom: 3rem;">Live Auctions</h2>
+            <div class="auction-grid">
+                <div class="auction-card">
+                    <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-pastel-peach));"></div>
+                    <div class="auction-info">
+                        <span class="live-badge">🔴 LIVE NOW</span>
+                        <h3>Sunset Dreams</h3>
+                        <p class="artist">Emma Thompson</p>
+                        <div class="auction-meta">
+                            <span class="price">Current: $18,500</span>
+                            <span class="status">23 bids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="auction-card">
+                    <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));"></div>
+                    <div class="auction-info">
+                        <span class="live-badge">🔴 LIVE NOW</span>
+                        <h3>Ocean Whispers</h3>
+                        <p class="artist">David Park</p>
+                        <div class="auction-meta">
+                            <span class="price">Current: $9,200</span>
+                            <span class="status">15 bids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="auction-card">
+                    <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-green), var(--color-pastel-blue));"></div>
+                    <div class="auction-info">
+                        <h3>Forest Meditation</h3>
+                        <p class="artist">Lisa Anderson</p>
+                        <div class="auction-meta">
+                            <span class="price">Starting at $7,000</span>
+                            <span class="status">Starts in 2h</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -596,7 +741,7 @@
                 </div>
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
                 <p style="text-align: center; margin-top: 1rem;">
-                    <a href="#register" onclick="showPage('register')" style="color: var(--color-secondary);">Don't have an account? Register</a>
+                    <a href="#register" onclick="showPage('register')" style="color: var(--color-accent);">Don't have an account? Register</a>
                 </p>
             </form>
         </section>
