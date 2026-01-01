@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTÉHAUS - Premium Art Auction Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>ARTÉHAUS - Luxury Art Auction Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #1A1A1A;
-            --color-secondary: #8B7355;
-            --color-accent: #D4A574;
-            --color-gold: #C9A87C;
-            --color-bg: #FAF9F7;
+            --color-primary: #0F0F0F;
+            --color-secondary: #A67C52;
+            --color-gold: #D4AF37;
+            --color-rose-gold: #B76E79;
+            --color-bg: #FDFBF7;
             --color-white: #FFFFFF;
-            --color-text: #4A4A4A;
-            --color-border: #E8E3DC;
-            --color-pastel-pink: #F5E6E8;
-            --color-pastel-blue: #E8F0F7;
-            --color-pastel-green: #E8F0E8;
-            --color-pastel-lavender: #EDE8F5;
-            --color-pastel-peach: #FFF0E8;
+            --color-text: #3A3A3A;
+            --color-light-text: #6B6B6B;
+            --color-border: #E5DDD5;
+            --color-cream: #F8F5F0;
+            --color-pastel-pink: #FFF0F3;
+            --color-pastel-blue: #EFF6FF;
+            --color-pastel-mint: #F0FFF4;
+            --color-pastel-lavender: #F5F3FF;
+            --color-pastel-peach: #FFF7ED;
         }
 
         * {
@@ -29,153 +31,184 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Raleway', sans-serif;
             background: var(--color-bg);
             color: var(--color-text);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
         }
 
-        /* Animations */
+        /* Smooth Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(1.03); }
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.9;
+                transform: scale(1.05);
+            }
         }
 
         @keyframes goldGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 124, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(201, 168, 124, 0.6); }
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(212, 175, 55, 0.7);
+            }
         }
 
         .fade-in {
-            animation: fadeIn 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        .slide-in {
-            animation: slideIn 0.5s ease-out;
-        }
-
-        /* Back Button */
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            transition: all 0.3s;
-            background: var(--color-white);
-            margin-bottom: 2rem;
-        }
-
-        .back-button:hover {
-            background: var(--color-accent);
-            color: var(--color-white);
-            border-color: var(--color-accent);
-            transform: translateX(-5px);
-        }
-
-        /* Breadcrumbs */
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: var(--color-text);
-        }
-
-        .breadcrumbs a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumbs a:hover {
-            color: var(--color-gold);
-        }
-
-        .breadcrumbs span {
-            color: var(--color-border);
-        }
-
+        /* Navigation Bar */
         .navbar {
-            background: var(--color-white);
-            border-bottom: 2px solid var(--color-gold);
-            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1.8rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            letter-spacing: 4px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-gold));
+            letter-spacing: 5px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Cormorant Garamond', serif;
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            position: relative;
         }
 
-        .logo:hover {
-            letter-spacing: 5px;
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-rose-gold));
+            transition: width 0.4s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: center;
         }
 
         .nav-links a {
             color: var(--color-text);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
         }
 
-        .nav-links a::after {
+        .nav-links a::before {
             content: '';
             position: absolute;
             bottom: 0;
@@ -183,54 +216,71 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--color-gold), var(--color-accent));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-rose-gold));
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--color-gold);
         }
 
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        /* Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent) 100%);
+            background: linear-gradient(135deg, var(--color-gold), var(--color-secondary));
             color: var(--color-white);
             border: none;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.5rem;
             font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(201, 168, 124, 0.3);
-            border-radius: 4px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            border-radius: 50px;
             text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(201, 168, 124, 0.5);
-            animation: goldGlow 2s infinite;
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--color-gold);
             border: 2px solid var(--color-gold);
-            padding: 0.7rem 1.8rem;
+            padding: 0.8rem 2.3rem;
             font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-block;
-            border-radius: 4px;
+            border-radius: 50px;
             text-transform: uppercase;
         }
 
@@ -238,17 +288,70 @@
             background: var(--color-gold);
             color: var(--color-white);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(201, 168, 124, 0.4);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
         }
 
+        /* Back Button & Breadcrumbs */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--color-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--color-border);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            background: var(--color-white);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .back-button:hover {
+            background: var(--color-gold);
+            color: var(--color-white);
+            border-color: var(--color-gold);
+            transform: translateX(-8px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--color-light-text);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .breadcrumbs a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--color-secondary);
+        }
+
+        .breadcrumbs span {
+            color: var(--color-border);
+            font-weight: 300;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 75vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 50%, #1A1A1A 100%);
+            background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 50%, #0F0F0F 100%);
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -261,9 +364,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 168, 124, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
-            animation: shimmer 8s infinite alternate;
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(183, 110, 121, 0.15) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
         }
 
         .hero::after {
@@ -272,59 +375,64 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-rose-gold), transparent);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 900px;
         }
 
         .hero-content h1 {
-            font-size: 5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--color-white), var(--color-gold));
+            font-size: 5.5rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #FFFFFF, var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1.5rem;
-            animation: fadeIn 1s ease-out;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 3rem;
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3.5rem;
             font-weight: 300;
-            animation: fadeIn 1s ease-out 0.2s backwards;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
         .hero-buttons {
             display: flex;
             gap: 2rem;
             justify-content: center;
-            animation: fadeIn 1s ease-out 0.4s backwards;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
         }
 
-        .featured {
+        /* Section Styling */
+        .section {
             max-width: 1400px;
-            margin: 8rem auto;
-            padding: 0 2rem;
+            margin: 10rem auto;
+            padding: 0 3rem;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .section-header h2 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
+            font-size: 4rem;
+            font-weight: 500;
+            letter-spacing: 3px;
             color: var(--color-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
@@ -332,40 +440,51 @@
         .section-header h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, var(--color-gold), var(--color-accent));
+            background: linear-gradient(90deg, var(--color-gold), var(--color-rose-gold));
+            border-radius: 10px;
         }
 
         .section-header p {
-            color: var(--color-text);
-            font-size: 1.1rem;
-            margin-top: 2rem;
+            color: var(--color-light-text);
+            font-size: 1.15rem;
+            margin-top: 2.5rem;
+            letter-spacing: 0.5px;
         }
 
+        /* Auction Grid */
         .auction-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 4rem;
         }
 
         .auction-card {
             background: var(--color-white);
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             border: 1px solid var(--color-border);
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .auction-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 60px rgba(201, 168, 124, 0.3);
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(212, 175, 55, 0.25);
             border-color: var(--color-gold);
+        }
+
+        .auction-image {
+            aspect-ratio: 4/5;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease;
         }
 
         .auction-card:nth-child(1) .auction-image {
@@ -373,164 +492,188 @@
         }
 
         .auction-card:nth-child(2) .auction-image {
-            background: linear-gradient(135deg, var(--color-pastel-green), var(--color-pastel-blue));
+            background: linear-gradient(135deg, var(--color-pastel-mint), var(--color-pastel-blue));
         }
 
         .auction-card:nth-child(3) .auction-image {
             background: linear-gradient(135deg, var(--color-pastel-peach), var(--color-pastel-pink));
         }
 
-        .auction-image {
-            aspect-ratio: 4/5;
-            background: var(--color-pastel-pink);
-            margin-bottom: 0;
-            transition: transform 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .auction-image::after {
+        .auction-image::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
         }
 
-        .auction-card:hover .auction-image::after {
+        .auction-card:hover .auction-image::before {
             left: 100%;
         }
 
         .auction-card:hover .auction-image {
-            transform: scale(1.08);
+            transform: scale(1.1);
         }
 
         .auction-info {
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .auction-info h3 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
             color: var(--color-primary);
+            letter-spacing: 1px;
         }
 
         .artist {
-            font-size: 1rem;
-            color: var(--color-text);
-            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: var(--color-light-text);
+            margin-bottom: 2rem;
             font-style: italic;
+            letter-spacing: 0.5px;
         }
 
         .auction-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             border-top: 2px solid var(--color-border);
         }
 
         .price {
-            font-size: 1.3rem;
-            color: var(--color-gold);
-            font-weight: 600;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .status {
             font-size: 0.85rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--color-text);
-            background: var(--color-pastel-pink);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-weight: 500;
+            background: var(--color-cream);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
 
         /* Auction Detail Page */
         .auction-detail {
             max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            margin: 5rem auto;
+            padding: 0 3rem;
         }
 
         .detail-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 5rem;
+            margin-top: 3rem;
         }
 
         .detail-image {
             aspect-ratio: 4/5;
             background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));
-            border-radius: 16px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             border: 3px solid var(--color-gold);
+            animation: scaleIn 0.8s ease-out;
         }
 
         .detail-info {
             background: var(--color-white);
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             border: 1px solid var(--color-border);
+            animation: slideInRight 0.8s ease-out;
         }
 
         .detail-info h1 {
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
             color: var(--color-primary);
+            letter-spacing: 2px;
         }
 
         .current-bid {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-accent));
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 600;
-            margin: 2rem 0;
-        }
-
-        .bid-form {
-            margin: 2rem 0;
+            font-weight: 700;
+            margin: 2.5rem 0;
+            font-family: 'Playfair Display', serif;
         }
 
         .bid-input {
             width: 100%;
-            padding: 1.2rem;
+            padding: 1.3rem 1.5rem;
             border: 2px solid var(--color-border);
-            border-radius: 8px;
+            border-radius: 15px;
             font-size: 1.2rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+            background: var(--color-cream);
         }
 
         .bid-input:focus {
             outline: none;
             border-color: var(--color-gold);
-            box-shadow: 0 0 0 4px rgba(201, 168, 124, 0.1);
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.1);
+            background: var(--color-white);
+        }
+
+        .timer {
+            background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-pastel-peach));
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border: 2px solid var(--color-gold);
+        }
+
+        .timer small {
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--color-text);
+            text-transform: uppercase;
+        }
+
+        .timer-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: 'Playfair Display', serif;
+            margin-top: 0.5rem;
         }
 
         .bid-history {
-            margin-top: 2rem;
-            max-height: 350px;
+            margin-top: 3rem;
+            max-height: 400px;
             overflow-y: auto;
             padding-right: 1rem;
         }
 
         .bid-history::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
 
         .bid-history::-webkit-scrollbar-track {
-            background: var(--color-bg);
+            background: var(--color-cream);
             border-radius: 10px;
         }
 
@@ -542,106 +685,97 @@
         .bid-item {
             display: flex;
             justify-content: space-between;
-            padding: 1.2rem;
+            padding: 1.5rem;
             border-bottom: 1px solid var(--color-border);
-            animation: slideIn 0.3s ease-out;
-            transition: background 0.3s;
+            animation: slideInLeft 0.4s ease-out;
+            transition: all 0.3s ease;
         }
 
         .bid-item:hover {
-            background: var(--color-bg);
-        }
-
-        .timer {
-            background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-pastel-peach));
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 2rem;
-            border: 2px solid var(--color-gold);
-        }
-
-        .timer-value {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            font-family: 'Cormorant Garamond', serif;
+            background: var(--color-cream);
+            padding-left: 2rem;
         }
 
         /* Dashboard */
         .dashboard {
             max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            margin: 5rem auto;
+            padding: 0 3rem;
         }
 
         .dashboard-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .dashboard-header h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-size: 4rem;
+            font-weight: 500;
             color: var(--color-primary);
+            letter-spacing: 2px;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
         }
 
         .stat-card {
-            background: linear-gradient(135deg, var(--color-white), var(--color-bg));
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            background: linear-gradient(135deg, var(--color-white), var(--color-cream));
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
             border: 2px solid var(--color-border);
+            animation: scaleIn 0.6s ease-out;
         }
 
         .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(201, 168, 124, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
             border-color: var(--color-gold);
         }
 
         .stat-card h3 {
-            font-size: 0.9rem;
-            color: var(--color-text);
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            color: var(--color-light-text);
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-family: 'Raleway', sans-serif;
         }
 
         .stat-value {
-            font-size: 3rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-accent));
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
         }
 
         .dashboard-section {
             background: var(--color-white);
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             margin-bottom: 3rem;
             border: 1px solid var(--color-border);
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .dashboard-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
             color: var(--color-primary);
+            letter-spacing: 1px;
         }
 
         .auction-list-item {
@@ -650,18 +784,19 @@
             align-items: center;
             padding: 2rem;
             border-bottom: 1px solid var(--color-border);
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .auction-list-item:hover {
-            background: var(--color-bg);
+            background: var(--color-cream);
             padding-left: 2.5rem;
         }
 
+        /* Trust Section */
         .trust {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #2C2C2C 100%);
-            padding: 8rem 2rem;
-            margin-top: 8rem;
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1A1A1A 100%);
+            padding: 10rem 3rem;
+            margin-top: 10rem;
             position: relative;
             overflow: hidden;
         }
@@ -674,8 +809,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 30% 50%, rgba(201, 168, 124, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(183, 110, 121, 0.15) 0%, transparent 50%);
+            animation: float 10s ease-in-out infinite;
         }
 
         .trust-content {
@@ -686,149 +822,172 @@
         }
 
         .trust-content h2 {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-size: 4rem;
+            font-weight: 500;
             text-align: center;
-            margin-bottom: 5rem;
-            background: linear-gradient(135deg, var(--color-white), var(--color-gold));
+            margin-bottom: 6rem;
+            background: linear-gradient(135deg, #FFFFFF, var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 4rem;
         }
 
         .trust-item {
             text-align: center;
-            background: rgba(255,255,255,0.05);
-            padding: 3rem;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3.5rem;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(201, 168, 124, 0.2);
-            transition: all 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .trust-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.08);
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--color-gold);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
         }
 
         .trust-item h3 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
             color: var(--color-gold);
+            letter-spacing: 1px;
         }
 
         .trust-item p {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.8);
-            line-height: 1.8;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.9;
+            letter-spacing: 0.5px;
         }
 
+        /* How It Works */
         .how-it-works {
-            max-width: 1200px;
-            margin: 8rem auto;
-            padding: 0 2rem;
+            max-width: 1300px;
+            margin: 10rem auto;
+            padding: 0 3rem;
         }
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-top: 6rem;
         }
 
         .step {
             text-align: center;
-            padding: 3rem;
+            padding: 3.5rem;
             background: var(--color-white);
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s ease;
             border: 2px solid var(--color-border);
+            animation: scaleIn 0.8s ease-out;
         }
 
         .step:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
             border-color: var(--color-gold);
         }
 
         .step:nth-child(1) {
-            border-top: 4px solid var(--color-pastel-pink);
+            border-top: 5px solid var(--color-pastel-pink);
         }
 
         .step:nth-child(2) {
-            border-top: 4px solid var(--color-pastel-blue);
+            border-top: 5px solid var(--color-pastel-blue);
         }
 
         .step:nth-child(3) {
-            border-top: 4px solid var(--color-pastel-green);
+            border-top: 5px solid var(--color-pastel-mint);
         }
 
         .step:nth-child(4) {
-            border-top: 4px solid var(--color-pastel-lavender);
+            border-top: 5px solid var(--color-pastel-lavender);
         }
 
         .step-number {
-            font-size: 4rem;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-accent));
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-rose-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif;
         }
 
-        .form-section {
-            max-width: 650px;
-            margin: 6rem auto;
-            padding: 4rem 3rem;
-            background: var(--color-white);
-            border-radius: 16px;
-            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
-            border: 2px solid var(--color-gold);
-        }
-
-        .form-section h2 {
-            font-size: 3rem;
-            font-weight: 300;
-            text-align: center;
-            margin-bottom: 3rem;
+        .step h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             color: var(--color-primary);
         }
 
+        .step p {
+            color: var(--color-light-text);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Forms */
+        .form-section {
+            max-width: 700px;
+            margin: 8rem auto;
+            padding: 4.5rem 4rem;
+            background: var(--color-white);
+            border-radius: 25px;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--color-gold);
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        .form-section h2 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+        }
+
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             color: var(--color-primary);
             font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem 1.5rem;
             border: 2px solid var(--color-border);
-            background: var(--color-bg);
-            font-family: 'Montserrat', sans-serif;
+            background: var(--color-cream);
+            font-family: 'Raleway', sans-serif;
             font-size: 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
@@ -836,77 +995,79 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--color-gold);
-            box-shadow: 0 0 0 4px rgba(201, 168, 124, 0.1);
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.1);
+            background: var(--color-white);
         }
 
         .form-group textarea {
-            min-height: 140px;
+            min-height: 150px;
             resize: vertical;
         }
 
+        /* Footer */
         .footer {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #0A0A0A 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #000000 100%);
             color: var(--color-white);
-            padding: 5rem 0 2rem;
-            margin-top: 8rem;
+            padding: 6rem 0 2.5rem;
+            margin-top: 10rem;
             border-top: 3px solid var(--color-gold);
         }
 
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 5rem;
+            margin-bottom: 5rem;
         }
 
         .footer-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
             color: var(--color-gold);
         }
 
         .footer-section h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--color-gold);
         }
 
         .footer-section a {
             display: block;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            transition: all 0.3s;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
 
         .footer-section a:hover {
             color: var(--color-gold);
-            padding-left: 5px;
+            padding-left: 8px;
         }
 
         .footer-section p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 3rem;
-            border-top: 1px solid rgba(201, 168, 124, 0.2);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
             max-width: 1400px;
             margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
         }
 
         .page-section {
@@ -917,45 +1078,40 @@
             display: block;
         }
 
-        .live-auctions-section {
-            max-width: 1400px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-        }
-
         .live-badge {
             display: inline-block;
             background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
             color: white;
-            padding: 0.5rem 1.2rem;
-            border-radius: 25px;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
             font-size: 0.85rem;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
             animation: pulse 2s infinite;
-            font-weight: 600;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
         .notification {
             position: fixed;
-            top: 100px;
-            right: 20px;
+            top: 120px;
+            right: 30px;
             background: var(--color-white);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 2rem 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             z-index: 2000;
-            animation: slideIn 0.5s ease-out;
-            max-width: 400px;
-            border-left: 4px solid var(--color-gold);
+            animation: slideInRight 0.5s ease-out;
+            max-width: 450px;
+            border-left: 5px solid var(--color-gold);
         }
 
         .notification.success {
-            border-left-color: var(--color-pastel-green);
+            border-left-color: #10B981;
         }
 
         .notification.error {
-            border-left-color: #FF6B6B;
+            border-left-color: #EF4444;
         }
 
         @media (max-width: 768px) {
@@ -964,16 +1120,11 @@
             }
             
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
             }
             
             .hero-buttons {
                 flex-direction: column;
-            }
-
-            .form-section {
-                margin: 3rem auto;
-                padding: 2.5rem 2rem;
             }
 
             .detail-grid {
@@ -985,17 +1136,17 @@
             }
 
             .section-header h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            .dashboard-header h1 {
-                font-size: 2.5rem;
+            .auction-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo" onclick="navigateTo('home')">ARTÉHAUS</div>
             <div class="nav-links">
@@ -1016,7 +1167,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Curated Art Auctions</h1>
-                <p>Discover exceptional works from emerging and established artists</p>
+                <p>Discover exceptional works from emerging and established artists worldwide</p>
                 <div class="hero-buttons">
                     <a href="#live" class="btn-primary" onclick="navigateTo('live')">View Live Auctions</a>
                     <a href="#apply" class="btn-outline" onclick="navigateTo('apply')">Submit Your Work</a>
@@ -1024,13 +1175,13 @@
             </div>
         </section>
 
-        <section class="featured">
+        <section class="section">
             <div class="section-header">
                 <h2>Featured Auctions</h2>
-                <p>Handpicked masterpieces from our curated collection</p>
+                <p>Handpicked masterpieces from our exclusive collection</p>
             </div>
             <div class="auction-grid">
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
+                <div class="auction-card" onclick="navigateTo('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Untitled Composition</h3>
@@ -1041,7 +1192,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
+                <div class="auction-card" onclick="navigateTo('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Abstract Horizon</h3>
@@ -1052,7 +1203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
+                <div class="auction-card" onclick="navigateTo('detail')">
                     <div class="auction-image"></div>
                     <div class="auction-info">
                         <h3>Urban Reflections</h3>
@@ -1089,7 +1240,7 @@
 
     <!-- AUCTION DETAIL PAGE -->
     <div id="detail" class="page-section">
-        <section class="auction-detail fade-in">
+        <section class="auction-detail">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back
             </a>
@@ -1108,7 +1259,7 @@
                     <p class="artist">by Sarah Mitchell</p>
                     
                     <div class="timer">
-                        <small style="font-weight: 600; letter-spacing: 1px;">TIME REMAINING</small>
+                        <small>TIME REMAINING</small>
                         <div class="timer-value" id="countdown">02:45:30</div>
                     </div>
 
@@ -1121,16 +1272,16 @@
                         <button class="btn-primary" style="width:100%;" onclick="placeBid()">Place Bid</button>
                     </div>
 
-                    <div style="margin: 2rem 0; padding: 2rem; background: var(--color-bg); border-radius: 12px; border: 1px solid var(--color-border);">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--color-primary);">Artwork Details</h3>
-                        <p style="margin-bottom: 0.8rem;"><strong>Medium:</strong> Oil on Canvas</p>
-                        <p style="margin-bottom: 0.8rem;"><strong>Size:</strong> 48" x 36"</p>
-                        <p style="margin-bottom: 0.8rem;"><strong>Year:</strong> 2024</p>
-                        <p><strong>Condition:</strong> Excellent</p>
+                    <div style="margin: 2.5rem 0; padding: 2.5rem; background: var(--color-cream); border-radius: 15px; border: 1px solid var(--color-border);">
+                        <h3 style="margin-bottom: 2rem; color: var(--color-primary); font-size: 1.5rem;">Artwork Details</h3>
+                        <p style="margin-bottom: 1rem; font-size: 1.05rem;"><strong>Medium:</strong> Oil on Canvas</p>
+                        <p style="margin-bottom: 1rem; font-size: 1.05rem;"><strong>Size:</strong> 48" x 36"</p>
+                        <p style="margin-bottom: 1rem; font-size: 1.05rem;"><strong>Year:</strong> 2024</p>
+                        <p style="font-size: 1.05rem;"><strong>Condition:</strong> Excellent</p>
                     </div>
 
                     <div class="bid-history">
-                        <h3 style="margin-bottom: 1.5rem;">Bid History</h3>
+                        <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Bid History</h3>
                         <div id="bidHistoryList">
                             <div class="bid-item">
                                 <span><strong>User_234</strong><br><small>2 min ago</small></span>
@@ -1149,7 +1300,7 @@
 
     <!-- DASHBOARD PAGE -->
     <div id="dashboard" class="page-section">
-        <section class="dashboard fade-in">
+        <section class="dashboard">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back to Home
             </a>
@@ -1187,17 +1338,17 @@
                 <h2>My Active Bids</h2>
                 <div class="auction-list-item">
                     <div>
-                        <h3>Untitled Composition</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Untitled Composition</h3>
                         <p>Current Bid: $12,500 • Your Bid: $12,500</p>
                     </div>
-                    <span class="status" style="background: var(--color-pastel-green);">Winning</span>
+                    <span class="status" style="background: var(--color-pastel-mint);">Winning</span>
                 </div>
                 <div class="auction-list-item">
                     <div>
-                        <h3>Abstract Horizon</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Abstract Horizon</h3>
                         <p>Current Bid: $9,200 • Your Bid: $8,500</p>
                     </div>
-                    <span class="status" style="background: #FFE5D9;">Outbid</span>
+                    <span class="status" style="background: var(--color-pastel-peach);">Outbid</span>
                 </div>
             </div>
 
@@ -1205,7 +1356,7 @@
                 <h2>Watchlist</h2>
                 <div class="auction-list-item">
                     <div>
-                        <h3>Forest Meditation</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Forest Meditation</h3>
                         <p>Starting at $7,000 • Starts in 2 hours</p>
                     </div>
                     <button class="btn-outline" onclick="navigateTo('detail')">View</button>
@@ -1216,7 +1367,7 @@
 
     <!-- LIVE AUCTIONS PAGE -->
     <div id="live" class="page-section">
-        <section class="live-auctions-section">
+        <section class="section">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back
             </a>
@@ -1225,7 +1376,7 @@
                 <p>Join active bidding sessions happening right now</p>
             </div>
             <div class="auction-grid">
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
+                <div class="auction-card" onclick="navigateTo('detail')">
                     <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-pink), var(--color-pastel-peach));"></div>
                     <div class="auction-info">
                         <span class="live-badge">🔴 LIVE NOW</span>
@@ -1237,7 +1388,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
+                <div class="auction-card" onclick="navigateTo('detail')">
                     <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-blue), var(--color-pastel-lavender));"></div>
                     <div class="auction-info">
                         <span class="live-badge">🔴 LIVE NOW</span>
@@ -1249,8 +1400,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="auction-card fade-in" onclick="navigateTo('detail')">
-                    <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-green), var(--color-pastel-blue));"></div>
+                <div class="auction-card" onclick="navigateTo('detail')">
+                    <div class="auction-image" style="background: linear-gradient(135deg, var(--color-pastel-mint), var(--color-pastel-blue));"></div>
                     <div class="auction-info">
                         <h3>Forest Meditation</h3>
                         <p class="artist">Lisa Anderson</p>
@@ -1275,22 +1426,22 @@
                 <p>Your journey to acquiring exceptional art in four simple steps</p>
             </div>
             <div class="steps">
-                <div class="step fade-in">
+                <div class="step">
                     <div class="step-number">01</div>
                     <h3>Register</h3>
                     <p>Create your account as a buyer or artist and join our exclusive community</p>
                 </div>
-                <div class="step fade-in">
+                <div class="step">
                     <div class="step-number">02</div>
                     <h3>Browse</h3>
                     <p>Explore curated auctions and upcoming events from our collection</p>
                 </div>
-                <div class="step fade-in">
+                <div class="step">
                     <div class="step-number">03</div>
                     <h3>Bid</h3>
                     <p>Place bids in real-time during live auctions with instant updates</p>
                 </div>
-                <div class="step fade-in">
+                <div class="step">
                     <div class="step-number">04</div>
                     <h3>Acquire</h3>
                     <p>Secure payment and authenticated delivery with full documentation</p>
@@ -1301,7 +1452,7 @@
 
     <!-- APPLY AS ARTIST PAGE -->
     <div id="apply" class="page-section">
-        <section class="form-section fade-in">
+        <section class="form-section">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back
             </a>
@@ -1332,14 +1483,14 @@
                         <option>10+ years</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Submit Application</button>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Submit Application</button>
             </form>
         </section>
     </div>
 
     <!-- BUYER REGISTRATION PAGE -->
     <div id="register" class="page-section">
-        <section class="form-section fade-in">
+        <section class="form-section">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back
             </a>
@@ -1365,14 +1516,14 @@
                     <label>Collecting Interests</label>
                     <textarea placeholder="What type of art are you interested in?"></textarea>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Create Account</button>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Create Account</button>
             </form>
         </section>
     </div>
 
     <!-- LOGIN PAGE -->
     <div id="login" class="page-section">
-        <section class="form-section fade-in">
+        <section class="form-section">
             <a href="#" class="back-button" onclick="goBack(); return false;">
                 ← Back
             </a>
@@ -1386,9 +1537,9 @@
                     <label>Password</label>
                     <input type="password" id="loginPassword" required>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Login</button>
-                <p style="text-align: center; margin-top: 1.5rem;">
-                    <a href="#register" onclick="navigateTo('register')" style="color: var(--color-gold); font-weight: 500;">Don't have an account? Register</a>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Login</button>
+                <p style="text-align: center; margin-top: 2rem;">
+                    <a href="#register" onclick="navigateTo('register')" style="color: var(--color-gold); font-weight: 600; text-decoration: none;">Don't have an account? Register</a>
                 </p>
             </form>
         </section>
@@ -1424,7 +1575,6 @@
     </footer>
 
     <script>
-        // Navigation History
         let navigationHistory = ['home'];
         let currentBid = 12500;
         let timeRemaining = 9930;
@@ -1436,7 +1586,6 @@
             document.getElementById(pageId).classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
             
-            // Add to history
             if (navigationHistory[navigationHistory.length - 1] !== pageId) {
                 navigationHistory.push(pageId);
             }
@@ -1444,7 +1593,7 @@
 
         function goBack() {
             if (navigationHistory.length > 1) {
-                navigationHistory.pop(); // Remove current page
+                navigationHistory.pop();
                 const previousPage = navigationHistory[navigationHistory.length - 1];
                 navigateTo(previousPage);
             } else {
@@ -1455,11 +1604,11 @@
         function showNotification(message, type = 'success') {
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
-            notification.innerHTML = `<strong style="font-size: 1.2rem;">${type === 'success' ? '✓' : '✗'}</strong> ${message}`;
+            notification.innerHTML = `<strong style="font-size: 1.3rem;">${type === 'success' ? '✓' : '✗'}</strong> ${message}`;
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.style.animation = 'fadeIn 0.3s ease-out reverse';
+                notification.style.opacity = '0';
                 setTimeout(() => notification.remove(), 300);
             }, 3000);
         }
@@ -1553,11 +1702,19 @@
             }
         }
 
-        // Initialize
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
         updateAuthUI();
         setInterval(updateCountdown, 1000);
 
-        // Browser back button support
         window.addEventListener('popstate', function(event) {
             goBack();
         });
