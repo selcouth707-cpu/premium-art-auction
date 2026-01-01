@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARTÉHAUS - Premium Art Auction Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-midnight-black: #090909;
-            --color-gallery-white: #F5F5F3;
-            --color-brushed-gold: #C9AE70;
-            --color-stone-gray: #7C7C7C;
-            --color-deep-shadow: #2A2A2A;
-            --color-white: #FFFFFF;
-            --color-light-gold: #E5D9B6;
-            --color-dark-gold: #B39A5F;
-            --color-light-gray: #A8A8A8;
-            --shadow-sm: 0 2px 8px rgba(9, 9, 9, 0.08);
-            --shadow-md: 0 4px 16px rgba(9, 9, 9, 0.12);
-            --shadow-lg: 0 8px 24px rgba(9, 9, 9, 0.16);
-            --shadow-xl: 0 16px 40px rgba(9, 9, 9, 0.2);
-            --shadow-2xl: 0 24px 60px rgba(9, 9, 9, 0.25);
+            --blood-red: #74070E;
+            --vanilla: #F4E3B2;
+            --drab-brown: #45462A;
+            --cinereous: #947268;
+            --black-bean: #310E10;
+            --white: #FFFFFF;
+            
+            --shadow-sm: 0 2px 12px rgba(49, 14, 16, 0.08);
+            --shadow-md: 0 4px 20px rgba(49, 14, 16, 0.12);
+            --shadow-lg: 0 8px 32px rgba(49, 14, 16, 0.16);
+            --shadow-xl: 0 16px 48px rgba(49, 14, 16, 0.2);
         }
 
         * {
@@ -30,17 +27,19 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--color-gallery-white);
-            color: var(--color-midnight-black);
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--vanilla);
+            color: var(--black-bean);
+            line-height: 1.7;
             overflow-x: hidden;
+            letter-spacing: 0.3px;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--color-midnight-black);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--black-bean);
+            letter-spacing: 0.5px;
         }
 
         /* Animations */
@@ -61,66 +60,66 @@
 
         /* Navigation */
         .navbar {
-            background: var(--color-white);
-            border-bottom: 2px solid var(--color-brushed-gold);
+            background: var(--white);
+            border-bottom: 2px solid var(--drab-brown);
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             box-shadow: var(--shadow-md);
         }
 
         .navbar-top {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem 3rem;
+            padding: 1.8rem 3rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid var(--color-stone-gray);
+            border-bottom: 1px solid var(--drab-brown);
         }
 
         .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            color: var(--color-midnight-black);
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--black-bean);
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Playfair Display', serif;
+            transition: all 0.4s ease;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .logo:hover {
-            color: var(--color-brushed-gold);
+            color: var(--blood-red);
             transform: scale(1.05);
         }
 
         .navbar-bottom {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0.8rem 3rem;
+            padding: 1rem 3rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--color-stone-gray);
+            color: var(--cinereous);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             position: relative;
             text-transform: uppercase;
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
         }
 
         .nav-links a::after {
@@ -130,12 +129,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--color-brushed-gold);
+            background: var(--blood-red);
             transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--color-brushed-gold);
+            color: var(--blood-red);
         }
 
         .nav-links a:hover::after {
@@ -144,56 +143,34 @@
 
         /* Buttons */
         .btn-primary {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            border: 2px solid var(--color-midnight-black);
-            padding: 0.7rem 1.5rem;
+            background: var(--black-bean);
+            color: var(--vanilla);
+            border: 2px solid var(--black-bean);
+            padding: 0.8rem 1.8rem;
             font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn-primary:hover {
-            background: var(--color-brushed-gold);
-            border-color: var(--color-brushed-gold);
-            color: var(--color-midnight-black);
-            transform: translateY(-2px);
+            background: var(--blood-red);
+            border-color: var(--blood-red);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--color-midnight-black);
-            border: 2px solid var(--color-midnight-black);
-            padding: 0.7rem 1.5rem;
+            color: var(--black-bean);
+            border: 2px solid var(--drab-brown);
+            padding: 0.8rem 1.8rem;
             font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-        }
-
-        .btn-outline:hover {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-accent {
-            background: var(--color-brushed-gold);
-            color: var(--color-midnight-black);
-            border: 2px solid var(--color-brushed-gold);
-            padding: 0.85rem 2rem;
-            font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 1px;
             cursor: pointer;
@@ -203,47 +180,70 @@
             text-transform: uppercase;
         }
 
-        .btn-accent:hover {
-            background: var(--color-dark-gold);
-            border-color: var(--color-dark-gold);
-            transform: translateY(-2px);
+        .btn-outline:hover {
+            background: var(--black-bean);
+            color: var(--vanilla);
+            border-color: var(--black-bean);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
+        }
+
+        .btn-accent {
+            background: var(--blood-red);
+            color: var(--vanilla);
+            border: 2px solid var(--blood-red);
+            padding: 1rem 2.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn-accent:hover {
+            background: var(--black-bean);
+            border-color: var(--black-bean);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
         }
 
         /* Back Button */
         .back-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--color-midnight-black);
+            gap: 0.6rem;
+            color: var(--black-bean);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--color-stone-gray);
+            padding: 0.8rem 1.6rem;
+            border: 2px solid var(--drab-brown);
             transition: all 0.3s ease;
-            background: var(--color-white);
+            background: var(--white);
             margin-bottom: 2rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
         }
 
         .back-button:hover {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            border-color: var(--color-midnight-black);
+            background: var(--black-bean);
+            color: var(--vanilla);
+            border-color: var(--black-bean);
             transform: translateX(-5px);
         }
 
         /* Hero */
         .hero {
-            min-height: 70vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
+            background: linear-gradient(135deg, var(--black-bean) 0%, var(--drab-brown) 100%);
             text-align: center;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -256,40 +256,88 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 174, 112, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(201, 174, 112, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(116, 7, 14, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(116, 7, 14, 0.1) 0%, transparent 50%);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            max-width: 1100px;
         }
 
         .hero-content h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            letter-spacing: -2px;
-            color: var(--color-white);
-            margin-bottom: 1.5rem;
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--vanilla);
+            margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out;
-            line-height: 1.1;
+            line-height: 1.2;
         }
 
         .hero-content .highlight {
-            background: linear-gradient(135deg, var(--color-brushed-gold), var(--color-light-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--blood-red);
         }
 
         .hero-content p {
-            font-size: 1.2rem;
-            color: var(--color-light-gray);
-            margin-bottom: 2.5rem;
+            font-size: 1.3rem;
+            color: var(--cinereous);
+            margin-bottom: 3rem;
             font-weight: 400;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
-            line-height: 1.8;
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* Advanced Search Bar */
+        .search-section {
+            background: var(--white);
+            padding: 2.5rem 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--drab-brown);
+            margin: -4rem auto 4rem;
+            max-width: 1200px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .search-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-group label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--black-bean);
+            margin-bottom: 0.6rem;
+        }
+
+        .search-group select,
+        .search-group input {
+            padding: 0.9rem 1.2rem;
+            border: 2px solid var(--drab-brown);
+            background: var(--vanilla);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--black-bean);
+            transition: all 0.3s ease;
+        }
+
+        .search-group select:focus,
+        .search-group input:focus {
+            outline: none;
+            border-color: var(--blood-red);
+            box-shadow: 0 0 0 3px rgba(116, 7, 14, 0.1);
         }
 
         /* Section */
@@ -305,40 +353,56 @@
         }
 
         .section-header h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--color-midnight-black);
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--black-bean);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--blood-red);
         }
 
         .section-header p {
-            color: var(--color-stone-gray);
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            line-height: 1.8;
+            color: var(--cinereous);
+            font-size: 1.15rem;
+            margin-top: 2.5rem;
+            line-height: 1.9;
+            letter-spacing: 0.4px;
         }
 
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
 
         .about-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-midnight-black);
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--black-bean);
+            letter-spacing: 1px;
         }
 
         .about-text p {
-            color: var(--color-stone-gray);
+            color: var(--cinereous);
             font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 1rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
         }
 
         .artwork-showcase {
@@ -349,179 +413,220 @@
 
         .artwork-img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.4s ease;
+            transition: transform 0.5s ease;
             box-shadow: var(--shadow-md);
+            border: 3px solid var(--drab-brown);
         }
 
         .artwork-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
             box-shadow: var(--shadow-xl);
+            border-color: var(--blood-red);
         }
 
         /* How It Works */
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .step-card {
-            background: var(--color-white);
-            padding: 2.5rem 2rem;
+            background: var(--white);
+            padding: 3rem 2rem;
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
-            border-top: 4px solid var(--color-brushed-gold);
+            border-top: 4px solid var(--blood-red);
+            border: 2px solid var(--drab-brown);
         }
 
         .step-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             box-shadow: var(--shadow-xl);
+            border-color: var(--blood-red);
         }
 
         .step-number {
-            font-size: 3rem;
-            color: var(--color-brushed-gold);
-            font-weight: 900;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            color: var(--blood-red);
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1.5rem;
         }
 
         .step-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--color-midnight-black);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--black-bean);
+            letter-spacing: 0.5px;
         }
 
         .step-card p {
-            color: var(--color-stone-gray);
+            color: var(--cinereous);
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
         }
 
         /* Why Choose Us */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 3rem;
             margin-top: 3rem;
         }
 
         .benefit-card {
-            background: var(--color-white);
-            padding: 2.5rem;
+            background: var(--white);
+            padding: 3rem;
             box-shadow: var(--shadow-md);
             transition: all 0.4s ease;
-            border-left: 4px solid var(--color-brushed-gold);
+            border-left: 5px solid var(--blood-red);
+            border: 2px solid var(--drab-brown);
         }
 
         .benefit-card:hover {
-            transform: translateX(10px);
+            transform: translateX(12px);
             box-shadow: var(--shadow-xl);
+            border-color: var(--blood-red);
         }
 
         .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .benefit-card h4 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--color-midnight-black);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            color: var(--black-bean);
+            letter-spacing: 0.5px;
         }
 
         .benefit-card p {
-            color: var(--color-stone-gray);
-            line-height: 1.7;
+            color: var(--cinereous);
+            line-height: 1.8;
+            letter-spacing: 0.3px;
         }
 
         /* Registration Choice */
         .registration-choice {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 4rem auto;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 5rem auto;
         }
 
         .choice-card {
-            background: var(--color-white);
+            background: var(--white);
             padding: 4rem 3rem;
             text-align: center;
             box-shadow: var(--shadow-xl);
-            border: 2px solid var(--color-stone-gray);
+            border: 3px solid var(--drab-brown);
             transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--blood-red);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .choice-card:hover::before {
+            transform: scaleX(1);
         }
 
         .choice-card:hover {
-            border-color: var(--color-brushed-gold);
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
+            border-color: var(--blood-red);
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
         }
 
-        .choice-icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
+        .choice-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 2rem;
+            border: 3px solid var(--drab-brown);
+            transition: all 0.4s ease;
+        }
+
+        .choice-card:hover .choice-image {
+            border-color: var(--blood-red);
+            transform: scale(1.05);
         }
 
         .choice-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--color-midnight-black);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black-bean);
+            letter-spacing: 0.8px;
         }
 
         .choice-card p {
-            color: var(--color-stone-gray);
-            margin-bottom: 2rem;
-            line-height: 1.7;
+            color: var(--cinereous);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
         }
 
         /* Forms */
         .form-container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 4rem auto;
             padding: 0 2rem;
         }
 
         .form-section {
-            background: var(--color-white);
-            padding: 3rem;
+            background: var(--white);
+            padding: 3.5rem;
             box-shadow: var(--shadow-xl);
-            border: 2px solid var(--color-brushed-gold);
-            margin-bottom: 2rem;
+            border: 2px solid var(--drab-brown);
+            margin-bottom: 2.5rem;
         }
 
         .form-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            color: var(--color-midnight-black);
-            border-bottom: 2px solid var(--color-brushed-gold);
-            padding-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--black-bean);
+            border-bottom: 3px solid var(--blood-red);
+            padding-bottom: 1.2rem;
+            letter-spacing: 0.8px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.6rem;
-            color: var(--color-midnight-black);
+            margin-bottom: 0.8rem;
+            color: var(--black-bean);
             font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
@@ -529,25 +634,25 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem 1.2rem;
-            border: 2px solid var(--color-stone-gray);
-            background: var(--color-white);
-            font-family: 'Inter', sans-serif;
+            padding: 1.1rem 1.4rem;
+            border: 2px solid var(--drab-brown);
+            background: var(--vanilla);
+            font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            color: var(--color-midnight-black);
+            color: var(--black-bean);
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--color-brushed-gold);
-            box-shadow: 0 0 0 3px rgba(201, 174, 112, 0.1);
+            border-color: var(--blood-red);
+            box-shadow: 0 0 0 3px rgba(116, 7, 14, 0.1);
         }
 
         .form-group textarea {
-            min-height: 120px;
+            min-height: 130px;
             resize: vertical;
         }
 
@@ -555,35 +660,353 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .checkbox-group input[type="checkbox"],
         .checkbox-group input[type="radio"] {
             width: auto;
-            margin-top: 0.3rem;
+            margin-top: 0.4rem;
             cursor: pointer;
+            min-width: 18px;
+            min-height: 18px;
         }
 
         .helper-text {
             font-size: 0.8rem;
-            color: var(--color-stone-gray);
-            margin-top: 0.4rem;
+            color: var(--cinereous);
+            margin-top: 0.5rem;
             font-style: italic;
+            letter-spacing: 0.2px;
         }
 
         .file-upload {
-            border: 2px dashed var(--color-stone-gray);
-            padding: 2rem;
+            border: 3px dashed var(--drab-brown);
+            padding: 2.5rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: var(--color-gallery-white);
+            background: var(--vanilla);
         }
 
         .file-upload:hover {
-            border-color: var(--color-brushed-gold);
-            background: var(--color-white);
+            border-color: var(--blood-red);
+            background: var(--white);
+        }
+
+        /* Auction Cards */
+        .auction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .auction-card {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            border: 2px solid var(--drab-brown);
+            overflow: hidden;
+        }
+
+        .auction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--blood-red);
+        }
+
+        .auction-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .auction-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--blood-red);
+            color: var(--vanilla);
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .auction-info {
+            padding: 2rem;
+        }
+
+        .auction-info h4 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--black-bean);
+        }
+
+        .auction-artist {
+            font-size: 0.9rem;
+            color: var(--cinereous);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .auction-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--drab-brown);
+            border-bottom: 1px solid var(--drab-brown);
+        }
+
+        .auction-detail-item {
+            text-align: center;
+        }
+
+        .auction-detail-label {
+            font-size: 0.75rem;
+            color: var(--cinereous);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .auction-detail-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--blood-red);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .countdown-timer {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--black-bean);
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        /* Sticky Bid Bar */
+        .sticky-bid-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--black-bean);
+            color: var(--vanilla);
+            padding: 1.5rem 3rem;
+            box-shadow: 0 -4px 20px rgba(49, 14, 16, 0.3);
+            z-index: 999;
+            display: none;
+        }
+
+        .sticky-bid-bar.active {
+            display: block;
+        }
+
+        .bid-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bid-bar-info h4 {
+            font-size: 1.3rem;
+            color: var(--vanilla);
+            margin-bottom: 0.3rem;
+        }
+
+        .bid-bar-info p {
+            color: var(--cinereous);
+            font-size: 0.9rem;
+        }
+
+        .bid-bar-action {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .bid-input {
+            padding: 0.9rem 1.5rem;
+            border: 2px solid var(--drab-brown);
+            background: var(--vanilla);
+            font-size: 1rem;
+            font-weight: 600;
+            width: 180px;
+            color: var(--black-bean);
+        }
+
+        /* Artist Profile */
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .artist-card {
+            background: var(--white);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--drab-brown);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--blood-red);
+        }
+
+        .artist-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cinereous), var(--drab-brown));
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--drab-brown);
+        }
+
+        .artist-card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--black-bean);
+        }
+
+        .artist-specialty {
+            color: var(--cinereous);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .artist-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--drab-brown);
+        }
+
+        .artist-stat {
+            text-align: center;
+        }
+
+        .artist-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--blood-red);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .artist-stat-label {
+            font-size: 0.75rem;
+            color: var(--cinereous);
+            text-transform: uppercase;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--drab-brown);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--blood-red);
+        }
+
+        .faq-question {
+            padding: 1.8rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--black-bean);
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 1.8rem 2rem;
+            color: var(--cinereous);
+            line-height: 1.8;
+            display: none;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--blood-red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Policies */
+        .policy-section {
+            background: var(--white);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 2px solid var(--drab-brown);
+            box-shadow: var(--shadow-md);
+        }
+
+        .policy-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--black-bean);
+            border-bottom: 3px solid var(--blood-red);
+            padding-bottom: 1rem;
+        }
+
+        .policy-section h4 {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            color: var(--black-bean);
+        }
+
+        .policy-section p,
+        .policy-section li {
+            color: var(--cinereous);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .policy-section li::before {
+            content: '• ';
+            color: var(--blood-red);
+            font-weight: 700;
+            margin-right: 0.8rem;
         }
 
         .page-section {
@@ -599,23 +1022,23 @@
             position: fixed;
             top: 100px;
             right: 30px;
-            background: var(--color-white);
+            background: var(--white);
             padding: 1.5rem 2rem;
-            box-shadow: var(--shadow-2xl);
+            box-shadow: var(--shadow-xl);
             z-index: 2000;
             animation: slideInRight 0.5s ease-out;
             max-width: 400px;
-            border: 2px solid var(--color-stone-gray);
-            border-left: 4px solid var(--color-brushed-gold);
+            border: 2px solid var(--drab-brown);
+            border-left: 5px solid var(--blood-red);
         }
 
         /* Footer */
         .footer {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
+            background: var(--black-bean);
+            color: var(--vanilla);
             padding: 4rem 0 2rem;
             margin-top: 6rem;
-            border-top: 3px solid var(--color-brushed-gold);
+            border-top: 4px solid var(--blood-red);
         }
 
         .footer-container {
@@ -629,59 +1052,63 @@
         }
 
         .footer-section h4 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
-            color: var(--color-brushed-gold);
+            color: var(--blood-red);
+            letter-spacing: 0.8px;
         }
 
         .footer-section a {
             display: block;
-            color: var(--color-light-gray);
+            color: var(--cinereous);
             text-decoration: none;
             margin-bottom: 0.8rem;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            letter-spacing: 0.3px;
         }
 
         .footer-section a:hover {
-            color: var(--color-brushed-gold);
-            padding-left: 5px;
+            color: var(--blood-red);
+            padding-left: 8px;
         }
 
         .footer-section p {
-            color: var(--color-light-gray);
+            color: var(--cinereous);
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(201, 174, 112, 0.2);
-            color: var(--color-stone-gray);
+            border-top: 1px solid var(--drab-brown);
+            color: var(--cinereous);
             font-size: 0.9rem;
             max-width: 1400px;
             margin: 0 auto;
             padding-left: 3rem;
             padding-right: 3rem;
+            letter-spacing: 0.3px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .navbar-bottom {
                 flex-direction: column;
-                gap: 0.8rem;
-                padding: 1rem 2rem;
+                gap: 1rem;
+                padding: 1.5rem 2rem;
             }
 
             .nav-links {
                 flex-direction: column;
-                gap: 0.8rem;
+                gap: 1rem;
             }
             
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
             .about-content,
@@ -690,7 +1117,9 @@
             }
 
             .steps-grid,
-            .benefits-grid {
+            .benefits-grid,
+            .auction-grid,
+            .artist-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -700,6 +1129,15 @@
 
             .artwork-showcase {
                 grid-template-columns: 1fr;
+            }
+
+            .search-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bid-bar-content {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -711,13 +1149,13 @@
             <div class="logo" onclick="navigateTo('home')">ARTÉHAUS</div>
         </div>
         <div class="navbar-bottom">
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <a href="javascript:void(0)" onclick="navigateTo('home')">Home</a>
-                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')">Live Auctions</a>
+                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')" id="auctionLink" style="display:none;">Live Auctions</a>
                 <a href="javascript:void(0)" onclick="navigateTo('artists')">Artists</a>
                 <a href="javascript:void(0)" onclick="navigateTo('policies')">Policies</a>
                 <a href="javascript:void(0)" onclick="navigateTo('faq')">FAQ</a>
-                <a href="javascript:void(0)" class="btn-outline" onclick="navigateTo('register-choice')">Register</a>
+                <a href="javascript:void(0)" class="btn-outline" onclick="navigateTo('register-choice')" id="registerBtn">Register</a>
                 <a href="javascript:void(0)" class="btn-primary" onclick="navigateTo('login')" id="loginBtn">Login</a>
                 <a href="javascript:void(0)" class="btn-primary" onclick="logout()" id="logoutBtn" style="display:none;">Logout</a>
             </div>
@@ -733,6 +1171,62 @@
             </div>
         </section>
 
+        <!-- Advanced Search Bar -->
+        <div class="section">
+            <div class="search-section">
+                <div class="search-grid">
+                    <div class="search-group">
+                        <label>Price Range</label>
+                        <select>
+                            <option value="">All Prices</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-20k">$5,000 - $20,000</option>
+                            <option value="20k-50k">$20,000 - $50,000</option>
+                            <option value="over-50k">Over $50,000</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label>Sort By</label>
+                        <select>
+                            <option value="ending-soon">Ending Soon</option>
+                            <option value="highest-bid">Highest Bid</option>
+                            <option value="newest">Newest</option>
+                            <option value="lowest-price">Lowest Price</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label>Artist</label>
+                        <input type="text" placeholder="Search by artist name">
+                    </div>
+                    <div class="search-group">
+                        <label>Medium</label>
+                        <select>
+                            <option value="">All Mediums</option>
+                            <option value="oil">Oil on Canvas</option>
+                            <option value="acrylic">Acrylic</option>
+                            <option value="watercolor">Watercolor</option>
+                            <option value="sculpture">Sculpture</option>
+                            <option value="digital">Digital Art</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label>Style</label>
+                        <select>
+                            <option value="">All Styles</option>
+                            <option value="abstract">Abstract</option>
+                            <option value="contemporary">Contemporary</option>
+                            <option value="landscape">Landscape</option>
+                            <option value="portrait">Portrait</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <label>&nbsp;</label>
+                        <button class="btn-accent" style="width: 100%; padding: 0.9rem;">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- About Section -->
         <section class="section">
             <div class="about-content">
@@ -743,10 +1237,10 @@
                     <p>Join 50,000+ collectors and 1,200+ artists from 85 countries in building meaningful art collections.</p>
                 </div>
                 <div class="artwork-showcase">
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #7C7C7C, #2A2A2A);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #C9AE70, #B39A5F);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #090909, #2A2A2A);"></div>
-                    <div class="artwork-img" style="background: linear-gradient(135deg, #E5D9B6, #C9AE70);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #947268, #45462A);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #74070E, #310E10);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #310E10, #45462A);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #F4E3B2, #947268);"></div>
                 </div>
             </div>
         </section>
@@ -761,7 +1255,7 @@
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h4>Register</h4>
-                    <p>Create your free account as a buyer or seller</p>
+                    <p>Create your account as a buyer or seller in minutes</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
@@ -781,7 +1275,7 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
+        <!-- Why Choose ARTÉHAUS -->
         <section class="section">
             <div class="section-header">
                 <h2>Why Choose ARTÉHAUS</h2>
@@ -791,27 +1285,27 @@
                 <div class="benefit-card">
                     <div class="benefit-icon">💎</div>
                     <h4>Investment Value</h4>
-                    <p>Art has outperformed traditional investments. Build wealth while enjoying beauty.</p>
+                    <p>Art has outperformed traditional investments. Build wealth while enjoying beauty and cultural significance.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🏡</div>
                     <h4>Lifestyle Upgrade</h4>
-                    <p>Transform your space into a gallery. Impress guests and inspire creativity daily.</p>
+                    <p>Transform your space into a gallery. Impress guests, inspire creativity, and reflect your refined taste.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🌍</div>
                     <h4>Global Network</h4>
-                    <p>Connect with collectors and artists worldwide. Attend exclusive events and exhibitions.</p>
+                    <p>Connect with collectors and artists worldwide. Attend exclusive events and build lasting relationships.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🔒</div>
                     <h4>Authenticity Guaranteed</h4>
-                    <p>Every piece verified by experts. 5-year authenticity guarantee on all purchases.</p>
+                    <p>Every piece verified by experts. 5-year authenticity guarantee on all purchases for peace of mind.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">📈</div>
                     <h4>Expert Guidance</h4>
-                    <p>Access art advisors and market insights. Make informed investment decisions.</p>
+                    <p>Access art advisors and market insights. Make informed decisions with professional support.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">🎯</div>
@@ -823,10 +1317,10 @@
 
         <!-- CTA -->
         <section class="section" style="text-align: center;">
-            <div style="background: var(--color-white); padding: 4rem 3rem; box-shadow: var(--shadow-xl); border: 2px solid var(--color-brushed-gold);">
-                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Start Your Journey Today</h2>
-                <p style="font-size: 1.1rem; color: var(--color-stone-gray); margin-bottom: 2.5rem;">Choose your path and join our exclusive community</p>
-                <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="navigateTo('register-choice')">Get Started</a>
+            <div style="background: var(--white); padding: 5rem 3rem; box-shadow: var(--shadow-xl); border: 3px solid var(--drab-brown);">
+                <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Start Your Journey Today</h2>
+                <p style="font-size: 1.2rem; color: var(--cinereous); margin-bottom: 3rem; line-height: 1.9;">Choose your path and join our exclusive community</p>
+                <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;" onclick="navigateTo('register-choice')">Get Started</a>
             </div>
         </section>
     </div>
@@ -841,13 +1335,13 @@
             </div>
             <div class="registration-choice">
                 <div class="choice-card" onclick="navigateTo('buyer-registration')">
-                    <div class="choice-icon">🎨</div>
+                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(116, 7, 14, 0.8), rgba(49, 14, 16, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>'); background-size: cover; background-position: center;"></div>
                     <h3>Buyer Registration</h3>
                     <p>Register as a collector to bid on exceptional artworks and build your collection</p>
                     <button class="btn-primary">Register as Buyer</button>
                 </div>
                 <div class="choice-card" onclick="navigateTo('seller-registration')">
-                    <div class="choice-icon">🖼️</div>
+                    <div class="choice-image" style="background: linear-gradient(135deg, rgba(116, 7, 14, 0.8), rgba(49, 14, 16, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>'); background-size: cover; background-position: center;"></div>
                     <h3>Seller Registration</h3>
                     <p>Register as an artist to showcase and sell your artwork to collectors worldwide</p>
                     <button class="btn-accent">Register as Seller</button>
@@ -860,9 +1354,9 @@
     <div id="buyer-registration" class="page-section">
         <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Buyer Registration</h2>
-                <p style="color: var(--color-stone-gray); font-size: 1.1rem;">Complete all sections to create your collector account</p>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--black-bean);">Buyer Registration</h2>
+                <p style="color: var(--cinereous); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to create your collector account</p>
             </div>
 
             <form onsubmit="submitBuyerRegistration(event)">
@@ -898,7 +1392,6 @@
                                 <option value="UK">United Kingdom</option>
                                 <option value="CA">Canada</option>
                                 <option value="AU">Australia</option>
-                                <option value="OTHER">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -946,7 +1439,6 @@
                                 <option value="">Select...</option>
                                 <option value="US">United States</option>
                                 <option value="UK">United Kingdom</option>
-                                <option value="CA">Canada</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -991,8 +1483,7 @@
                                 <option value="under-5k">Under $5,000</option>
                                 <option value="5k-20k">$5,000 - $20,000</option>
                                 <option value="20k-50k">$20,000 - $50,000</option>
-                                <option value="50k-100k">$50,000 - $100,000</option>
-                                <option value="over-100k">Over $100,000</option>
+                                <option value="over-50k">Over $50,000</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1014,7 +1505,6 @@
                             <option value="social">Social Media</option>
                             <option value="referral">Friend Referral</option>
                             <option value="advertisement">Advertisement</option>
-                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
@@ -1096,7 +1586,7 @@
                         <div class="form-group">
                             <label>Enter OTP (Sent to your email) *</label>
                             <input type="text" required placeholder="Enter 6-digit code">
-                            <button type="button" class="btn-outline" style="margin-top: 0.5rem;">Send OTP</button>
+                            <button type="button" class="btn-outline" style="margin-top: 0.8rem;">Send OTP</button>
                         </div>
                         <div class="form-group">
                             <label>CAPTCHA Verification *</label>
@@ -1106,7 +1596,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem; margin-top: 2rem;">Complete Registration</button>
+                <button type="submit" class="btn-accent" style="width: 100%; padding: 1.3rem; font-size: 1.05rem; margin-top: 2rem;">Complete Registration</button>
             </form>
         </div>
     </div>
@@ -1115,9 +1605,9 @@
     <div id="seller-registration" class="page-section">
         <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Seller Registration</h2>
-                <p style="color: var(--color-stone-gray); font-size: 1.1rem;">Complete all sections to start selling your artwork</p>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--black-bean);">Seller Registration</h2>
+                <p style="color: var(--cinereous); font-size: 1.15rem; letter-spacing: 0.4px;">Complete all sections to start selling your artwork</p>
             </div>
 
             <form onsubmit="submitSellerRegistration(event)">
@@ -1151,7 +1641,6 @@
                                 <option value="">Select...</option>
                                 <option value="US">United States</option>
                                 <option value="UK">United Kingdom</option>
-                                <option value="CA">Canada</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1160,7 +1649,6 @@
                                 <option value="">Select...</option>
                                 <option value="passport">Passport</option>
                                 <option value="drivers-license">Driver's License</option>
-                                <option value="national-id">National ID</option>
                             </select>
                         </div>
                     </div>
@@ -1170,7 +1658,7 @@
                     </div>
                 </div>
 
-                <!-- Address Details (Same as Buyer) -->
+                <!-- Address Details -->
                 <div class="form-section">
                     <h3>Address Details</h3>
                     <div class="form-group">
@@ -1197,7 +1685,6 @@
                             <select required>
                                 <option value="">Select...</option>
                                 <option value="US">United States</option>
-                                <option value="UK">United Kingdom</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1290,9 +1777,7 @@
                                 <option value="oil">Oil on Canvas</option>
                                 <option value="acrylic">Acrylic</option>
                                 <option value="watercolor">Watercolor</option>
-                                <option value="mixed-media">Mixed Media</option>
                                 <option value="sculpture">Sculpture</option>
-                                <option value="digital">Digital Art</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1302,7 +1787,6 @@
                                 <option value="abstract">Abstract</option>
                                 <option value="contemporary">Contemporary</option>
                                 <option value="landscape">Landscape</option>
-                                <option value="portrait">Portrait</option>
                             </select>
                         </div>
                     </div>
@@ -1357,8 +1841,8 @@
                     <div class="form-group">
                         <label>High-Resolution Images *</label>
                         <div class="file-upload">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem;">📁 Upload Images</p>
-                            <small style="color: var(--color-stone-gray);">Upload 5-10 high-resolution images (JPG, PNG, Max 10MB each)</small>
+                            <p style="font-weight: 700; margin-bottom: 0.8rem;">📁 Upload Images</p>
+                            <small style="color: var(--cinereous);">Upload 5-10 high-resolution images (JPG, PNG, Max 10MB each)</small>
                             <input type="file" multiple accept="image/*" style="display: none;">
                         </div>
                     </div>
@@ -1372,7 +1856,7 @@
                     <div class="form-group">
                         <label>Certificate of Authenticity</label>
                         <div class="file-upload">
-                            <p style="font-weight: 700; margin-bottom: 0.5rem;">📄 Upload Certificate (if available)</p>
+                            <p style="font-weight: 700; margin-bottom: 0.8rem;">📄 Upload Certificate (if available)</p>
                             <input type="file" accept=".pdf,image/*" style="display: none;">
                         </div>
                     </div>
@@ -1410,7 +1894,6 @@
                                 <option value="">Select...</option>
                                 <option value="immediate">Immediate (1-3 days)</option>
                                 <option value="week">Within a week</option>
-                                <option value="two-weeks">Within two weeks</option>
                             </select>
                         </div>
                     </div>
@@ -1456,7 +1939,7 @@
                         <div class="form-group">
                             <label>Enter OTP (Sent to your email) *</label>
                             <input type="text" required placeholder="Enter 6-digit code">
-                            <button type="button" class="btn-outline" style="margin-top: 0.5rem;">Send OTP</button>
+                            <button type="button" class="btn-outline" style="margin-top: 0.8rem;">Send OTP</button>
                         </div>
                         <div class="form-group">
                             <label>CAPTCHA Verification *</label>
@@ -1465,18 +1948,18 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem; margin-top: 2rem;">Submit Application</button>
-                <p style="text-align: center; margin-top: 1.5rem; color: var(--color-stone-gray);">Your application will be reviewed within 5-7 business days</p>
+                <button type="submit" class="btn-accent" style="width: 100%; padding: 1.3rem; font-size: 1.05rem; margin-top: 2rem;">Submit Application</button>
+                <p style="text-align: center; margin-top: 2rem; color: var(--cinereous); letter-spacing: 0.3px;">Your application will be reviewed within 5-7 business days</p>
             </form>
         </div>
     </div>
 
     <!-- LOGIN PAGE -->
     <div id="login" class="page-section">
-        <section class="form-section" style="max-width: 500px; margin: 6rem auto; padding: 3rem;">
+        <section class="form-section" style="max-width: 550px; margin: 6rem auto; padding: 4rem;">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">Sign In</h2>
-            <p style="text-align: center; color: var(--color-stone-gray); margin-bottom: 2rem;">Welcome back to ARTÉHAUS</p>
+            <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1.5rem; color: var(--black-bean);">Sign In</h2>
+            <p style="text-align: center; color: var(--cinereous); margin-bottom: 3rem; letter-spacing: 0.4px;">Welcome back to ARTÉHAUS</p>
             
             <form onsubmit="loginUser(event)">
                 <div class="form-group">
@@ -1494,15 +1977,15 @@
                     <label style="text-transform: none; font-weight: 400;">Remember me for 30 days</label>
                 </div>
                 
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
+                <button type="submit" class="btn-accent" style="width: 100%; margin-top: 2rem; padding: 1.2rem;">Sign In</button>
                 
-                <p style="text-align: center; margin-top: 1.5rem; color: var(--color-stone-gray);">
-                    <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Forgot password?</a>
+                <p style="text-align: center; margin-top: 2rem; color: var(--cinereous);">
+                    <a href="javascript:void(0)" style="color: var(--blood-red); font-weight: 700; text-decoration: none;">Forgot password?</a>
                 </p>
 
-                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
+                <p style="text-align: center; margin-top: 2.5rem; color: var(--cinereous);">
                     Don't have an account? 
-                    <a href="javascript:void(0)" onclick="navigateTo('register-choice')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Register</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('register-choice')" style="color: var(--blood-red); font-weight: 700; text-decoration: none;">Register</a>
                 </p>
             </form>
         </section>
@@ -1510,53 +1993,640 @@
 
     <!-- LIVE AUCTIONS PAGE -->
     <div id="live-auctions" class="page-section">
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero" style="min-height: 55vh;">
             <div class="hero-content">
                 <h1>Live <span class="highlight">Auctions</span></h1>
                 <p>Bid on exceptional artworks in real-time</p>
             </div>
         </section>
+
         <section class="section">
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Live auctions coming soon. Register now to get notified!</p>
+            <div class="section-header">
+                <h2>Active Auctions</h2>
+                <p>Place your bids and secure exceptional artworks</p>
+            </div>
+
+            <!-- Live Statistics -->
+            <div style="background: var(--white); padding: 2.5rem; margin-bottom: 4rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">24</div>
+                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Active Auctions</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">156</div>
+                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Bids Today</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">+18%</div>
+                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Avg Bid Increase</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">2.4K</div>
+                        <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 0.8px;">Views Today</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auction Grid -->
+            <div class="auction-grid">
+                <div class="auction-card" onclick="navigateTo('auction-detail')">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #947268, #45462A);">
+                        <div class="auction-badge">LIVE</div>
+                    </div>
+                    <div class="auction-info">
+                        <h4>Untitled Composition</h4>
+                        <p class="auction-artist">by Sarah Mitchell</p>
+                        <div class="auction-details">
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Current Bid</div>
+                                <div class="auction-detail-value">$12,500</div>
+                            </div>
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Bids</div>
+                                <div class="auction-detail-value">23</div>
+                            </div>
+                        </div>
+                        <div class="countdown-timer">⏰ Ends in 2h 34m</div>
+                        <button class="btn-accent" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+                    </div>
+                </div>
+
+                <div class="auction-card">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #74070E, #310E10);">
+                        <div class="auction-badge">ENDING SOON</div>
+                    </div>
+                    <div class="auction-info">
+                        <h4>Abstract Horizon</h4>
+                        <p class="auction-artist">by James Chen</p>
+                        <div class="auction-details">
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Current Bid</div>
+                                <div class="auction-detail-value">$8,900</div>
+                            </div>
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Bids</div>
+                                <div class="auction-detail-value">18</div>
+                            </div>
+                        </div>
+                        <div class="countdown-timer">⏰ Ends in 45m</div>
+                        <button class="btn-accent" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+                    </div>
+                </div>
+
+                <div class="auction-card">
+                    <div class="auction-image" style="background: linear-gradient(135deg, #310E10, #45462A);">
+                        <div class="auction-badge">LIVE</div>
+                    </div>
+                    <div class="auction-info">
+                        <h4>Urban Reflections</h4>
+                        <p class="auction-artist">by Maria Rodriguez</p>
+                        <div class="auction-details">
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Current Bid</div>
+                                <div class="auction-detail-value">$15,200</div>
+                            </div>
+                            <div class="auction-detail-item">
+                                <div class="auction-detail-label">Bids</div>
+                                <div class="auction-detail-value">31</div>
+                            </div>
+                        </div>
+                        <div class="countdown-timer">⏰ Ends in 5h 12m</div>
+                        <button class="btn-accent" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+                    </div>
+                </div>
+            </div>
         </section>
+    </div>
+
+    <!-- AUCTION DETAIL PAGE -->
+    <div id="auction-detail" class="page-section">
+        <section class="section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back to Auctions</a>
+            
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem;">
+                <!-- Left: Artwork Image -->
+                <div>
+                    <div style="width: 100%; height: 600px; background: linear-gradient(135deg, #947268, #45462A); border: 3px solid var(--drab-brown); box-shadow: var(--shadow-xl); margin-bottom: 2rem;"></div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
+                        <div style="height: 100px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown); cursor: pointer;"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Auction Details -->
+                <div>
+                    <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-xl);">
+                        <div style="background: var(--blood-red); color: var(--vanilla); padding: 0.6rem 1.5rem; display: inline-block; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem;">LIVE AUCTION</div>
+                        
+                        <h2 style="font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--black-bean);">Untitled Composition</h2>
+                        <p style="font-size: 1.1rem; color: var(--cinereous); font-style: italic; margin-bottom: 2rem;">by Sarah Mitchell</p>
+                        
+                        <div style="border-top: 2px solid var(--drab-brown); border-bottom: 2px solid var(--drab-brown); padding: 1.5rem 0; margin-bottom: 2rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span style="color: var(--cinereous); font-size: 0.9rem;">Medium:</span>
+                                <span style="color: var(--black-bean); font-weight: 600;">Oil on Canvas</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span style="color: var(--cinereous); font-size: 0.9rem;">Dimensions:</span>
+                                <span style="color: var(--black-bean); font-weight: 600;">36 x 48 inches</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span style="color: var(--cinereous); font-size: 0.9rem;">Year:</span>
+                                <span style="color: var(--black-bean); font-weight: 600;">2024</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--cinereous); font-size: 0.9rem;">Framed:</span>
+                                <span style="color: var(--black-bean); font-weight: 600;">Yes</span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Current Bid</div>
+                            <div style="font-size: 3.5rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">$12,500</div>
+                            <div style="font-size: 0.9rem; color: var(--cinereous); margin-top: 0.5rem;">23 bids • Starting bid: $8,000</div>
+                        </div>
+
+                        <div style="background: var(--vanilla); padding: 1.5rem; margin-bottom: 2rem; border: 2px solid var(--drab-brown); text-align: center;">
+                            <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Time Remaining</div>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--black-bean);">2h 34m 18s</div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label>Your Bid Amount</label>
+                            <input type="number" placeholder="Enter bid (min $13,000)" style="font-size: 1.1rem; font-weight: 600;">
+                            <p class="helper-text">Minimum increment: $500</p>
+                        </div>
+
+                        <button class="btn-accent" style="width: 100%; padding: 1.3rem; font-size: 1.1rem; margin-bottom: 1rem;">Place Bid Now</button>
+                        <button class="btn-outline" style="width: 100%; padding: 1.1rem;">Add to Watchlist</button>
+
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--drab-brown);">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--black-bean);">Bid History</h4>
+                            <div style="max-height: 200px; overflow-y: auto;">
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
+                                    <span style="color: var(--cinereous);">Bidder #23</span>
+                                    <span style="color: var(--blood-red); font-weight: 700;">$12,500</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
+                                    <span style="color: var(--cinereous);">Bidder #18</span>
+                                    <span style="color: var(--blood-red); font-weight: 700;">$12,000</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid var(--drab-brown);">
+                                    <span style="color: var(--cinereous);">Bidder #12</span>
+                                    <span style="color: var(--blood-red); font-weight: 700;">$11,500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artwork Description -->
+            <div style="margin-top: 4rem; background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean);">About This Artwork</h3>
+                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
+                    This stunning abstract composition explores the interplay of light and shadow through bold brushstrokes and a carefully curated color palette. The artist's masterful technique creates depth and movement, inviting viewers to discover new details with each viewing.
+                </p>
+                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px;">
+                    Created in 2024, this piece represents the artist's mature period and has been exhibited in several prestigious galleries. Certificate of authenticity included.
+                </p>
+            </div>
+
+            <!-- Shipping & Policies -->
+            <div style="margin-top: 2rem; background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean);">Shipping & Policies</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                    <div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--black-bean);">Shipping</h4>
+                        <p style="color: var(--cinereous); line-height: 1.8; letter-spacing: 0.3px;">Professional packaging and insured shipping included. Estimated delivery: 7-14 business days.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--black-bean);">Returns</h4>
+                        <p style="color: var(--cinereous); line-height: 1.8; letter-spacing: 0.3px;">14-day return policy for authenticity concerns. Full refund if artwork is not as described.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sticky Bid Bar -->
+    <div class="sticky-bid-bar" id="stickyBidBar">
+        <div class="bid-bar-content">
+            <div class="bid-bar-info">
+                <h4>Untitled Composition</h4>
+                <p>Current Bid: $12,500 • Ends in 2h 34m</p>
+            </div>
+            <div class="bid-bar-action">
+                <input type="number" class="bid-input" placeholder="Your bid">
+                <button class="btn-accent">Place Bid</button>
+            </div>
+        </div>
     </div>
 
     <!-- ARTISTS PAGE -->
     <div id="artists" class="page-section">
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero" style="min-height: 55vh;">
             <div class="hero-content">
                 <h1>Featured <span class="highlight">Artists</span></h1>
                 <p>Discover talented creators from around the world</p>
             </div>
         </section>
+
         <section class="section">
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Artist profiles coming soon!</p>
+            <div class="section-header">
+                <h2>Our Artists</h2>
+                <p>Meet the exceptional artists behind the masterpieces</p>
+            </div>
+
+            <div class="artist-grid">
+                <div class="artist-card" onclick="navigateTo('artist-profile')">
+                    <div class="artist-avatar"></div>
+                    <h4>Sarah Mitchell</h4>
+                    <p class="artist-specialty">Abstract • Contemporary</p>
+                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Award-winning abstract artist exploring color and form through bold compositions.</p>
+                    <div class="artist-stats">
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">24</div>
+                            <div class="artist-stat-label">Artworks</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">156</div>
+                            <div class="artist-stat-label">Sales</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">4.9★</div>
+                            <div class="artist-stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar"></div>
+                    <h4>James Chen</h4>
+                    <p class="artist-specialty">Landscape • Oil Painting</p>
+                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Master landscape painter capturing the beauty of natural environments.</p>
+                    <div class="artist-stats">
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">18</div>
+                            <div class="artist-stat-label">Artworks</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">92</div>
+                            <div class="artist-stat-label">Sales</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">4.8★</div>
+                            <div class="artist-stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-avatar"></div>
+                    <h4>Maria Rodriguez</h4>
+                    <p class="artist-specialty">Urban Art • Mixed Media</p>
+                    <p style="color: var(--cinereous); font-size: 0.9rem; line-height: 1.7; letter-spacing: 0.3px;">Contemporary artist blending urban themes with traditional techniques.</p>
+                    <div class="artist-stats">
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">31</div>
+                            <div class="artist-stat-label">Artworks</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">203</div>
+                            <div class="artist-stat-label">Sales</div>
+                        </div>
+                        <div class="artist-stat">
+                            <div class="artist-stat-value">5.0★</div>
+                            <div class="artist-stat-label">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ARTIST PROFILE PAGE -->
+    <div id="artist-profile" class="page-section">
+        <section class="section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back to Artists</a>
+            
+            <div style="background: var(--white); padding: 4rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-xl); margin-bottom: 3rem;">
+                <div style="display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start;">
+                    <div class="artist-avatar" style="width: 200px; height: 200px;"></div>
+                    <div>
+                        <h2 style="font-size: 3rem; margin-bottom: 0.8rem; color: var(--black-bean);">Sarah Mitchell</h2>
+                        <p style="font-size: 1.2rem; color: var(--cinereous); font-style: italic; margin-bottom: 2rem;">Abstract • Contemporary Artist</p>
+                        
+                        <div style="display: flex; gap: 3rem; margin-bottom: 2rem;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">24</div>
+                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Artworks</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">156</div>
+                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Sales</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">4.9★</div>
+                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Rating</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: var(--blood-red); font-family: 'Cormorant Garamond', serif;">12</div>
+                                <div style="font-size: 0.85rem; color: var(--cinereous); text-transform: uppercase;">Exhibitions</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">📷</a>
+                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">🌐</a>
+                            <a href="#" style="color: var(--blood-red); font-size: 1.5rem; text-decoration: none;">📧</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biography -->
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md); margin-bottom: 3rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Biography</h3>
+                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px; margin-bottom: 1.5rem;">
+                    Sarah Mitchell is an internationally recognized abstract artist whose work explores the intersection of color, form, and emotion. With over 15 years of practice, her distinctive style has been featured in galleries across North America and Europe.
+                </p>
+                <p style="color: var(--cinereous); line-height: 1.9; letter-spacing: 0.3px;">
+                    Her work is characterized by bold brushstrokes, vibrant color palettes, and a deep understanding of composition. Sarah holds an MFA from the Rhode Island School of Design and has received numerous awards for her contributions to contemporary art.
+                </p>
+            </div>
+
+            <!-- Certificates & Awards -->
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md); margin-bottom: 3rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Certificates & Awards</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
+                        <strong style="color: var(--black-bean);">2023</strong> - Best Contemporary Artist, International Art Fair
+                    </li>
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
+                        <strong style="color: var(--black-bean);">2022</strong> - Excellence in Abstract Art, National Gallery Award
+                    </li>
+                    <li style="padding: 1rem 0; border-bottom: 1px solid var(--drab-brown); color: var(--cinereous);">
+                        <strong style="color: var(--black-bean);">2021</strong> - MFA, Rhode Island School of Design
+                    </li>
+                    <li style="padding: 1rem 0; color: var(--cinereous);">
+                        <strong style="color: var(--black-bean);">2020</strong> - Emerging Artist Grant, Arts Foundation
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Portfolio -->
+            <div style="background: var(--white); padding: 3rem; border: 2px solid var(--drab-brown); box-shadow: var(--shadow-md);">
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--black-bean); border-bottom: 3px solid var(--blood-red); padding-bottom: 1rem;">Portfolio</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                    <div style="height: 300px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown);"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #74070E, #310E10); border: 2px solid var(--drab-brown);"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #310E10, #45462A); border: 2px solid var(--drab-brown);"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #F4E3B2, #947268); border: 2px solid var(--drab-brown);"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #947268, #45462A); border: 2px solid var(--drab-brown);"></div>
+                    <div style="height: 300px; background: linear-gradient(135deg, #74070E, #310E10); border: 2px solid var(--drab-brown);"></div>
+                </div>
+            </div>
         </section>
     </div>
 
     <!-- POLICIES PAGE -->
     <div id="policies" class="page-section">
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero" style="min-height: 55vh;">
             <div class="hero-content">
                 <h1>Policies & <span class="highlight">Terms</span></h1>
                 <p>Transparency and trust at every step</p>
             </div>
         </section>
+
         <section class="section">
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Detailed policies coming soon!</p>
+            <div class="policy-section">
+                <h3>AUCTION TERMS & POLICIES</h3>
+                
+                <h4>COLLECTORS (BUYERS)</h4>
+                <ul>
+                    <li>Participation is open to individuals 18 years and above with verified details.</li>
+                    <li>All bids placed are final and legally binding.</li>
+                    <li>The highest bid at the close of an auction constitutes a confirmed purchase.</li>
+                    <li>Successful bidders are required to complete payment within 48–72 hours of auction close.</li>
+                    <li>Accepted payment methods may include card, bank transfer, PayPal, or approved digital assets.</li>
+                    <li>Failure to complete payment may result in cancellation of the sale or account restriction.</li>
+                    <li>Shipping, insurance, and applicable duties are the responsibility of the buyer, unless otherwise stated.</li>
+                    <li>Auctions are considered final, except in cases of verified authenticity concerns or significant damage incurred during transit.</li>
+                    <li>Approved refunds are processed within 7–14 business days.</li>
+                </ul>
+
+                <h4>ARTISTS & SELLERS</h4>
+                <ul>
+                    <li>Artworks may be submitted only by the original artist or lawful owner.</li>
+                    <li>All submitted works must be authentic, original, and accurately represented.</li>
+                    <li>Submissions are subject to curatorial review and may be accepted or declined at the platform's discretion.</li>
+                    <li>Sellers retain full responsibility for authenticity, provenance, legal ownership, and copyright compliance.</li>
+                    <li>A platform commission (typically 15–25%) is deducted prior to payout.</li>
+                    <li>Seller payments are released following confirmed buyer payment and successful delivery.</li>
+                    <li>Artworks must be professionally packaged and dispatched within 3–5 business days of sale.</li>
+                    <li>Any misrepresentation may result in withdrawal of the artwork or account termination.</li>
+                </ul>
+
+                <h4>PLATFORM PRINCIPLES</h4>
+                <ul>
+                    <li>All personal information is managed with strict confidentiality in accordance with our Privacy Policy.</li>
+                    <li>Activities such as bid manipulation, fraudulent conduct, or misuse of the platform are strictly prohibited.</li>
+                    <li>Disputes are reviewed with care and resolved through internal assessment; determinations are final, subject to applicable law.</li>
+                    <li>Policies may be updated periodically. Continued use of the platform signifies acceptance of current terms.</li>
+                    <li>These terms are governed by the laws of [Your Jurisdiction].</li>
+                </ul>
+
+                <h4>ACCEPTANCE</h4>
+                <p>Engaging with the platform—whether by bidding, purchasing, or submitting artwork—constitutes agreement to these terms.</p>
+            </div>
         </section>
     </div>
 
     <!-- FAQ PAGE -->
     <div id="faq" class="page-section">
-        <section class="hero" style="min-height: 50vh;">
+        <section class="hero" style="min-height: 55vh;">
             <div class="hero-content">
                 <h1>Frequently Asked <span class="highlight">Questions</span></h1>
                 <p>Find answers to common questions</p>
             </div>
         </section>
+
         <section class="section">
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">FAQ content coming soon!</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do online auctions work?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Artworks are offered for a fixed auction period. Collectors place bids, and the highest bid at the close of the auction secures the artwork.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are bids binding?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. All bids placed are final and legally binding.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can an auction be extended?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        To ensure fair participation, auctions may be extended briefly in the event of last-minute bidding.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What payment methods are accepted?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We accept selected payment methods including credit/debit cards, bank transfers, PayPal, and approved digital assets.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>When must payment be completed?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Successful bidders are required to complete payment within 48–72 hours of auction close.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are there additional fees?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Buyers are responsible for shipping, insurance, and applicable taxes or duties unless otherwise stated.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How is artwork shipped?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Artworks are carefully packaged and shipped either by the artist or through our logistics partners.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is artwork insured during transit?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Basic transit insurance is included. Additional insurance may be arranged upon request.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>When will my artwork arrive?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Delivery timelines vary based on location and artwork specifications. Estimated timelines are shared after purchase.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are artworks authentic?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        All artworks are submitted by artists or lawful owners. Documentation such as certificates of authenticity may be provided where applicable.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What if an artwork is damaged or misrepresented?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        In rare cases of verified damage or authenticity concerns, the matter will be reviewed and resolved in accordance with our policies.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Who can submit artwork?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Original artists or lawful owners may submit works for curatorial review.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is submission guaranteed to be accepted?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No. All submissions are carefully reviewed, and acceptance is at the platform's discretion.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>When do sellers receive payment?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Seller payouts are released after buyer payment confirmation and successful delivery.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is my personal information secure?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. All personal data is handled securely and in accordance with our Privacy Policy.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can my account be suspended?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Accounts may be restricted or suspended in cases of non-payment, policy violations, or fraudulent activity.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How can I contact support?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        For any assistance, please contact us via the Contact section or email our support team at support@artehaus.com.
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -1569,13 +2639,14 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <a href="javascript:void(0)" onclick="navigateTo('home')">Home</a>
-                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')">Live Auctions</a>
+                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')" id="footerAuctionLink" style="display:none;">Live Auctions</a>
                 <a href="javascript:void(0)" onclick="navigateTo('artists')">Artists</a>
             </div>
             <div class="footer-section">
                 <h4>Legal</h4>
                 <a href="javascript:void(0)" onclick="navigateTo('policies')">Terms & Conditions</a>
                 <a href="javascript:void(0)" onclick="navigateTo('policies')">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="navigateTo('faq')">FAQ</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -1604,6 +2675,13 @@
                 if (navigationHistory[navigationHistory.length - 1] !== pageId) {
                     navigationHistory.push(pageId);
                 }
+
+                // Show sticky bid bar on auction detail page
+                if (pageId === 'auction-detail') {
+                    document.getElementById('stickyBidBar').classList.add('active');
+                } else {
+                    document.getElementById('stickyBidBar').classList.remove('active');
+                }
             }
         }
 
@@ -1620,7 +2698,7 @@
         function showNotification(message) {
             const notification = document.createElement('div');
             notification.className = 'notification';
-            notification.innerHTML = `<strong style="font-size: 1.2rem; font-weight: 800;">✓</strong> ${message}`;
+            notification.innerHTML = `<strong style="font-size: 1.3rem; font-weight: 800;">✓</strong> ${message}`;
             document.body.appendChild(notification);
             
             setTimeout(() => {
@@ -1642,7 +2720,11 @@
         function submitSellerRegistration(event) {
             event.preventDefault();
             showNotification('Application submitted! We\'ll review within 5-7 business days.');
-            setTimeout(() => navigateTo('home'), 2000);
+            setTimeout(() => {
+                isLoggedIn = true;
+                updateAuthUI();
+                navigateTo('home');
+            }, 2000);
         }
 
         function loginUser(event) {
@@ -1663,16 +2745,27 @@
         function updateAuthUI() {
             document.getElementById('loginBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
             document.getElementById('logoutBtn').style.display = isLoggedIn ? 'inline-block' : 'none';
+            document.getElementById('registerBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
+            document.getElementById('auctionLink').style.display = isLoggedIn ? 'inline-block' : 'none';
+            document.getElementById('footerAuctionLink').style.display = isLoggedIn ? 'block' : 'none';
+        }
+
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
         }
 
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 8px 24px rgba(9, 9, 9, 0.16)';
+                navbar.style.boxShadow = '0 8px 32px rgba(49, 14, 16, 0.2)';
             } else {
-                navbar.style.boxShadow = '0 4px 16px rgba(9, 9, 9, 0.12)';
+                navbar.style.boxShadow = '0 4px 20px rgba(49, 14, 16, 0.12)';
             }
         });
+
+        // Initialize
+        updateAuthUI();
     </script>
 </body>
 </html>
