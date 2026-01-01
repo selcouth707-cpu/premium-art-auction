@@ -74,11 +74,6 @@
             50% { opacity: 0.9; transform: scale(1.05); }
         }
 
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
         .fade-in { animation: fadeInUp 0.6s ease-out; }
 
         /* Navigation */
@@ -266,404 +261,6 @@
             transform: translateX(-5px);
         }
 
-        /* Breadcrumbs */
-        .breadcrumbs {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-            font-size: 0.85rem;
-            color: var(--color-stone-gray);
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        .breadcrumbs a {
-            color: var(--color-brushed-gold);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .breadcrumbs a:hover {
-            color: var(--color-dark-gold);
-        }
-
-        /* Search & Filters */
-        .search-filter-section {
-            max-width: 1400px;
-            margin: 3rem auto;
-            padding: 0 3rem;
-        }
-
-        .search-bar {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .search-input {
-            flex: 1;
-            padding: 1.2rem 1.5rem;
-            border: 2px solid var(--color-stone-gray);
-            font-size: 1rem;
-            background: var(--color-white);
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            color: var(--color-midnight-black);
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--color-brushed-gold);
-            box-shadow: 0 0 0 3px rgba(201, 174, 112, 0.1);
-        }
-
-        .filter-tags {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.6s ease-out 0.1s backwards;
-        }
-
-        .filter-tag {
-            padding: 0.7rem 1.5rem;
-            border: 2px solid var(--color-stone-gray);
-            background: var(--color-white);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: var(--color-stone-gray);
-        }
-
-        .filter-tag:hover, .filter-tag.active {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            border-color: var(--color-midnight-black);
-            transform: translateY(-2px);
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 174, 112, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(201, 174, 112, 0.08) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1000px;
-        }
-
-        .hero-content h1 {
-            font-size: 5.5rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            color: var(--color-white);
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease-out;
-            line-height: 1.1;
-        }
-
-        .hero-content .highlight {
-            background: linear-gradient(135deg, var(--color-brushed-gold), var(--color-light-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            color: var(--color-light-gray);
-            margin-bottom: 3rem;
-            font-weight: 400;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        }
-
-        /* Section */
-        .section {
-            max-width: 1400px;
-            margin: 8rem auto;
-            padding: 0 3rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .section-header h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--color-midnight-black);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--color-brushed-gold);
-        }
-
-        .section-header p {
-            color: var(--color-stone-gray);
-            font-size: 1.1rem;
-            margin-top: 2rem;
-        }
-
-        /* Auction Grid */
-        .auction-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 3rem;
-        }
-
-        .auction-card {
-            background: var(--color-white);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-stone-gray);
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .auction-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--color-brushed-gold);
-        }
-
-        .auction-image {
-            aspect-ratio: 4/5;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s ease;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .auction-card:hover .auction-image {
-            transform: scale(1.05);
-        }
-
-        .auction-info {
-            padding: 2rem;
-            background: var(--color-white);
-        }
-
-        .auction-info h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--color-midnight-black);
-        }
-
-        .artist {
-            font-size: 1rem;
-            color: var(--color-stone-gray);
-            margin-bottom: 1rem;
-            font-weight: 500;
-            font-style: italic;
-        }
-
-        .auction-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--color-stone-gray);
-        }
-
-        .price {
-            font-size: 1.4rem;
-            color: var(--color-brushed-gold);
-            font-weight: 800;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .status {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: var(--color-white);
-            background: var(--color-deep-shadow);
-            padding: 0.5rem 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--color-brushed-gold);
-            font-weight: 600;
-        }
-
-        /* Featured Artists */
-        .artist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-        }
-
-        .artist-card {
-            background: var(--color-white);
-            padding: 3rem;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid var(--color-stone-gray);
-        }
-
-        .artist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--color-brushed-gold);
-        }
-
-        .artist-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-brushed-gold), var(--color-dark-gold));
-            margin: 0 auto 1.5rem;
-            border: 4px solid var(--color-midnight-black);
-        }
-
-        .artist-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-midnight-black);
-        }
-
-        .artist-stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--color-stone-gray);
-        }
-
-        .artist-stat strong {
-            display: block;
-            font-size: 1.8rem;
-            color: var(--color-brushed-gold);
-            font-weight: 800;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .artist-stat span {
-            font-size: 0.75rem;
-            color: var(--color-stone-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        /* Reviews */
-        .review-card {
-            background: var(--color-white);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--color-brushed-gold);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .review-author {
-            font-weight: 700;
-            color: var(--color-midnight-black);
-            font-size: 1.1rem;
-        }
-
-        .review-rating {
-            color: var(--color-brushed-gold);
-            font-size: 1.2rem;
-        }
-
-        /* FAQ */
-        .faq-item {
-            background: var(--color-white);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--color-stone-gray);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateX(5px);
-            border-color: var(--color-brushed-gold);
-        }
-
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--color-midnight-black);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            margin-top: 1rem;
-            color: var(--color-stone-gray);
-            line-height: 1.8;
-            display: none;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
         /* Forms */
         .form-section {
             max-width: 800px;
@@ -679,12 +276,25 @@
             font-size: 3rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             color: var(--color-midnight-black);
+        }
+
+        .form-section .subtitle {
+            text-align: center;
+            color: var(--color-stone-gray);
+            margin-bottom: 3rem;
+            font-size: 1rem;
         }
 
         .form-group {
             margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
         }
 
         .form-group label {
@@ -746,183 +356,74 @@
         .checkbox-group input[type="checkbox"] {
             width: auto;
             margin-top: 0.3rem;
+            cursor: pointer;
         }
 
-        .signature-pad {
-            border: 2px solid var(--color-stone-gray);
-            background: var(--color-white);
-            height: 150px;
-            cursor: crosshair;
-        }
-
-        /* Dashboard */
-        .dashboard {
-            max-width: 1400px;
-            margin: 4rem auto;
-            padding: 0 3rem;
-        }
-
-        .dashboard-header {
+        .radio-group {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 4rem;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .dashboard-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--color-midnight-black);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-top: 0.5rem;
         }
 
-        .stat-card {
-            background: var(--color-white);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
-            border: 1px solid var(--color-stone-gray);
-            animation: scaleIn 0.6s ease-out;
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-brushed-gold);
+        .radio-option input[type="radio"] {
+            width: auto;
+            cursor: pointer;
         }
 
-        .stat-card h3 {
-            font-size: 0.85rem;
-            color: var(--color-stone-gray);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .form-divider {
+            border: none;
+            border-top: 2px solid var(--color-brushed-gold);
+            margin: 3rem 0;
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .stat-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--color-brushed-gold);
+            color: var(--color-midnight-black);
+            margin-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
         }
 
-        .chart-container {
-            background: var(--color-white);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 3rem;
-            border: 1px solid var(--color-stone-gray);
+        .helper-text {
+            font-size: 0.85rem;
+            color: var(--color-stone-gray);
+            margin-top: 0.5rem;
         }
 
-        /* Policies */
-        .policy-section {
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
             background: var(--color-white);
-            padding: 3rem;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 3rem;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-2xl);
+            z-index: 2000;
+            animation: slideInRight 0.5s ease-out;
+            max-width: 400px;
+            border: 2px solid var(--color-stone-gray);
             border-left: 4px solid var(--color-brushed-gold);
         }
 
-        .policy-section h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-midnight-black);
-            font-weight: 800;
+        .notification.success {
+            border-left-color: var(--color-brushed-gold);
         }
 
-        .policy-section p, .policy-section ul {
-            color: var(--color-stone-gray);
-            line-height: 1.9;
-            margin-bottom: 1rem;
-        }
-
-        .policy-section ul {
-            padding-left: 2rem;
-        }
-
-        .policy-section li {
-            margin-bottom: 0.8rem;
-        }
-
-        /* Support Chat */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-
-        .chat-button {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            border: none;
-            cursor: pointer;
-            box-shadow: var(--shadow-xl);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .chat-button:hover {
-            transform: scale(1.1);
-            background: var(--color-brushed-gold);
-            color: var(--color-midnight-black);
-        }
-
-        .chat-window {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            height: 500px;
-            background: var(--color-white);
-            box-shadow: var(--shadow-2xl);
-            display: none;
-            flex-direction: column;
-            border: 2px solid var(--color-stone-gray);
-        }
-
-        .chat-window.active {
-            display: flex;
-        }
-
-        .chat-header {
-            background: var(--color-midnight-black);
-            color: var(--color-white);
-            padding: 1.5rem;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 1.5rem;
-            overflow-y: auto;
-        }
-
-        .chat-input-container {
-            padding: 1rem;
-            border-top: 1px solid var(--color-stone-gray);
-        }
-
-        .chat-input {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid var(--color-stone-gray);
-            font-size: 0.9rem;
+        .notification.error {
+            border-left-color: var(--color-deep-shadow);
         }
 
         /* Footer */
@@ -991,73 +492,23 @@
             padding-right: 3rem;
         }
 
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 30px;
-            background: var(--color-white);
-            padding: 1.5rem 2rem;
-            box-shadow: var(--shadow-2xl);
-            z-index: 2000;
-            animation: slideInRight 0.5s ease-out;
-            max-width: 400px;
-            border: 2px solid var(--color-stone-gray);
-            border-left: 4px solid var(--color-brushed-gold);
-        }
-
-        .notification.success {
-            border-left-color: var(--color-brushed-gold);
-        }
-
-        .notification.error {
-            border-left-color: var(--color-deep-shadow);
-        }
-
-        .live-badge {
-            display: inline-block;
-            background: var(--color-brushed-gold);
-            color: var(--color-midnight-black);
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
-            text-transform: uppercase;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
 
-            .auction-grid, .artist-grid {
+            .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .section-header h2 {
-                font-size: 2.5rem;
+            .form-section {
+                padding: 3rem 2rem;
+                margin: 3rem 1rem;
             }
 
-            .search-bar {
-                flex-direction: column;
+            .form-section h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -1068,13 +519,8 @@
             <div class="logo" onclick="navigateTo('home')">ARTÉHAUS</div>
             <div class="nav-links">
                 <a href="#home" onclick="navigateTo('home')">Home</a>
-                <a href="#live" onclick="navigateTo('live')">Live Auctions</a>
-                <a href="#artists" onclick="navigateTo('artists')">Artists</a>
-                <a href="#policies" onclick="navigateTo('policies')">Policies</a>
-                <a href="#faq" onclick="navigateTo('faq')">FAQ</a>
-                <a href="#dashboard" onclick="navigateTo('dashboard')" id="dashboardLink" style="display:none;">Dashboard</a>
                 <a href="#register" class="btn-outline" onclick="navigateTo('register')" id="registerBtn">Register</a>
-                <a href="#login" class="btn-primary" onclick="navigateTo('login')" id="loginBtn">Login</a>
+                <a href="#login" class="btn-primary" onclick="navigateTo('login')" id="loginBtn">Sign In</a>
                 <a href="#" class="btn-primary" onclick="logout()" id="logoutBtn" style="display:none;">Logout</a>
             </div>
         </div>
@@ -1082,503 +528,259 @@
 
     <!-- HOME PAGE -->
     <div id="home" class="page-section active">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Curated <span class="highlight">Art Auctions</span></h1>
-                <p>Discover exceptional works from emerging and established artists worldwide</p>
-                <div class="hero-buttons">
-                    <a href="#live" class="btn-accent" onclick="navigateTo('live')">View Live Auctions</a>
-                    <a href="#artist-apply" class="btn-outline" style="color: white; border-color: var(--color-stone-gray);" onclick="navigateTo('artist-apply')">Submit Your Work</a>
+        <div style="min-height: 80vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%); text-align: center; padding: 6rem 2rem;">
+            <div style="max-width: 800px;">
+                <h1 style="font-size: 4rem; font-weight: 800; color: var(--color-white); margin-bottom: 2rem;">Welcome to <span style="color: var(--color-brushed-gold);">ARTÉHAUS</span></h1>
+                <p style="font-size: 1.3rem; color: var(--color-light-gray); margin-bottom: 3rem;">Curated art auctions for discerning collectors worldwide</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#register" class="btn-accent" onclick="navigateTo('register')">Register as Buyer</a>
+                    <a href="#login" class="btn-outline" style="color: white; border-color: var(--color-stone-gray);" onclick="navigateTo('login')">Sign In</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Search & Filters -->
-        <section class="search-filter-section">
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Search artworks, artists, or styles..." id="searchInput">
-                <button class="btn-primary" onclick="performSearch()">Search</button>
-            </div>
-            <div class="filter-tags">
-                <div class="filter-tag active" onclick="filterAuctions('all')">All</div>
-                <div class="filter-tag" onclick="filterAuctions('live')">Live Now</div>
-                <div class="filter-tag" onclick="filterAuctions('upcoming')">Upcoming</div>
-                <div class="filter-tag" onclick="filterAuctions('abstract')">Abstract</div>
-                <div class="filter-tag" onclick="filterAuctions('contemporary')">Contemporary</div>
-                <div class="filter-tag" onclick="filterAuctions('landscape')">Landscape</div>
-                <div class="filter-tag" onclick="filterAuctions('portrait')">Portrait</div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2>Featured Auctions</h2>
-                <p>Handpicked masterpieces from our exclusive collection</p>
-            </div>
-            <div class="auction-grid" id="auctionGrid">
-                <div class="auction-card" onclick="navigateTo('detail')" data-category="live abstract">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #7C7C7C, #2A2A2A);"></div>
-                    <div class="auction-info">
-                        <h3>Untitled Composition</h3>
-                        <p class="artist">Sarah Mitchell</p>
-                        <div class="rating">
-                            ★★★★★ <span style="color: var(--color-stone-gray);">(24 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$12,000</span>
-                            <span class="status">Live Now</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="auction-card" onclick="navigateTo('detail')" data-category="upcoming contemporary">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #C9AE70, #B39A5F);"></div>
-                    <div class="auction-info">
-                        <h3>Abstract Horizon</h3>
-                        <p class="artist">James Chen</p>
-                        <div class="rating">
-                            ★★★★☆ <span style="color: var(--color-stone-gray);">(18 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$8,500</span>
-                            <span class="status">Tomorrow 3PM</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="auction-card" onclick="navigateTo('detail')" data-category="live landscape">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #090909, #2A2A2A);"></div>
-                    <div class="auction-info">
-                        <h3>Urban Reflections</h3>
-                        <p class="artist">Maria Rodriguez</p>
-                        <div class="rating">
-                            ★★★★★ <span style="color: var(--color-stone-gray);">(31 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$15,000</span>
-                            <span class="status">Live Now</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Success Stories -->
-        <section class="section">
-            <div class="section-header">
-                <h2>Past Auction Success</h2>
-                <p>Celebrating our record-breaking sales and satisfied collectors</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>Total Sales</h3>
-                    <div class="stat-value">$2.4M</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Artworks Sold</h3>
-                    <div class="stat-value">847</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Active Artists</h3>
-                    <div class="stat-value">156</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Satisfied Buyers</h3>
-                    <div class="stat-value">1,234</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reviews -->
-        <section class="section">
-            <div class="section-header">
-                <h2>What Our Collectors Say</h2>
-                <p>Trusted by art enthusiasts worldwide</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div>
-                        <div class="review-author">Alexandra Thompson</div>
-                        <small style="color: var(--color-stone-gray); font-weight: 600;">Verified Buyer</small>
-                    </div>
-                    <div class="review-rating">★★★★★</div>
-                </div>
-                <p style="color: var(--color-stone-gray); line-height: 1.8;">"Exceptional experience from start to finish. The authentication process was thorough, and the artwork arrived in perfect condition. ARTÉHAUS has become my go-to platform for acquiring contemporary art."</p>
-            </div>
-            <div class="review-card">
-                <div class="review-header">
-                    <div>
-                        <div class="review-author">Michael Chen</div>
-                        <small style="color: var(--color-stone-gray); font-weight: 600;">Verified Buyer</small>
-                    </div>
-                    <div class="review-rating">★★★★★</div>
-                </div>
-                <p style="color: var(--color-stone-gray); line-height: 1.8;">"The live auction experience is seamless and exciting. I've purchased three pieces through ARTÉHAUS and each transaction was handled professionally with excellent customer support."</p>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <!-- FEATURED ARTISTS PAGE -->
-    <div id="artists" class="page-section">
-        <section class="section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <div class="section-header">
-                <h2>Featured Artists</h2>
-                <p>Meet the talented creators behind our curated collection</p>
-            </div>
-            <div class="artist-grid">
-                <div class="artist-card">
-                    <div class="artist-avatar"></div>
-                    <h3>Sarah Mitchell</h3>
-                    <p style="font-style: italic; color: var(--color-stone-gray); font-weight: 500;">Contemporary Abstract Artist</p>
-                    <p style="color: var(--color-stone-gray); font-size: 0.9rem; line-height: 1.7; margin-top: 1rem;">Known for vibrant compositions that explore the intersection of emotion and geometry.</p>
-                    <div class="artist-stats">
-                        <div class="artist-stat">
-                            <strong>24</strong>
-                            <span>Artworks</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>$180K</strong>
-                            <span>Total Sales</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>4.9</strong>
-                            <span>Rating</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="artist-card">
-                    <div class="artist-avatar" style="background: linear-gradient(135deg, var(--color-stone-gray), var(--color-deep-shadow));"></div>
-                    <h3>James Chen</h3>
-                    <p style="font-style: italic; color: var(--color-stone-gray); font-weight: 500;">Landscape & Nature Artist</p>
-                    <p style="color: var(--color-stone-gray); font-size: 0.9rem; line-height: 1.7; margin-top: 1rem;">Captures the essence of natural beauty through bold brushstrokes and vivid colors.</p>
-                    <div class="artist-stats">
-                        <div class="artist-stat">
-                            <strong>31</strong>
-                            <span>Artworks</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>$245K</strong>
-                            <span>Total Sales</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>4.8</strong>
-                            <span>Rating</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="artist-card">
-                    <div class="artist-avatar" style="background: linear-gradient(135deg, var(--color-midnight-black), var(--color-deep-shadow));"></div>
-                    <h3>Maria Rodriguez</h3>
-                    <p style="font-style: italic; color: var(--color-stone-gray); font-weight: 500;">Urban Contemporary Artist</p>
-                    <p style="color: var(--color-stone-gray); font-size: 0.9rem; line-height: 1.7; margin-top: 1rem;">Explores urban life and architecture with a unique perspective and modern aesthetic.</p>
-                    <div class="artist-stats">
-                        <div class="artist-stat">
-                            <strong>18</strong>
-                            <span>Artworks</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>$320K</strong>
-                            <span>Total Sales</span>
-                        </div>
-                        <div class="artist-stat">
-                            <strong>5.0</strong>
-                            <span>Rating</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- POLICIES PAGE -->
-    <div id="policies" class="page-section">
-        <section class="section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <div class="section-header">
-                <h2>Auction Rules & Policies</h2>
-                <p>Transparency and trust are at the heart of everything we do</p>
-            </div>
-
-            <div class="policy-section">
-                <h3>Auction Rules</h3>
-                <ul>
-                    <li><strong>Bidding Process:</strong> All bids are binding. Once placed, a bid cannot be retracted except in cases of clear error or fraud.</li>
-                    <li><strong>Bid Increments:</strong> Minimum bid increments are set at 5% of the current bid amount.</li>
-                    <li><strong>Reserve Price:</strong> Some artworks have a reserve price. If bidding does not reach this amount, the artwork will not be sold.</li>
-                    <li><strong>Auction Extension:</strong> If a bid is placed in the final 2 minutes, the auction will automatically extend by 2 minutes.</li>
-                    <li><strong>Winner Notification:</strong> Winning bidders will be notified via email within 1 hour of auction close.</li>
-                    <li><strong>Payment Terms:</strong> Full payment is due within 48 hours of auction close. Accepted methods: Wire transfer, credit card, cryptocurrency.</li>
-                    <li><strong>Buyer's Premium:</strong> A 15% buyer's premium is added to the final hammer price.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h3>Refund Policy</h3>
-                <ul>
-                    <li><strong>Authenticity Guarantee:</strong> If an artwork is proven to be inauthentic within 5 years of purchase, we offer a full refund including buyer's premium.</li>
-                    <li><strong>Condition Disputes:</strong> Claims regarding condition must be made within 7 days of delivery with photographic evidence.</li>
-                    <li><strong>Damage in Transit:</strong> All shipments are fully insured. Report any damage within 48 hours of delivery.</li>
-                    <li><strong>Refund Processing:</strong> Approved refunds are processed within 10-14 business days to the original payment method.</li>
-                    <li><strong>Non-Refundable Items:</strong> Buyer's premium and shipping costs are non-refundable except in cases of authenticity disputes.</li>
-                    <li><strong>Return Shipping:</strong> Buyers are responsible for return shipping costs unless the return is due to our error or damage.</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h3>Seller Fees & Monetization</h3>
-                <ul>
-                    <li><strong>Standard Listing:</strong> Free for approved artists. 10% commission on successful sales.</li>
-                    <li><strong>Premium Listing:</strong> $99/month. Includes featured placement, priority support, and reduced commission (7%).</li>
-                    <li><strong>Featured Auction:</strong> $299 per auction. Homepage placement, email marketing to 50K+ collectors, social media promotion.</li>
-                    <li><strong>Payment Schedule:</strong> Sellers receive payment within 7 business days after buyer payment clears.</li>
-                    <li><strong>Withdrawal Methods:</strong> Bank transfer, PayPal, or cryptocurrency (Bitcoin, Ethereum).</li>
-                </ul>
-            </div>
-
-            <div class="policy-section">
-                <h3>Privacy & Data Protection</h3>
-                <p>We are committed to protecting your personal information. All data is encrypted and stored securely. We never sell your information to third parties. User activity is tracked for analytics purposes to improve our platform. IP addresses and timestamps are logged for security and fraud prevention.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- FAQ PAGE -->
-    <div id="faq" class="page-section">
-        <section class="section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our platform</p>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    How do I register as a buyer?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    Click the "Register" button in the navigation menu and complete the buyer registration form. You'll need to provide your name, email, phone number, and agree to our terms. Optional ID verification is available for higher bidding limits. Your account will be reviewed and approved within 24 hours.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    How do I apply as an artist?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    Navigate to "Apply as Artist" and submit your application including personal details, portfolio, artist statement, and bank information. Our curation team reviews all applications within 5-7 business days. Approved artists receive access to list artworks and participate in auctions.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    What payment methods do you accept?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    We accept wire transfers, major credit cards (Visa, Mastercard, Amex), and cryptocurrencies (Bitcoin, Ethereum). All transactions are processed securely through encrypted payment gateways.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    How is shipping handled?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    We partner with specialized art logistics companies to ensure safe delivery. All shipments are fully insured and tracked. Shipping costs are calculated based on artwork size, weight, and destination. International shipping is available to most countries.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    What if I win an auction but change my mind?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    All bids are legally binding. Failure to complete payment may result in account suspension and legal action. We recommend carefully reviewing artwork details before bidding. Contact support immediately if you have concerns.
-                </div>
-            </div>
-
-            <div class="faq-item" onclick="toggleFAQ(this)">
-                <div class="faq-question">
-                    How do you verify artwork authenticity?
-                    <span style="font-size: 1.5rem; font-weight: 700;">+</span>
-                </div>
-                <div class="faq-answer">
-                    Every artwork undergoes rigorous authentication by our expert team. We provide certificates of authenticity, provenance documentation, and artist verification. Our 5-year authenticity guarantee protects your investment.
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ARTIST APPLICATION FORM -->
-    <div id="artist-apply" class="page-section">
+    <!-- SIGN IN PAGE -->
+    <div id="login" class="page-section">
         <section class="form-section">
             <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <h2>Artist Application</h2>
-            <p style="text-align: center; color: var(--color-stone-gray); margin-bottom: 2rem; font-weight: 500;">Join our exclusive community of talented artists</p>
+            <h2>Sign In</h2>
+            <p class="subtitle">Welcome back! Sign in to access your account</p>
             
-            <form onsubmit="submitArtistApplication(event)">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" required>
-                </div>
-                
+            <form onsubmit="loginUser(event)">
                 <div class="form-group">
                     <label>Email Address *</label>
-                    <input type="email" required>
+                    <input type="email" id="loginEmail" required placeholder="your.email@example.com">
                 </div>
                 
                 <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" required>
+                    <label>Password *</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
                 </div>
-                
-                <div class="form-group">
-                    <label>Portfolio URL</label>
-                    <input type="url" placeholder="https://yourportfolio.com">
-                </div>
-                
-                <div class="form-group">
-                    <label>Artist Statement *</label>
-                    <textarea required placeholder="Tell us about your artistic vision and practice..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Years of Experience *</label>
-                    <select required>
-                        <option value="">Select...</option>
-                        <option>0-2 years</option>
-                        <option>3-5 years</option>
-                        <option>6-10 years</option>
-                        <option>10+ years</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Upload Artwork Samples (Max 5 images) *</label>
-                    <div class="file-upload">
-                        <p style="font-weight: 700; margin-bottom: 0.5rem;">📁 Click to upload or drag and drop</p>
-                        <small style="color: var(--color-stone-gray);">JPG, PNG, or PDF (Max 10MB each)</small>
-                        <input type="file" multiple accept="image/*,.pdf" style="display: none;">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>ID Proof (Passport/Driver's License) *</label>
-                    <div class="file-upload">
-                        <p style="font-weight: 700;">📄 Upload ID Document</p>
-                        <input type="file" accept="image/*,.pdf" style="display: none;">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Bank Account Details *</label>
-                    <input type="text" placeholder="Account Holder Name" required style="margin-bottom: 1rem;">
-                    <input type="text" placeholder="Bank Name" required style="margin-bottom: 1rem;">
-                    <input type="text" placeholder="Account Number" required style="margin-bottom: 1rem;">
-                    <input type="text" placeholder="Routing Number / SWIFT Code" required>
-                </div>
-                
+
                 <div class="form-group">
                     <div class="checkbox-group">
-                        <input type="checkbox" id="artistAgreement" required>
-                        <label for="artistAgreement" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
-                            I agree to the <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Artist Agreement</a>, 
-                            <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, and 
-                            <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Commission Structure</a>. 
-                            I understand that my application will be manually reviewed and I will be notified of the decision within 5-7 business days.
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            Remember me for 30 days
                         </label>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label>Digital Signature *</label>
-                    <canvas class="signature-pad" id="artistSignature"></canvas>
-                    <button type="button" class="btn-outline" style="margin-top: 1rem;" onclick="clearSignature('artistSignature')">Clear Signature</button>
-                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
                 
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem;">Submit Application</button>
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
+                    <a href="#" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Forgot your password?</a>
+                </p>
+
+                <hr class="form-divider">
                 
-                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--color-stone-gray);">
-                    Application submitted on: <span id="timestamp" style="font-weight: 700;"></span><br>
-                    IP Address: <span id="ipAddress" style="font-weight: 700;">Loading...</span>
+                <p style="text-align: center; color: var(--color-stone-gray);">
+                    Don't have an account? 
+                    <a href="#register" onclick="navigateTo('register')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Register as Buyer</a>
                 </p>
             </form>
         </section>
     </div>
 
-    <!-- BUYER REGISTRATION FORM -->
+    <!-- BUYER REGISTRATION PAGE -->
     <div id="register" class="page-section">
         <section class="form-section">
             <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
             <h2>Buyer Registration</h2>
-            <p style="text-align: center; color: var(--color-stone-gray); margin-bottom: 2rem; font-weight: 500;">Create your account to start bidding on exceptional artworks</p>
+            <p class="subtitle">Create your account to start bidding on exceptional artworks</p>
             
             <form onsubmit="registerUser(event)">
-                <div class="form-group">
-                    <label>Full Name *</label>
-                    <input type="text" id="regName" required>
+                <!-- Personal Information -->
+                <div class="form-section-title">Personal Information</div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" id="regFirstName" required placeholder="John">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" id="regLastName" required placeholder="Doe">
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label>Email Address *</label>
-                    <input type="email" id="regEmail" required>
+                    <input type="email" id="regEmail" required placeholder="your.email@example.com">
+                    <p class="helper-text">We'll send auction updates and notifications to this email</p>
                 </div>
                 
-                <div class="form-group">
-                    <label>Password *</label>
-                    <input type="password" id="regPassword" required minlength="8">
-                    <small style="color: var(--color-stone-gray);">Minimum 8 characters</small>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="regPhone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" id="regDOB" required>
+                    </div>
                 </div>
+
+                <hr class="form-divider">
+
+                <!-- Address Information -->
+                <div class="form-section-title">Address Information</div>
                 
                 <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" required>
+                    <label>Street Address *</label>
+                    <input type="text" id="regAddress" required placeholder="123 Main Street">
                 </div>
                 
-                <div class="form-group">
-                    <label>Country *</label>
-                    <select required>
-                        <option value="">Select Country...</option>
-                        <option>United States</option>
-                        <option>United Kingdom</option>
-                        <option>Canada</option>
-                        <option>Australia</option>
-                        <option>Germany</option>
-                        <option>France</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>ID Verification (Optional - Required for bids over $10,000)</label>
-                    <div class="file-upload">
-                        <p style="font-weight: 700; margin-bottom: 0.5rem;">📄 Upload ID Document</p>
-                        <small style="color: var(--color-stone-gray);">Passport, Driver's License, or National ID</small>
-                        <input type="file" accept="image/*,.pdf" style="display: none;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City *</label>
+                        <input type="text" id="regCity" required placeholder="New York">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>State / Province *</label>
+                        <input type="text" id="regState" required placeholder="NY">
                     </div>
                 </div>
                 
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Postal / ZIP Code *</label>
+                        <input type="text" id="regZip" required placeholder="10001">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <select id="regCountry" required>
+                            <option value="">Select Country...</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IT">Italy</option>
+                            <option value="ES">Spain</option>
+                            <option value="JP">Japan</option>
+                            <option value="CN">China</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Account Security -->
+                <div class="form-section-title">Account Security</div>
+                
                 <div class="form-group">
-                    <label>Collecting Interests</label>
-                    <textarea placeholder="What type of art are you interested in? (Abstract, Contemporary, Landscape, etc.)"></textarea>
+                    <label>Password *</label>
+                    <input type="password" id="regPassword" required minlength="8" placeholder="Minimum 8 characters">
+                    <p class="helper-text">Must contain at least 8 characters, including uppercase, lowercase, and numbers</p>
                 </div>
                 
                 <div class="form-group">
-                    <label>Refundable Deposit (Optional)</label>
+                    <label>Confirm Password *</label>
+                    <input type="password" id="regConfirmPassword" required minlength="8" placeholder="Re-enter your password">
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Collecting Preferences -->
+                <div class="form-section-title">Collecting Preferences</div>
+                
+                <div class="form-group">
+                    <label>Art Interests</label>
+                    <textarea id="regInterests" placeholder="What type of art are you interested in? (e.g., Abstract, Contemporary, Landscape, Portrait, Sculpture)"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Budget Range</label>
+                    <select id="regBudget">
+                        <option value="">Select Budget Range...</option>
+                        <option value="under-5k">Under $5,000</option>
+                        <option value="5k-10k">$5,000 - $10,000</option>
+                        <option value="10k-25k">$10,000 - $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="50k-100k">$50,000 - $100,000</option>
+                        <option value="over-100k">Over $100,000</option>
+                    </select>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Verification (Optional) -->
+                <div class="form-section-title">Identity Verification (Optional)</div>
+                
+                <div class="form-group">
+                    <label>ID Verification</label>
+                    <div class="file-upload" onclick="document.getElementById('idUpload').click()">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem;">📄 Upload ID Document</p>
+                        <small style="color: var(--color-stone-gray);">Passport, Driver's License, or National ID (Required for bids over $10,000)</small>
+                        <input type="file" id="idUpload" accept="image/*,.pdf" style="display: none;">
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Refundable Deposit -->
+                <div class="form-section-title">Bidding Privileges</div>
+                
+                <div class="form-group">
+                    <label>Refundable Security Deposit (Optional)</label>
                     <p style="font-size: 0.9rem; color: var(--color-stone-gray); margin-bottom: 1rem;">
-                        A $500 refundable deposit increases your bidding limit and provides priority access to exclusive auctions.
+                        A $500 refundable deposit increases your bidding limit to $50,000 and provides priority access to exclusive auctions. The deposit will be refunded upon account closure or can be applied to your first purchase.
                     </p>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="depositYes" name="deposit" value="yes">
+                            <label for="depositYes" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">Yes, I'll make a $500 deposit</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="depositNo" name="deposit" value="no" checked>
+                            <label for="depositNo" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">No, standard limits are fine</label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Communication Preferences -->
+                <div class="form-section-title">Communication Preferences</div>
+                
+                <div class="form-group">
                     <div class="checkbox-group">
-                        <input type="checkbox" id="depositOption">
-                        <label for="depositOption" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
-                            I would like to make a $500 refundable deposit
+                        <input type="checkbox" id="emailNotifications" checked>
+                        <label for="emailNotifications" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            Send me email notifications about new auctions and updates
                         </label>
                     </div>
                 </div>
                 
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="smsNotifications">
+                        <label for="smsNotifications" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            Send me SMS notifications for auction reminders
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" checked>
+                        <label for="newsletter" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            Subscribe to our monthly newsletter featuring curated collections
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <!-- Terms and Conditions -->
                 <div class="form-group">
                     <div class="checkbox-group">
                         <input type="checkbox" id="buyerAgreement" required>
@@ -1587,7 +789,7 @@
                             <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, 
                             <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Auction Rules</a>, and 
                             <a href="#" style="color: var(--color-brushed-gold); font-weight: 700;">Privacy Policy</a>. 
-                            I understand that bidding access will be granted after account approval (typically within 24 hours).
+                            I understand that all bids are legally binding and bidding access will be granted after account approval (typically within 24 hours). *
                         </label>
                     </div>
                 </div>
@@ -1598,240 +800,15 @@
                     Registration submitted on: <span id="regTimestamp" style="font-weight: 700;"></span><br>
                     IP Address: <span id="regIpAddress" style="font-weight: 700;">Loading...</span>
                 </p>
-            </form>
-        </section>
-    </div>
 
-    <!-- LOGIN PAGE -->
-    <div id="login" class="page-section">
-        <section class="form-section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <h2>Login</h2>
-            <form onsubmit="loginUser(event)">
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="loginEmail" required>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="loginPassword" required>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Login</button>
-                <p style="text-align: center; margin-top: 2rem;">
-                    <a href="#register" onclick="navigateTo('register')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Don't have an account? Register</a>
+                <hr class="form-divider">
+                
+                <p style="text-align: center; color: var(--color-stone-gray);">
+                    Already have an account? 
+                    <a href="#login" onclick="navigateTo('login')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Sign In</a>
                 </p>
             </form>
         </section>
-    </div>
-
-    <!-- DASHBOARD PAGE -->
-    <div id="dashboard" class="page-section">
-        <section class="dashboard">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back to Home</a>
-            
-            <div class="dashboard-header">
-                <h1>Dashboard</h1>
-                <button class="btn-primary" onclick="navigateTo('artist-apply')">+ List New Artwork</button>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>Active Bids</h3>
-                    <div class="stat-value">3</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Won Auctions</h3>
-                    <div class="stat-value">7</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Total Spent</h3>
-                    <div class="stat-value">$45K</div>
-                </div>
-                <div class="stat-card">
-                    <h3>Watchlist</h3>
-                    <div class="stat-value">12</div>
-                </div>
-            </div>
-
-            <div class="chart-container">
-                <h2 style="margin-bottom: 2rem; font-size: 2rem; font-weight: 800;">Activity Analytics</h2>
-                <p style="color: var(--color-stone-gray); line-height: 2;">
-                    📊 Your bidding activity has increased by <strong style="color: var(--color-brushed-gold);">35%</strong> this month<br>
-                    📈 Average bid amount: <strong style="color: var(--color-brushed-gold);">$8,450</strong><br>
-                    🎯 Success rate: <strong style="color: var(--color-brushed-gold);">68%</strong> (7 wins out of 10 bids)<br>
-                    ⏰ Most active time: <strong>Weekday evenings (6-9 PM)</strong><br>
-                    🎨 Preferred categories: <strong>Abstract (45%), Contemporary (30%), Landscape (25%)</strong>
-                </p>
-            </div>
-
-            <div class="policy-section">
-                <h3>My Active Bids</h3>
-                <div style="padding: 1.5rem; background: var(--color-gallery-white); margin-bottom: 1rem; border: 1px solid var(--color-stone-gray);">
-                    <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Untitled Composition</h4>
-                    <p style="color: var(--color-stone-gray);">Current Bid: <strong>$12,500</strong> • Your Bid: <strong>$12,500</strong> • Status: <span style="color: var(--color-brushed-gold); font-weight: 700;">Winning</span></p>
-                </div>
-                <div style="padding: 1.5rem; background: var(--color-gallery-white); border: 1px solid var(--color-stone-gray);">
-                    <h4 style="margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: 700;">Abstract Horizon</h4>
-                    <p style="color: var(--color-stone-gray);">Current Bid: <strong>$9,200</strong> • Your Bid: <strong>$8,500</strong> • Status: <span style="color: var(--color-deep-shadow); font-weight: 700;">Outbid</span></p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- LIVE AUCTIONS PAGE -->
-    <div id="live" class="page-section">
-        <section class="section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            
-            <!-- Search & Filters -->
-            <div class="search-filter-section" style="margin-bottom: 4rem;">
-                <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="Search live auctions..." id="liveSearchInput">
-                    <button class="btn-primary" onclick="performSearch()">Search</button>
-                </div>
-                <div class="filter-tags">
-                    <div class="filter-tag active" onclick="filterAuctions('all')">All</div>
-                    <div class="filter-tag" onclick="filterAuctions('ending-soon')">Ending Soon</div>
-                    <div class="filter-tag" onclick="filterAuctions('new')">New Today</div>
-                    <div class="filter-tag" onclick="filterAuctions('popular')">Most Popular</div>
-                </div>
-            </div>
-            
-            <div class="section-header">
-                <h2>Live Auctions</h2>
-                <p>Join active bidding sessions happening right now</p>
-            </div>
-            <div class="auction-grid">
-                <div class="auction-card" onclick="navigateTo('detail')">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #C9AE70, #B39A5F);"></div>
-                    <div class="auction-info">
-                        <span class="live-badge">🔴 LIVE NOW</span>
-                        <h3>Sunset Dreams</h3>
-                        <p class="artist">Emma Thompson</p>
-                        <div class="rating">
-                            ★★★★★ <span style="color: var(--color-stone-gray);">(28 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$18,500</span>
-                            <span class="status">23 bids</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="auction-card" onclick="navigateTo('detail')">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #7C7C7C, #2A2A2A);"></div>
-                    <div class="auction-info">
-                        <span class="live-badge">🔴 LIVE NOW</span>
-                        <h3>Ocean Whispers</h3>
-                        <p class="artist">David Park</p>
-                        <div class="rating">
-                            ★★★★☆ <span style="color: var(--color-stone-gray);">(19 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$9,200</span>
-                            <span class="status">15 bids</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="auction-card" onclick="navigateTo('detail')">
-                    <div class="auction-image" style="background: linear-gradient(135deg, #090909, #2A2A2A);"></div>
-                    <div class="auction-info">
-                        <h3>Forest Meditation</h3>
-                        <p class="artist">Lisa Anderson</p>
-                        <div class="rating">
-                            ★★★★★ <span style="color: var(--color-stone-gray);">(22 reviews)</span>
-                        </div>
-                        <div class="auction-meta">
-                            <span class="price">$7,000</span>
-                            <span class="status">Starts in 2h</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- AUCTION DETAIL PAGE -->
-    <div id="detail" class="page-section">
-        <section class="section">
-            <a href="#" class="back-button" onclick="goBack(); return false;">← Back</a>
-            <div class="breadcrumbs">
-                <a href="#" onclick="navigateTo('home'); return false;">Home</a>
-                <span>/</span>
-                <a href="#" onclick="navigateTo('live'); return false;">Live Auctions</a>
-                <span>/</span>
-                <span>Untitled Composition</span>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; margin-top: 3rem;">
-                <div>
-                    <div style="aspect-ratio: 4/5; background: linear-gradient(135deg, #7C7C7C, #2A2A2A); box-shadow: var(--shadow-xl); border: 2px solid var(--color-brushed-gold); animation: scaleIn 0.6s ease-out;"></div>
-                </div>
-                <div style="background: var(--color-white); padding: 3rem; box-shadow: var(--shadow-md); border: 1px solid var(--color-stone-gray); animation: slideInRight 0.6s ease-out;">
-                    <h1 style="font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800;">Untitled Composition</h1>
-                    <p class="artist">by Sarah Mitchell</p>
-                    <div class="rating" style="margin: 1rem 0;">
-                        ★★★★★ <span style="color: var(--color-stone-gray);">(24 reviews)</span>
-                    </div>
-                    
-                    <div style="background: var(--color-gallery-white); padding: 1.5rem; text-align: center; margin: 2rem 0; border: 2px solid var(--color-brushed-gold);">
-                        <small style="font-weight: 700; letter-spacing: 1.5px; color: var(--color-midnight-black); text-transform: uppercase;">TIME REMAINING</small>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-midnight-black); font-family: 'Playfair Display', serif; margin-top: 0.5rem;" id="countdown">02:45:30</div>
-                    </div>
-
-                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-brushed-gold); margin: 2rem 0; font-family: 'Playfair Display', serif;">
-                        Current Bid: $<span id="currentBidAmount">12,500</span>
-                    </div>
-
-                    <div style="margin: 2rem 0;">
-                        <input type="number" style="width: 100%; padding: 1.2rem 1.5rem; border: 2px solid var(--color-stone-gray); font-size: 1.1rem; margin-bottom: 1rem; background: var(--color-white); transition: all 0.3s ease; font-family: 'Inter', sans-serif; color: var(--color-midnight-black);" id="bidInput" placeholder="Enter your bid" min="12600">
-                        <button class="btn-primary" style="width:100%;" onclick="placeBid()">Place Bid</button>
-                    </div>
-
-                    <div style="margin: 2rem 0; padding: 2rem; background: var(--color-gallery-white); border: 1px solid var(--color-stone-gray);">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--color-midnight-black); font-size: 1.5rem; font-weight: 800;">Artwork Details</h3>
-                        <p style="margin-bottom: 0.8rem; font-size: 1rem; color: var(--color-stone-gray);"><strong>Medium:</strong> Oil on Canvas</p>
-                        <p style="margin-bottom: 0.8rem; font-size: 1rem; color: var(--color-stone-gray);"><strong>Size:</strong> 48" x 36"</p>
-                        <p style="margin-bottom: 0.8rem; font-size: 1rem; color: var(--color-stone-gray);"><strong>Year:</strong> 2024</p>
-                        <p style="font-size: 1rem; color: var(--color-stone-gray);"><strong>Condition:</strong> Excellent</p>
-                    </div>
-
-                    <div style="margin-top: 2.5rem; max-height: 350px; overflow-y: auto;">
-                        <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 800;">Bid History</h3>
-                        <div id="bidHistoryList">
-                            <div style="display: flex; justify-content: space-between; padding: 1.2rem; border-bottom: 1px solid var(--color-stone-gray); transition: background 0.3s ease;">
-                                <span><strong>User_234</strong><br><small>2 min ago</small></span>
-                                <span class="price">$12,500</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; padding: 1.2rem; border-bottom: 1px solid var(--color-stone-gray); transition: background 0.3s ease;">
-                                <span><strong>ArtLover_89</strong><br><small>5 min ago</small></span>
-                                <span class="price">$12,200</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Support Chat Widget -->
-    <div class="chat-widget">
-        <button class="chat-button" onclick="toggleChat()">💬</button>
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <div>Support Chat</div>
-                <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; font-weight: 700;">×</button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <p style="padding: 1rem; background: var(--color-gallery-white); margin-bottom: 1rem; border: 1px solid var(--color-stone-gray);">
-                    <strong>Support Team</strong><br>
-                    <small style="color: var(--color-stone-gray); font-weight: 600;">Just now</small><br>
-                    Hello! How can we help you today?
-                </p>
-            </div>
-            <div class="chat-input-container">
-                <input type="text" class="chat-input" placeholder="Type your message..." id="chatInput" onkeypress="if(event.key==='Enter') sendMessage()">
-            </div>
-        </div>
     </div>
 
     <footer class="footer">
@@ -1842,15 +819,15 @@
             </div>
             <div class="footer-section">
                 <h4>Legal</h4>
-                <a href="#" onclick="navigateTo('policies')">Terms & Conditions</a>
-                <a href="#" onclick="navigateTo('policies')">Auction Rules</a>
-                <a href="#" onclick="navigateTo('policies')">Refund Policy</a>
-                <a href="#" onclick="navigateTo('policies')">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Auction Rules</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Privacy Policy</a>
             </div>
             <div class="footer-section">
                 <h4>Support</h4>
-                <a href="#" onclick="navigateTo('faq')">FAQ</a>
-                <a href="#" onclick="toggleChat()">Live Chat</a>
+                <a href="#">FAQ</a>
+                <a href="#">Live Chat</a>
                 <a href="#">Submit Ticket</a>
                 <a href="#">Contact Us</a>
             </div>
@@ -1868,8 +845,6 @@
 
     <script>
         let navigationHistory = ['home'];
-        let currentBid = 12500;
-        let timeRemaining = 9930;
 
         function navigateTo(pageId) {
             document.querySelectorAll('.page-section').forEach(section => {
@@ -1902,77 +877,85 @@
             setTimeout(() => {
                 notification.style.opacity = '0';
                 setTimeout(() => notification.remove(), 300);
-            }, 3000);
-        }
-
-        function placeBid() {
-            const bidInput = document.getElementById('bidInput');
-            const bidAmount = parseInt(bidInput.value);
-            
-            if (bidAmount <= currentBid) {
-                showNotification('Bid must be higher than current bid!', 'error');
-                return;
-            }
-            
-            currentBid = bidAmount;
-            document.getElementById('currentBidAmount').textContent = currentBid.toLocaleString();
-            
-            const bidHistory = document.getElementById('bidHistoryList');
-            const newBid = document.createElement('div');
-            newBid.style.cssText = 'display: flex; justify-content: space-between; padding: 1.2rem; border-bottom: 1px solid var(--color-stone-gray); animation: slideInLeft 0.4s ease-out;';
-            newBid.innerHTML = `
-                <span><strong>You</strong><br><small>Just now</small></span>
-                <span class="price">$${bidAmount.toLocaleString()}</span>
-            `;
-            bidHistory.insertBefore(newBid, bidHistory.firstChild);
-            
-            bidInput.value = '';
-            showNotification('Bid placed successfully!');
-        }
-
-        function performSearch() {
-            const searchTerm = document.getElementById('searchInput')?.value || document.getElementById('liveSearchInput')?.value;
-            showNotification(`Searching for: ${searchTerm}`);
-        }
-
-        function filterAuctions(category) {
-            document.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('active'));
-            event.target.classList.add('active');
-            showNotification(`Filtering by: ${category}`);
+            }, 4000);
         }
 
         function registerUser(event) {
             event.preventDefault();
-            const name = document.getElementById('regName').value;
+            
+            const firstName = document.getElementById('regFirstName').value;
+            const lastName = document.getElementById('regLastName').value;
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
             
-            localStorage.setItem('user', JSON.stringify({name, email, password, approved: false}));
-            showNotification('Registration submitted! Your account will be reviewed within 24 hours.');
-            setTimeout(() => navigateTo('login'), 2000);
+            // Validate password match
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match!', 'error');
+                return;
+            }
+            
+            // Validate password strength
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                showNotification('Password must contain at least 8 characters, including uppercase, lowercase, and numbers', 'error');
+                return;
+            }
+            
+            const userData = {
+                firstName,
+                lastName,
+                email,
+                password,
+                phone: document.getElementById('regPhone').value,
+                dob: document.getElementById('regDOB').value,
+                address: document.getElementById('regAddress').value,
+                city: document.getElementById('regCity').value,
+                state: document.getElementById('regState').value,
+                zip: document.getElementById('regZip').value,
+                country: document.getElementById('regCountry').value,
+                interests: document.getElementById('regInterests').value,
+                budget: document.getElementById('regBudget').value,
+                deposit: document.querySelector('input[name="deposit"]:checked').value,
+                emailNotifications: document.getElementById('emailNotifications').checked,
+                smsNotifications: document.getElementById('smsNotifications').checked,
+                newsletter: document.getElementById('newsletter').checked,
+                approved: false,
+                registeredAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('user', JSON.stringify(userData));
+            showNotification('Registration submitted successfully! Your account will be reviewed within 24 hours. Check your email for confirmation.');
+            
+            setTimeout(() => navigateTo('login'), 3000);
         }
 
         function loginUser(event) {
             event.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
             
             const user = JSON.parse(localStorage.getItem('user'));
             
             if (user && user.email === email && user.password === password) {
                 localStorage.setItem('loggedIn', 'true');
+                if (rememberMe) {
+                    localStorage.setItem('rememberMe', 'true');
+                }
                 updateAuthUI();
-                showNotification('Login successful! Welcome back.');
-                setTimeout(() => navigateTo('dashboard'), 1500);
+                showNotification(`Welcome back, ${user.firstName}! Login successful.`);
+                setTimeout(() => navigateTo('home'), 2000);
             } else {
-                showNotification('Invalid credentials!', 'error');
+                showNotification('Invalid email or password. Please try again.', 'error');
             }
         }
 
         function logout() {
             localStorage.removeItem('loggedIn');
+            localStorage.removeItem('rememberMe');
             updateAuthUI();
-            showNotification('Logged out successfully!');
+            showNotification('You have been logged out successfully.');
             navigateTo('home');
         }
 
@@ -1981,93 +964,21 @@
             document.getElementById('loginBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
             document.getElementById('registerBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
             document.getElementById('logoutBtn').style.display = isLoggedIn ? 'inline-block' : 'none';
-            document.getElementById('dashboardLink').style.display = isLoggedIn ? 'inline-block' : 'none';
-        }
-
-        function submitArtistApplication(event) {
-            event.preventDefault();
-            showNotification('Application submitted! Our team will review within 5-7 business days.');
-            setTimeout(() => navigateTo('home'), 2000);
-        }
-
-        function toggleFAQ(element) {
-            element.classList.toggle('active');
-            const icon = element.querySelector('.faq-question span');
-            icon.textContent = element.classList.contains('active') ? '−' : '+';
-        }
-
-        function toggleChat() {
-            document.getElementById('chatWindow').classList.toggle('active');
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            if (message) {
-                const messagesDiv = document.getElementById('chatMessages');
-                messagesDiv.innerHTML += `
-                    <p style="padding: 1rem; background: var(--color-white); margin-bottom: 1rem; text-align: right; border: 1px solid var(--color-stone-gray);">
-                        <strong>You</strong><br>
-                        <small style="color: var(--color-stone-gray); font-weight: 600;">Just now</small><br>
-                        ${message}
-                    </p>
-                `;
-                input.value = '';
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-                
-                setTimeout(() => {
-                    messagesDiv.innerHTML += `
-                        <p style="padding: 1rem; background: var(--color-gallery-white); margin-bottom: 1rem; border: 1px solid var(--color-stone-gray);">
-                            <strong>Support Team</strong><br>
-                            <small style="color: var(--color-stone-gray); font-weight: 600;">Just now</small><br>
-                            Thank you for your message. A support agent will respond shortly.
-                        </p>
-                    `;
-                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-                }, 1000);
-            }
-        }
-
-        function clearSignature(canvasId) {
-            const canvas = document.getElementById(canvasId);
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-
-        function updateCountdown() {
-            if (timeRemaining > 0) {
-                timeRemaining--;
-                const hours = Math.floor(timeRemaining / 3600);
-                const minutes = Math.floor((timeRemaining % 3600) / 60);
-                const seconds = timeRemaining % 60;
-                
-                const countdownEl = document.getElementById('countdown');
-                if (countdownEl) {
-                    countdownEl.textContent = 
-                        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                }
-            }
         }
 
         function updateTimestamps() {
             const now = new Date().toLocaleString();
-            const timestampEl = document.getElementById('timestamp');
             const regTimestampEl = document.getElementById('regTimestamp');
-            if (timestampEl) timestampEl.textContent = now;
             if (regTimestampEl) regTimestampEl.textContent = now;
             
             fetch('https://api.ipify.org?format=json')
                 .then(res => res.json())
                 .then(data => {
-                    const ipEl = document.getElementById('ipAddress');
                     const regIpEl = document.getElementById('regIpAddress');
-                    if (ipEl) ipEl.textContent = data.ip;
                     if (regIpEl) regIpEl.textContent = data.ip;
                 })
                 .catch(() => {
-                    const ipEl = document.getElementById('ipAddress');
                     const regIpEl = document.getElementById('regIpAddress');
-                    if (ipEl) ipEl.textContent = '192.168.1.1';
                     if (regIpEl) regIpEl.textContent = '192.168.1.1';
                 });
         }
@@ -2081,8 +992,12 @@
             }
         });
 
+        // Check if user is remembered
+        if (localStorage.getItem('rememberMe') === 'true') {
+            localStorage.setItem('loggedIn', 'true');
+        }
+
         updateAuthUI();
-        setInterval(updateCountdown, 1000);
         updateTimestamps();
 
         window.addEventListener('popstate', function(event) {
