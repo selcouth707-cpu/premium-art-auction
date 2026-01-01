@@ -49,11 +49,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         @keyframes slideInRight {
             from { opacity: 0; transform: translateX(30px); }
             to { opacity: 1; transform: translateX(0); }
@@ -240,34 +235,278 @@
             transform: translateX(-5px);
         }
 
-        /* Forms */
-        .form-section {
-            max-width: 800px;
-            margin: 6rem auto;
-            padding: 4rem 3.5rem;
-            background: var(--color-white);
-            box-shadow: var(--shadow-xl);
-            border: 2px solid var(--color-brushed-gold);
-            animation: scaleIn 0.6s ease-out;
+        /* Hero */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .form-section h2 {
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 174, 112, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(201, 174, 112, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+            line-height: 1.1;
+        }
+
+        .hero-content .highlight {
+            background: linear-gradient(135deg, var(--color-brushed-gold), var(--color-light-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--color-light-gray);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            line-height: 1.8;
+        }
+
+        /* Section */
+        .section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 3rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
             font-size: 3rem;
             font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--color-midnight-black);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--color-stone-gray);
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-midnight-black);
+        }
+
+        .about-text p {
+            color: var(--color-stone-gray);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .artwork-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .artwork-img {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .artwork-img:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: var(--color-white);
+            padding: 2.5rem 2rem;
             text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--color-brushed-gold);
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            color: var(--color-brushed-gold);
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-midnight-black);
+        }
+
+        .step-card p {
+            color: var(--color-stone-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--color-white);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--color-brushed-gold);
+        }
+
+        .benefit-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--color-midnight-black);
         }
 
-        .form-section .subtitle {
-            text-align: center;
+        .benefit-card p {
             color: var(--color-stone-gray);
-            margin-bottom: 3rem;
-            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Registration Choice */
+        .registration-choice {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+        }
+
+        .choice-card {
+            background: var(--color-white);
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--color-stone-gray);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .choice-card:hover {
+            border-color: var(--color-brushed-gold);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .choice-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .choice-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-midnight-black);
+        }
+
+        .choice-card p {
+            color: var(--color-stone-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Forms */
+        .form-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .form-section {
+            background: var(--color-white);
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--color-brushed-gold);
+            margin-bottom: 2rem;
+        }
+
+        .form-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--color-midnight-black);
+            border-bottom: 2px solid var(--color-brushed-gold);
+            padding-bottom: 1rem;
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-row {
@@ -278,7 +517,7 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             color: var(--color-midnight-black);
             font-size: 0.85rem;
             font-weight: 700;
@@ -290,7 +529,7 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1.1rem 1.5rem;
+            padding: 1rem 1.2rem;
             border: 2px solid var(--color-stone-gray);
             background: var(--color-white);
             font-family: 'Inter', sans-serif;
@@ -308,7 +547,7 @@
         }
 
         .form-group textarea {
-            min-height: 130px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -316,28 +555,40 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .checkbox-group input[type="checkbox"] {
+        .checkbox-group input[type="checkbox"],
+        .checkbox-group input[type="radio"] {
             width: auto;
             margin-top: 0.3rem;
             cursor: pointer;
         }
 
-        .form-divider {
-            border: none;
-            border-top: 2px solid var(--color-brushed-gold);
-            margin: 3rem 0;
+        .helper-text {
+            font-size: 0.8rem;
+            color: var(--color-stone-gray);
+            margin-top: 0.4rem;
+            font-style: italic;
         }
 
-        .helper-text {
-            font-size: 0.85rem;
-            color: var(--color-stone-gray);
-            margin-top: 0.5rem;
+        .file-upload {
+            border: 2px dashed var(--color-stone-gray);
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--color-gallery-white);
+        }
+
+        .file-upload:hover {
+            border-color: var(--color-brushed-gold);
+            background: var(--color-white);
         }
 
         .page-section {
             display: none;
+            min-height: 100vh;
         }
 
         .page-section.active {
@@ -358,77 +609,12 @@
             border-left: 4px solid var(--color-brushed-gold);
         }
 
-        /* Hero */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 174, 112, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(201, 174, 112, 0.08) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1100px;
-        }
-
-        .hero-content h1 {
-            font-size: 5.5rem;
-            font-weight: 900;
-            letter-spacing: -2px;
-            color: var(--color-white);
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease-out;
-            line-height: 1.1;
-        }
-
-        .hero-content .highlight {
-            background: linear-gradient(135deg, var(--color-brushed-gold), var(--color-light-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            color: var(--color-light-gray);
-            margin-bottom: 3rem;
-            font-weight: 400;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-            flex-wrap: wrap;
-        }
-
         /* Footer */
         .footer {
             background: var(--color-midnight-black);
             color: var(--color-white);
-            padding: 5rem 0 2rem;
-            margin-top: 8rem;
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
             border-top: 3px solid var(--color-brushed-gold);
         }
 
@@ -438,16 +624,8 @@
             padding: 0 3rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-            color: var(--color-brushed-gold);
-            font-weight: 800;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h4 {
@@ -479,7 +657,7 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2.5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(201, 174, 112, 0.2);
             color: var(--color-stone-gray);
             font-size: 0.9rem;
@@ -503,26 +681,31 @@
             }
             
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .registration-choice {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .form-section {
-                padding: 3rem 2rem;
-                margin: 3rem 1rem;
-            }
-
-            .form-section h2 {
-                font-size: 2rem;
+            .artwork-showcase {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Two-Row Navigation -->
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="navbar-top">
             <div class="logo" onclick="navigateTo('home')">ARTÉHAUS</div>
@@ -530,12 +713,13 @@
         <div class="navbar-bottom">
             <div class="nav-links">
                 <a href="javascript:void(0)" onclick="navigateTo('home')">Home</a>
-                <a href="javascript:void(0)" onclick="navigateTo('live')">Live Auctions</a>
+                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')">Live Auctions</a>
                 <a href="javascript:void(0)" onclick="navigateTo('artists')">Artists</a>
                 <a href="javascript:void(0)" onclick="navigateTo('policies')">Policies</a>
                 <a href="javascript:void(0)" onclick="navigateTo('faq')">FAQ</a>
-                <a href="javascript:void(0)" class="btn-outline" onclick="navigateTo('register')">Register</a>
-                <a href="javascript:void(0)" class="btn-primary" onclick="navigateTo('login')">Login</a>
+                <a href="javascript:void(0)" class="btn-outline" onclick="navigateTo('register-choice')">Register</a>
+                <a href="javascript:void(0)" class="btn-primary" onclick="navigateTo('login')" id="loginBtn">Login</a>
+                <a href="javascript:void(0)" class="btn-primary" onclick="logout()" id="logoutBtn" style="display:none;">Logout</a>
             </div>
         </div>
     </nav>
@@ -546,284 +730,857 @@
             <div class="hero-content">
                 <h1>Where Art Meets <span class="highlight">Opportunity</span></h1>
                 <p>Join the world's most exclusive art auction platform. Discover masterpieces, invest in culture, and transform your life through the power of art.</p>
-                <div class="hero-buttons">
-                    <a href="javascript:void(0)" class="btn-primary" onclick="navigateTo('register')">Start Your Journey Today</a>
-                    <a href="javascript:void(0)" class="btn-accent" onclick="navigateTo('seller-signup')">Sell Your Art</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About ARTÉHAUS</h3>
+                    <p>ARTÉHAUS is the premier online platform connecting collectors with exceptional artists worldwide. We curate only the finest artworks, ensuring authenticity, quality, and investment value.</p>
+                    <p>Our live auction format brings the excitement of traditional art houses to your fingertips, with transparent bidding, secure transactions, and white-glove delivery service.</p>
+                    <p>Join 50,000+ collectors and 1,200+ artists from 85 countries in building meaningful art collections.</p>
+                </div>
+                <div class="artwork-showcase">
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #7C7C7C, #2A2A2A);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #C9AE70, #B39A5F);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #090909, #2A2A2A);"></div>
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #E5D9B6, #C9AE70);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple, secure, and exciting - start your art journey in minutes</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Register</h4>
+                    <p>Create your free account as a buyer or seller</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Browse</h4>
+                    <p>Explore curated artworks and live auctions</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Bid & Win</h4>
+                    <p>Place bids in real-time and secure your artwork</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Enjoy</h4>
+                    <p>Receive your artwork with insured delivery</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section">
+            <div class="section-header">
+                <h2>Why Choose ARTÉHAUS</h2>
+                <p>Elevate your lifestyle with curated art and exclusive benefits</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h4>Investment Value</h4>
+                    <p>Art has outperformed traditional investments. Build wealth while enjoying beauty.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏡</div>
+                    <h4>Lifestyle Upgrade</h4>
+                    <p>Transform your space into a gallery. Impress guests and inspire creativity daily.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h4>Global Network</h4>
+                    <p>Connect with collectors and artists worldwide. Attend exclusive events and exhibitions.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h4>Authenticity Guaranteed</h4>
+                    <p>Every piece verified by experts. 5-year authenticity guarantee on all purchases.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h4>Expert Guidance</h4>
+                    <p>Access art advisors and market insights. Make informed investment decisions.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Create Legacy</h4>
+                    <p>Build a collection that tells your story. Pass down cultural heritage to future generations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section" style="text-align: center;">
+            <div style="background: var(--color-white); padding: 4rem 3rem; box-shadow: var(--shadow-xl); border: 2px solid var(--color-brushed-gold);">
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Start Your Journey Today</h2>
+                <p style="font-size: 1.1rem; color: var(--color-stone-gray); margin-bottom: 2.5rem;">Choose your path and join our exclusive community</p>
+                <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="navigateTo('register-choice')">Get Started</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- REGISTRATION CHOICE PAGE -->
+    <div id="register-choice" class="page-section">
+        <section class="section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
+            <div class="section-header">
+                <h2>Choose Your Registration Type</h2>
+                <p>Select the option that best describes you</p>
+            </div>
+            <div class="registration-choice">
+                <div class="choice-card" onclick="navigateTo('buyer-registration')">
+                    <div class="choice-icon">🎨</div>
+                    <h3>Buyer Registration</h3>
+                    <p>Register as a collector to bid on exceptional artworks and build your collection</p>
+                    <button class="btn-primary">Register as Buyer</button>
+                </div>
+                <div class="choice-card" onclick="navigateTo('seller-registration')">
+                    <div class="choice-icon">🖼️</div>
+                    <h3>Seller Registration</h3>
+                    <p>Register as an artist to showcase and sell your artwork to collectors worldwide</p>
+                    <button class="btn-accent">Register as Seller</button>
                 </div>
             </div>
         </section>
     </div>
 
     <!-- BUYER REGISTRATION PAGE -->
-    <div id="register" class="page-section">
-        <section class="form-section">
+    <div id="buyer-registration" class="page-section">
+        <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <h2>Buyer Registration</h2>
-            <p class="subtitle">Create your account to start bidding on exceptional artworks</p>
-            
-            <form onsubmit="registerBuyer(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name *</label>
-                        <input type="text" id="buyerFirstName" required placeholder="John">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Buyer Registration</h2>
+                <p style="color: var(--color-stone-gray); font-size: 1.1rem;">Complete all sections to create your collector account</p>
+            </div>
+
+            <form onsubmit="submitBuyerRegistration(event)">
+                <!-- Personal Identity -->
+                <div class="form-section">
+                    <h3>Personal Identity</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" required placeholder="John Michael Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" required>
+                        </div>
                     </div>
-                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number *</label>
+                            <input type="tel" required placeholder="+1 (555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nationality *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                                <option value="AU">Australia</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Government ID Type *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="passport">Passport</option>
+                                <option value="drivers-license">Driver's License</option>
+                                <option value="national-id">National ID</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <label>Last Name *</label>
-                        <input type="text" id="buyerLastName" required placeholder="Doe">
+                        <label>ID Number (Masked) *</label>
+                        <input type="password" required placeholder="Enter ID number">
+                        <p class="helper-text">Your ID number is encrypted and securely stored</p>
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" id="buyerEmail" required placeholder="your.email@example.com">
-                    <p class="helper-text">We'll send auction updates and notifications to this email</p>
-                </div>
-                
-                <div class="form-row">
+
+                <!-- Address Details -->
+                <div class="form-section">
+                    <h3>Address Details</h3>
                     <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" id="buyerPhone" required placeholder="+1 (555) 123-4567">
+                        <label>Billing Address *</label>
+                        <input type="text" required placeholder="123 Main Street, Apt 4B">
                     </div>
-                    
                     <div class="form-group">
-                        <label>Country *</label>
-                        <select id="buyerCountry" required>
-                            <option value="">Select Country...</option>
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                            <option value="DE">Germany</option>
-                            <option value="FR">France</option>
-                            <option value="IT">Italy</option>
-                            <option value="ES">Spain</option>
-                            <option value="JP">Japan</option>
-                            <option value="CN">China</option>
-                            <option value="OTHER">Other</option>
+                        <label>Shipping Address *</label>
+                        <input type="text" required placeholder="Same as billing or different address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City *</label>
+                            <input type="text" required placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label>State/Province *</label>
+                            <input type="text" required placeholder="NY">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Country *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>PIN/ZIP Code *</label>
+                            <input type="text" required placeholder="10001">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Account -->
+                <div class="form-section">
+                    <h3>Payment Account</h3>
+                    <div class="form-group">
+                        <label>Preferred Payment Method *</label>
+                        <div class="checkbox-group" style="flex-direction: column;">
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="credit-card" required> Credit/Debit Card</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="wire-transfer"> Wire Transfer</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="cryptocurrency"> Cryptocurrency</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="paypal"> PayPal</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auction Participation Details -->
+                <div class="form-section">
+                    <h3>Auction Participation Details</h3>
+                    <div class="form-group">
+                        <label>Interested Categories *</label>
+                        <div class="checkbox-group" style="flex-direction: column;">
+                            <label style="text-transform: none; font-weight: 400;"><input type="checkbox" value="abstract"> Abstract</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="checkbox" value="contemporary"> Contemporary</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="checkbox" value="landscape"> Landscape</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="checkbox" value="portrait"> Portrait</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="checkbox" value="sculpture"> Sculpture</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Budget Range *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-20k">$5,000 - $20,000</option>
+                                <option value="20k-50k">$20,000 - $50,000</option>
+                                <option value="50k-100k">$50,000 - $100,000</option>
+                                <option value="over-100k">Over $100,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Purpose of Purchase *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="personal">Personal Collection</option>
+                                <option value="investment">Investment</option>
+                                <option value="gift">Gift</option>
+                                <option value="corporate">Corporate Collection</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>How Did You Hear About Us? *</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="search">Search Engine</option>
+                            <option value="social">Social Media</option>
+                            <option value="referral">Friend Referral</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
 
-                <hr class="form-divider">
-
-                <div class="form-group">
-                    <label>Password *</label>
-                    <input type="password" id="buyerPassword" required minlength="8" placeholder="Minimum 8 characters">
-                    <p class="helper-text">Must contain at least 8 characters, including uppercase, lowercase, and numbers</p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Confirm Password *</label>
-                    <input type="password" id="buyerConfirmPassword" required minlength="8" placeholder="Re-enter your password">
-                </div>
-
-                <hr class="form-divider">
-
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="buyerAgreement" required>
-                        <label for="buyerAgreement" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
-                            I agree to the <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, 
-                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Auction Rules</a>, and 
-                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Privacy Policy</a>. *
-                        </label>
+                <!-- Shipping and Handling -->
+                <div class="form-section">
+                    <h3>Shipping and Handling</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Shipping Speed *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="standard">Standard (7-14 days)</option>
+                                <option value="express">Express (3-5 days)</option>
+                                <option value="overnight">Overnight</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Insurance Required *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="yes">Yes, insure my purchases</option>
+                                <option value="no">No insurance needed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Instructions</label>
+                        <textarea placeholder="Special delivery instructions, gate codes, preferred delivery times, etc."></textarea>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem;">Create Account</button>
-                
-                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
-                    Already have an account? 
-                    <a href="javascript:void(0)" onclick="navigateTo('login')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Sign In</a>
-                </p>
+
+                <!-- Collector Status -->
+                <div class="form-section">
+                    <h3>Collector Status</h3>
+                    <div class="form-group">
+                        <label>Collector Type *</label>
+                        <div class="checkbox-group" style="flex-direction: column;">
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="collector" value="first-time" required> First-Time Collector</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="collector" value="private"> Private Collector</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="collector" value="gallery"> Gallery/Institution</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Previous Auction Experience</label>
+                        <textarea placeholder="Describe your experience with art auctions, if any..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Special Requests</label>
+                        <textarea placeholder="Any special requirements or preferences..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Legal Acknowledgement -->
+                <div class="form-section">
+                    <h3>Legal Acknowledgement</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I agree to the auction terms and conditions *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I understand that all bids are legally binding *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I accept the refund and cancellation policies *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I confirm that all information provided is accurate *</label>
+                    </div>
+                </div>
+
+                <!-- Verification and Security -->
+                <div class="form-section">
+                    <h3>Verification and Security</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Enter OTP (Sent to your email) *</label>
+                            <input type="text" required placeholder="Enter 6-digit code">
+                            <button type="button" class="btn-outline" style="margin-top: 0.5rem;">Send OTP</button>
+                        </div>
+                        <div class="form-group">
+                            <label>CAPTCHA Verification *</label>
+                            <input type="text" required placeholder="Enter text from image">
+                            <p class="helper-text">Verify you're human</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem; margin-top: 2rem;">Complete Registration</button>
             </form>
-        </section>
+        </div>
     </div>
 
-    <!-- SELLER SIGN UP PAGE -->
-    <div id="seller-signup" class="page-section">
-        <section class="form-section">
+    <!-- SELLER REGISTRATION PAGE -->
+    <div id="seller-registration" class="page-section">
+        <div class="form-container">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <h2>Artist Registration</h2>
-            <p class="subtitle">Join our exclusive community of artists and start selling your artwork</p>
-            
-            <form onsubmit="registerSeller(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name *</label>
-                        <input type="text" id="sellerFirstName" required placeholder="John">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem;">Seller Registration</h2>
+                <p style="color: var(--color-stone-gray); font-size: 1.1rem;">Complete all sections to start selling your artwork</p>
+            </div>
+
+            <form onsubmit="submitSellerRegistration(event)">
+                <!-- Personal Identity (Same as Buyer) -->
+                <div class="form-section">
+                    <h3>Personal Identity</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" required placeholder="John Michael Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth *</label>
+                            <input type="date" required>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Last Name *</label>
-                        <input type="text" id="sellerLastName" required placeholder="Doe">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number *</label>
+                            <input type="tel" required placeholder="+1 (555) 123-4567">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Artist/Studio Name *</label>
-                    <input type="text" id="artistName" required placeholder="Your professional name or studio">
-                    <p class="helper-text">This will be displayed on your artist profile</p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email Address *</label>
-                    <input type="email" id="sellerEmail" required placeholder="your.email@example.com">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" id="sellerPhone" required placeholder="+1 (555) 123-4567">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nationality *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Government ID Type *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="passport">Passport</option>
+                                <option value="drivers-license">Driver's License</option>
+                                <option value="national-id">National ID</option>
+                            </select>
+                        </div>
                     </div>
-                    
                     <div class="form-group">
-                        <label>Country *</label>
-                        <select id="sellerCountry" required>
-                            <option value="">Select Country...</option>
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                            <option value="DE">Germany</option>
-                            <option value="FR">France</option>
-                            <option value="IT">Italy</option>
-                            <option value="ES">Spain</option>
-                            <option value="JP">Japan</option>
-                            <option value="CN">China</option>
-                            <option value="OTHER">Other</option>
-                        </select>
+                        <label>ID Number (Masked) *</label>
+                        <input type="password" required placeholder="Enter ID number">
                     </div>
                 </div>
 
-                <hr class="form-divider">
-
-                <div class="form-group">
-                    <label>Artist Statement *</label>
-                    <textarea id="artistStatement" required placeholder="Tell us about your artistic vision, style, and what inspires your work..."></textarea>
-                    <p class="helper-text">Minimum 100 words. This will be featured on your artist profile.</p>
+                <!-- Address Details (Same as Buyer) -->
+                <div class="form-section">
+                    <h3>Address Details</h3>
+                    <div class="form-group">
+                        <label>Billing Address *</label>
+                        <input type="text" required placeholder="123 Main Street, Apt 4B">
+                    </div>
+                    <div class="form-group">
+                        <label>Shipping Address *</label>
+                        <input type="text" required placeholder="Same as billing or different address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City *</label>
+                            <input type="text" required placeholder="New York">
+                        </div>
+                        <div class="form-group">
+                            <label>State/Province *</label>
+                            <input type="text" required placeholder="NY">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Country *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>PIN/ZIP Code *</label>
+                            <input type="text" required placeholder="10001">
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Years of Experience *</label>
-                    <select id="yearsExperience" required>
-                        <option value="">Select...</option>
-                        <option value="0-2">0-2 years</option>
-                        <option value="3-5">3-5 years</option>
-                        <option value="6-10">6-10 years</option>
-                        <option value="10+">10+ years</option>
-                    </select>
+
+                <!-- Payment Account -->
+                <div class="form-section">
+                    <h3>Payment Account (For Receiving Payments)</h3>
+                    <div class="form-group">
+                        <label>Preferred Payment Method *</label>
+                        <div class="checkbox-group" style="flex-direction: column;">
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="bank-transfer" required> Bank Transfer</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="paypal"> PayPal</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="payment" value="cryptocurrency"> Cryptocurrency</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Bank Account Number *</label>
+                            <input type="text" required placeholder="Account number">
+                        </div>
+                        <div class="form-group">
+                            <label>Routing Number *</label>
+                            <input type="text" required placeholder="Routing number">
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Portfolio URL</label>
-                    <input type="url" id="portfolioUrl" placeholder="https://yourportfolio.com">
+                <!-- Artist Profile -->
+                <div class="form-section">
+                    <h3>Artist Profile</h3>
+                    <div class="form-group">
+                        <label>Short Biography *</label>
+                        <textarea required placeholder="Tell us about your artistic journey, influences, and vision..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Years of Practice *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="0-2">0-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="6-10">6-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Exhibitions</label>
+                            <input type="number" placeholder="Number of exhibitions">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Awards & Recognition</label>
+                        <textarea placeholder="List any awards, grants, or recognition received..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Portfolio/Website Link</label>
+                            <input type="url" placeholder="https://yourportfolio.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram/Social Media</label>
+                            <input type="url" placeholder="https://instagram.com/yourhandle">
+                        </div>
+                    </div>
                 </div>
 
-                <hr class="form-divider">
-
-                <div class="form-group">
-                    <label>Password *</label>
-                    <input type="password" id="sellerPassword" required minlength="8" placeholder="Minimum 8 characters">
+                <!-- Artwork Submission Details -->
+                <div class="form-section">
+                    <h3>Artwork Submission Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Artwork Title *</label>
+                            <input type="text" required placeholder="Untitled Composition">
+                        </div>
+                        <div class="form-group">
+                            <label>Year of Creation *</label>
+                            <input type="number" required placeholder="2024">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Medium *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="oil">Oil on Canvas</option>
+                                <option value="acrylic">Acrylic</option>
+                                <option value="watercolor">Watercolor</option>
+                                <option value="mixed-media">Mixed Media</option>
+                                <option value="sculpture">Sculpture</option>
+                                <option value="digital">Digital Art</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Style *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="abstract">Abstract</option>
+                                <option value="contemporary">Contemporary</option>
+                                <option value="landscape">Landscape</option>
+                                <option value="portrait">Portrait</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Dimensions (H x W x D) *</label>
+                            <input type="text" required placeholder="24 x 36 x 2 inches">
+                        </div>
+                        <div class="form-group">
+                            <label>Weight *</label>
+                            <input type="text" required placeholder="5 lbs">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Framed? *</label>
+                        <div class="checkbox-group">
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="framed" value="yes" required> Yes</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="framed" value="no"> No</label>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Confirm Password *</label>
-                    <input type="password" id="sellerConfirmPassword" required minlength="8" placeholder="Re-enter your password">
+
+                <!-- Pricing -->
+                <div class="form-section">
+                    <h3>Pricing</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Reserve Price *</label>
+                            <input type="number" required placeholder="$5,000">
+                            <p class="helper-text">Minimum price you'll accept</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Starting Bid *</label>
+                            <input type="number" required placeholder="$3,000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Buy Now Price (Optional)</label>
+                            <input type="number" placeholder="$10,000">
+                        </div>
+                        <div class="form-group">
+                            <label>Estimated Value Range *</label>
+                            <input type="text" required placeholder="$8,000 - $12,000">
+                        </div>
+                    </div>
                 </div>
 
-                <hr class="form-divider">
+                <!-- Artwork Images -->
+                <div class="form-section">
+                    <h3>Artwork Images</h3>
+                    <div class="form-group">
+                        <label>High-Resolution Images *</label>
+                        <div class="file-upload">
+                            <p style="font-weight: 700; margin-bottom: 0.5rem;">📁 Upload Images</p>
+                            <small style="color: var(--color-stone-gray);">Upload 5-10 high-resolution images (JPG, PNG, Max 10MB each)</small>
+                            <input type="file" multiple accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Artist Signature Visible? *</label>
+                        <div class="checkbox-group">
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="signature" value="yes" required> Yes</label>
+                            <label style="text-transform: none; font-weight: 400;"><input type="radio" name="signature" value="no"> No</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Certificate of Authenticity</label>
+                        <div class="file-upload">
+                            <p style="font-weight: 700; margin-bottom: 0.5rem;">📄 Upload Certificate (if available)</p>
+                            <input type="file" accept=".pdf,image/*" style="display: none;">
+                        </div>
+                    </div>
+                </div>
 
-                <div class="form-group">
+                <!-- Logistics and Handling -->
+                <div class="form-section">
+                    <h3>Logistics and Handling</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Artwork Location *</label>
+                            <input type="text" required placeholder="City, Country">
+                        </div>
+                        <div class="form-group">
+                            <label>Will You Handle Shipping? *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="yes">Yes, I'll arrange shipping</option>
+                                <option value="no">No, platform handles shipping</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Insurance Required? *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Shipping Readiness Time *</label>
+                            <select required>
+                                <option value="">Select...</option>
+                                <option value="immediate">Immediate (1-3 days)</option>
+                                <option value="week">Within a week</option>
+                                <option value="two-weeks">Within two weeks</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Declaration -->
+                <div class="form-section">
+                    <h3>Legal Declaration</h3>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="sellerAgreement" required>
-                        <label for="sellerAgreement" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
-                            I agree to the <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Seller Agreement</a>, 
-                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, and 
-                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Commission Structure</a>. 
-                            I understand that my application will be reviewed within 5-7 business days. *
-                        </label>
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I confirm I am the original creator of this artwork *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">This artwork is authentic and original *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">This artwork does not infringe any copyright *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I agree to the seller agreement and commission structure *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I authorize the platform to market and auction my artwork *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I understand my artwork may be rejected after review *</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" required>
+                        <label style="text-transform: none; font-weight: 400;">I agree to the commission and payment terms *</label>
                     </div>
                 </div>
-                
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem;">Submit Application</button>
-                
-                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
-                    Already have an account? 
-                    <a href="javascript:void(0)" onclick="navigateTo('login')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Sign In</a>
-                </p>
+
+                <!-- Verification -->
+                <div class="form-section">
+                    <h3>Verification and Security</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Enter OTP (Sent to your email) *</label>
+                            <input type="text" required placeholder="Enter 6-digit code">
+                            <button type="button" class="btn-outline" style="margin-top: 0.5rem;">Send OTP</button>
+                        </div>
+                        <div class="form-group">
+                            <label>CAPTCHA Verification *</label>
+                            <input type="text" required placeholder="Enter text from image">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1rem; margin-top: 2rem;">Submit Application</button>
+                <p style="text-align: center; margin-top: 1.5rem; color: var(--color-stone-gray);">Your application will be reviewed within 5-7 business days</p>
             </form>
-        </section>
+        </div>
     </div>
 
     <!-- LOGIN PAGE -->
     <div id="login" class="page-section">
-        <section class="form-section">
+        <section class="form-section" style="max-width: 500px; margin: 6rem auto; padding: 3rem;">
             <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
-            <h2>Sign In</h2>
-            <p class="subtitle">Welcome back! Sign in to access your account</p>
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 1rem;">Sign In</h2>
+            <p style="text-align: center; color: var(--color-stone-gray); margin-bottom: 2rem;">Welcome back to ARTÉHAUS</p>
             
             <form onsubmit="loginUser(event)">
                 <div class="form-group">
                     <label>Email Address *</label>
-                    <input type="email" id="loginEmail" required placeholder="your.email@example.com">
+                    <input type="email" required placeholder="your.email@example.com">
                 </div>
                 
                 <div class="form-group">
                     <label>Password *</label>
-                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                    <input type="password" required placeholder="Enter your password">
                 </div>
 
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="rememberMe">
-                        <label for="rememberMe" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
-                            Remember me for 30 days
-                        </label>
-                    </div>
+                <div class="checkbox-group">
+                    <input type="checkbox">
+                    <label style="text-transform: none; font-weight: 400;">Remember me for 30 days</label>
                 </div>
                 
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
                 
-                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
-                    <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Forgot your password?</a>
+                <p style="text-align: center; margin-top: 1.5rem; color: var(--color-stone-gray);">
+                    <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Forgot password?</a>
                 </p>
 
-                <hr class="form-divider">
-                
-                <p style="text-align: center; color: var(--color-stone-gray);">
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
                     Don't have an account? 
-                    <a href="javascript:void(0)" onclick="navigateTo('register')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Register as Buyer</a>
-                    or
-                    <a href="javascript:void(0)" onclick="navigateTo('seller-signup')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Apply as Artist</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('register-choice')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Register</a>
                 </p>
             </form>
+        </section>
+    </div>
+
+    <!-- LIVE AUCTIONS PAGE -->
+    <div id="live-auctions" class="page-section">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="hero-content">
+                <h1>Live <span class="highlight">Auctions</span></h1>
+                <p>Bid on exceptional artworks in real-time</p>
+            </div>
+        </section>
+        <section class="section">
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Live auctions coming soon. Register now to get notified!</p>
+        </section>
+    </div>
+
+    <!-- ARTISTS PAGE -->
+    <div id="artists" class="page-section">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="hero-content">
+                <h1>Featured <span class="highlight">Artists</span></h1>
+                <p>Discover talented creators from around the world</p>
+            </div>
+        </section>
+        <section class="section">
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Artist profiles coming soon!</p>
+        </section>
+    </div>
+
+    <!-- POLICIES PAGE -->
+    <div id="policies" class="page-section">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="hero-content">
+                <h1>Policies & <span class="highlight">Terms</span></h1>
+                <p>Transparency and trust at every step</p>
+            </div>
+        </section>
+        <section class="section">
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">Detailed policies coming soon!</p>
+        </section>
+    </div>
+
+    <!-- FAQ PAGE -->
+    <div id="faq" class="page-section">
+        <section class="hero" style="min-height: 50vh;">
+            <div class="hero-content">
+                <h1>Frequently Asked <span class="highlight">Questions</span></h1>
+                <p>Find answers to common questions</p>
+            </div>
+        </section>
+        <section class="section">
+            <p style="text-align: center; font-size: 1.2rem; color: var(--color-stone-gray);">FAQ content coming soon!</p>
         </section>
     </div>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>ARTÉHAUS</h3>
+                <h4>ARTÉHAUS</h4>
                 <p>Curated art auctions for discerning collectors worldwide</p>
             </div>
             <div class="footer-section">
-                <h4>For Buyers</h4>
-                <a href="javascript:void(0)" onclick="navigateTo('register')">Register</a>
-                <a href="javascript:void(0)" onclick="navigateTo('live')">Live Auctions</a>
-                <a href="javascript:void(0)" onclick="navigateTo('artists')">Browse Artists</a>
+                <h4>Quick Links</h4>
+                <a href="javascript:void(0)" onclick="navigateTo('home')">Home</a>
+                <a href="javascript:void(0)" onclick="navigateTo('live-auctions')">Live Auctions</a>
+                <a href="javascript:void(0)" onclick="navigateTo('artists')">Artists</a>
             </div>
             <div class="footer-section">
-                <h4>For Sellers</h4>
-                <a href="javascript:void(0)" onclick="navigateTo('seller-signup')">Sell Your Art</a>
-                <a href="javascript:void(0)" onclick="navigateTo('policies')">Seller Fees</a>
+                <h4>Legal</h4>
+                <a href="javascript:void(0)" onclick="navigateTo('policies')">Terms & Conditions</a>
+                <a href="javascript:void(0)" onclick="navigateTo('policies')">Privacy Policy</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
                 <p>contact@artehaus.com</p>
                 <p>+1 (555) 123-4567</p>
-                <p>Mon-Fri: 9AM-6PM EST</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -833,6 +1590,7 @@
 
     <script>
         let navigationHistory = ['home'];
+        let isLoggedIn = false;
 
         function navigateTo(pageId) {
             document.querySelectorAll('.page-section').forEach(section => {
@@ -859,10 +1617,10 @@
             }
         }
 
-        function showNotification(message, type = 'success') {
+        function showNotification(message) {
             const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `<strong style="font-size: 1.2rem; font-weight: 800;">${type === 'success' ? '✓' : '✗'}</strong> ${message}`;
+            notification.className = 'notification';
+            notification.innerHTML = `<strong style="font-size: 1.2rem; font-weight: 800;">✓</strong> ${message}`;
             document.body.appendChild(notification);
             
             setTimeout(() => {
@@ -871,72 +1629,40 @@
             }, 4000);
         }
 
-        function registerBuyer(event) {
+        function submitBuyerRegistration(event) {
             event.preventDefault();
-            
-            const password = document.getElementById('buyerPassword').value;
-            const confirmPassword = document.getElementById('buyerConfirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                showNotification('Passwords do not match!', 'error');
-                return;
-            }
-            
-            const buyerData = {
-                firstName: document.getElementById('buyerFirstName').value,
-                lastName: document.getElementById('buyerLastName').value,
-                email: document.getElementById('buyerEmail').value,
-                phone: document.getElementById('buyerPhone').value,
-                country: document.getElementById('buyerCountry').value,
-                type: 'buyer',
-                registeredAt: new Date().toISOString()
-            };
-            
-            localStorage.setItem('user', JSON.stringify(buyerData));
             showNotification('Registration successful! Welcome to ARTÉHAUS.');
-            
-            setTimeout(() => navigateTo('login'), 2000);
+            setTimeout(() => {
+                isLoggedIn = true;
+                updateAuthUI();
+                navigateTo('home');
+            }, 2000);
         }
 
-        function registerSeller(event) {
+        function submitSellerRegistration(event) {
             event.preventDefault();
-            
-            const password = document.getElementById('sellerPassword').value;
-            const confirmPassword = document.getElementById('sellerConfirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                showNotification('Passwords do not match!', 'error');
-                return;
-            }
-            
-            const sellerData = {
-                firstName: document.getElementById('sellerFirstName').value,
-                lastName: document.getElementById('sellerLastName').value,
-                artistName: document.getElementById('artistName').value,
-                email: document.getElementById('sellerEmail').value,
-                phone: document.getElementById('sellerPhone').value,
-                country: document.getElementById('sellerCountry').value,
-                artistStatement: document.getElementById('artistStatement').value,
-                yearsExperience: document.getElementById('yearsExperience').value,
-                portfolioUrl: document.getElementById('portfolioUrl').value,
-                type: 'seller',
-                approved: false,
-                submittedAt: new Date().toISOString()
-            };
-            
-            localStorage.setItem('sellerApplication', JSON.stringify(sellerData));
-            showNotification('Application submitted successfully! Our team will review within 5-7 business days.');
-            
-            setTimeout(() => navigateTo('home'), 3000);
+            showNotification('Application submitted! We\'ll review within 5-7 business days.');
+            setTimeout(() => navigateTo('home'), 2000);
         }
 
         function loginUser(event) {
             event.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
+            isLoggedIn = true;
+            updateAuthUI();
             showNotification('Login successful! Welcome back.');
             setTimeout(() => navigateTo('home'), 2000);
+        }
+
+        function logout() {
+            isLoggedIn = false;
+            updateAuthUI();
+            showNotification('Logged out successfully!');
+            navigateTo('home');
+        }
+
+        function updateAuthUI() {
+            document.getElementById('loginBtn').style.display = isLoggedIn ? 'none' : 'inline-block';
+            document.getElementById('logoutBtn').style.display = isLoggedIn ? 'inline-block' : 'none';
         }
 
         window.addEventListener('scroll', function() {
