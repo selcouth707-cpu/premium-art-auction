@@ -54,11 +54,6 @@
             to { opacity: 1; }
         }
 
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
         @keyframes slideInRight {
             from { opacity: 0; transform: translateX(30px); }
             to { opacity: 1; transform: translateX(0); }
@@ -69,14 +64,7 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.9; transform: scale(1.05); }
-        }
-
-        .fade-in { animation: fadeInUp 0.6s ease-out; }
-
-        /* Navigation - Two Row Design */
+        /* Navigation */
         .navbar {
             background: var(--color-white);
             border-bottom: 2px solid var(--color-brushed-gold);
@@ -227,6 +215,149 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-midnight-black);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--color-stone-gray);
+            transition: all 0.3s ease;
+            background: var(--color-white);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background: var(--color-midnight-black);
+            color: var(--color-white);
+            border-color: var(--color-midnight-black);
+            transform: translateX(-5px);
+        }
+
+        /* Forms */
+        .form-section {
+            max-width: 800px;
+            margin: 6rem auto;
+            padding: 4rem 3.5rem;
+            background: var(--color-white);
+            box-shadow: var(--shadow-xl);
+            border: 2px solid var(--color-brushed-gold);
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .form-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--color-midnight-black);
+        }
+
+        .form-section .subtitle {
+            text-align: center;
+            color: var(--color-stone-gray);
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--color-midnight-black);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            border: 2px solid var(--color-stone-gray);
+            background: var(--color-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            color: var(--color-midnight-black);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-brushed-gold);
+            box-shadow: 0 0 0 3px rgba(201, 174, 112, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.3rem;
+            cursor: pointer;
+        }
+
+        .form-divider {
+            border: none;
+            border-top: 2px solid var(--color-brushed-gold);
+            margin: 3rem 0;
+        }
+
+        .helper-text {
+            font-size: 0.85rem;
+            color: var(--color-stone-gray);
+            margin-top: 0.5rem;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--color-white);
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-2xl);
+            z-index: 2000;
+            animation: slideInRight 0.5s ease-out;
+            max-width: 400px;
+            border: 2px solid var(--color-stone-gray);
+            border-left: 4px solid var(--color-brushed-gold);
+        }
+
         /* Hero */
         .hero {
             min-height: 85vh;
@@ -290,382 +421,6 @@
             justify-content: center;
             animation: fadeInUp 0.8s ease-out 0.4s backwards;
             flex-wrap: wrap;
-        }
-
-        /* Section */
-        .section {
-            max-width: 1400px;
-            margin: 8rem auto;
-            padding: 0 3rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .section-header h2 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--color-midnight-black);
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--color-brushed-gold);
-        }
-
-        .section-header p {
-            color: var(--color-stone-gray);
-            font-size: 1.2rem;
-            margin-top: 2rem;
-            line-height: 1.8;
-        }
-
-        /* About Section with Artworks */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .about-card {
-            background: var(--color-white);
-            padding: 3rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
-            border: 1px solid var(--color-stone-gray);
-            text-align: center;
-        }
-
-        .about-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--color-brushed-gold);
-        }
-
-        .about-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--color-midnight-black);
-        }
-
-        .about-card p {
-            color: var(--color-stone-gray);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        /* Artwork Gallery */
-        .artwork-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .artwork-item {
-            background: var(--color-white);
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s ease;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .artwork-item:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .artwork-image {
-            width: 100%;
-            height: 350px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.4s ease;
-        }
-
-        .artwork-item:hover .artwork-image {
-            transform: scale(1.1);
-        }
-
-        .artwork-info {
-            padding: 1.5rem;
-        }
-
-        .artwork-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--color-midnight-black);
-        }
-
-        .artwork-artist {
-            font-size: 0.9rem;
-            color: var(--color-stone-gray);
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .artwork-price {
-            font-size: 1.5rem;
-            color: var(--color-brushed-gold);
-            font-weight: 800;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Auction Process - Compact Design */
-        .auction-process {
-            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
-            padding: 5rem 3rem;
-            margin: 8rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .auction-process::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(201, 174, 112, 0.08) 0%, transparent 70%);
-        }
-
-        .auction-process-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .auction-process h2 {
-            font-size: 3.5rem;
-            color: var(--color-white);
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .auction-process > p {
-            font-size: 1.2rem;
-            color: var(--color-light-gray);
-            margin-bottom: 4rem;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .process-step {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border: 2px solid rgba(201, 174, 112, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .process-step:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--color-brushed-gold);
-            transform: translateY(-5px);
-        }
-
-        .process-number {
-            font-size: 3rem;
-            color: var(--color-brushed-gold);
-            font-weight: 900;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.3rem;
-            color: var(--color-white);
-            margin-bottom: 0.8rem;
-        }
-
-        .process-step p {
-            color: var(--color-light-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Benefits Section */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .benefit-card {
-            background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gallery-white) 100%);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            border-left: 4px solid var(--color-brushed-gold);
-            transition: all 0.4s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .benefit-card h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--color-midnight-black);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .benefit-card p {
-            color: var(--color-stone-gray);
-            line-height: 1.8;
-        }
-
-        /* Life Transformation Section */
-        .life-change {
-            background: linear-gradient(135deg, var(--color-midnight-black) 0%, var(--color-deep-shadow) 100%);
-            padding: 6rem 3rem;
-            margin: 8rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .life-change::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(201, 174, 112, 0.1) 0%, transparent 70%);
-        }
-
-        .life-change-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .life-change h2 {
-            font-size: 4rem;
-            color: var(--color-white);
-            margin-bottom: 2rem;
-            font-weight: 900;
-        }
-
-        .life-change p {
-            font-size: 1.3rem;
-            color: var(--color-light-gray);
-            line-height: 2;
-            margin-bottom: 3rem;
-        }
-
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .transformation-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border: 2px solid rgba(201, 174, 112, 0.3);
-            transition: all 0.4s ease;
-        }
-
-        .transformation-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--color-brushed-gold);
-            transform: translateY(-10px);
-        }
-
-        .transformation-card h3 {
-            font-size: 2rem;
-            color: var(--color-brushed-gold);
-            margin-bottom: 1rem;
-        }
-
-        .transformation-card p {
-            color: var(--color-light-gray);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: var(--color-white);
-            padding: 5rem 3rem;
-            box-shadow: var(--shadow-xl);
-            margin: 4rem 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: scale(1.1);
-        }
-
-        .stat-value {
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--color-brushed-gold);
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--color-stone-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
-
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
         }
 
         /* Footer */
@@ -750,21 +505,18 @@
             .hero-content h1 {
                 font-size: 3rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
 
-            .section-header h2 {
-                font-size: 2.5rem;
-            }
-
-            .life-change h2 {
-                font-size: 2.5rem;
-            }
-
-            .about-grid, .benefits-grid, .transformation-grid, .artwork-gallery {
+            .form-row {
                 grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                padding: 3rem 2rem;
+                margin: 3rem 1rem;
+            }
+
+            .form-section h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -790,7 +542,6 @@
 
     <!-- HOME PAGE -->
     <div id="home" class="page-section active">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Where Art Meets <span class="highlight">Opportunity</span></h1>
@@ -801,212 +552,253 @@
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- About ARTÉHAUS -->
-        <section class="section">
-            <div class="section-header">
-                <h2>About ARTÉHAUS</h2>
-                <p>We're revolutionizing the art market by connecting collectors with exceptional artists through transparent, secure, and exciting live auctions.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon">🎨</div>
-                    <h3>Curated Excellence</h3>
-                    <p>Every artwork is hand-selected by our expert curation team. We showcase only the finest pieces from emerging and established artists worldwide, ensuring quality and authenticity in every auction.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🔒</div>
-                    <h3>Trust & Security</h3>
-                    <p>Your investments are protected with our 5-year authenticity guarantee, secure payment processing, and comprehensive insurance. We verify every artist and authenticate every piece.</p>
-                </div>
-                <div class="about-card">
-                    <div class="about-icon">🌍</div>
-                    <h3>Global Community</h3>
-                    <p>Join 50,000+ collectors and 1,200+ artists from 85 countries. Access exclusive auctions, connect with fellow art enthusiasts, and build your collection with confidence.</p>
-                </div>
-            </div>
-
-            <!-- Featured Artworks -->
-            <div class="artwork-gallery">
-                <div class="artwork-item">
-                    <div class="artwork-image" style="background: linear-gradient(135deg, #7C7C7C, #2A2A2A);"></div>
-                    <div class="artwork-info">
-                        <h4>Untitled Composition</h4>
-                        <p class="artwork-artist">by Sarah Mitchell</p>
-                        <div class="artwork-price">$12,000</div>
+    <!-- BUYER REGISTRATION PAGE -->
+    <div id="register" class="page-section">
+        <section class="form-section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
+            <h2>Buyer Registration</h2>
+            <p class="subtitle">Create your account to start bidding on exceptional artworks</p>
+            
+            <form onsubmit="registerBuyer(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" id="buyerFirstName" required placeholder="John">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" id="buyerLastName" required placeholder="Doe">
                     </div>
                 </div>
-                <div class="artwork-item">
-                    <div class="artwork-image" style="background: linear-gradient(135deg, #C9AE70, #B39A5F);"></div>
-                    <div class="artwork-info">
-                        <h4>Abstract Horizon</h4>
-                        <p class="artwork-artist">by James Chen</p>
-                        <div class="artwork-price">$8,500</div>
-                    </div>
-                </div>
-                <div class="artwork-item">
-                    <div class="artwork-image" style="background: linear-gradient(135deg, #090909, #2A2A2A);"></div>
-                    <div class="artwork-info">
-                        <h4>Urban Reflections</h4>
-                        <p class="artwork-artist">by Maria Rodriguez</p>
-                        <div class="artwork-price">$15,000</div>
-                    </div>
-                </div>
-                <div class="artwork-item">
-                    <div class="artwork-image" style="background: linear-gradient(135deg, #E5D9B6, #C9AE70);"></div>
-                    <div class="artwork-info">
-                        <h4>Golden Dreams</h4>
-                        <p class="artwork-artist">by Alexandra Stone</p>
-                        <div class="artwork-price">$9,200</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How Our Auctions Work - Compact -->
-        <section class="auction-process">
-            <div class="auction-process-content">
-                <h2>How It Works</h2>
-                <p>Simple, secure, and exciting - start bidding in minutes</p>
                 
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="process-number">1</div>
-                        <h3>Register</h3>
-                        <p>Create your free account in under 2 minutes</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-number">2</div>
-                        <h3>Browse</h3>
-                        <p>Explore curated artworks and live auctions</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-number">3</div>
-                        <h3>Bid</h3>
-                        <p>Place bids in real-time with instant updates</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="process-number">4</div>
-                        <h3>Win & Own</h3>
-                        <p>Secure payment and white-glove delivery</p>
-                    </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="buyerEmail" required placeholder="your.email@example.com">
+                    <p class="helper-text">We'll send auction updates and notifications to this email</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Why Join ARTÉHAUS -->
-        <section class="section">
-            <div class="section-header">
-                <h2>Why Join ARTÉHAUS?</h2>
-                <p>Discover the exclusive benefits that await you as a member of our community</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h4>💎 Exclusive Access</h4>
-                    <p>Get first access to new listings, private sales, and invitation-only auctions featuring museum-quality pieces not available anywhere else.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>📈 Investment Potential</h4>
-                    <p>Art has outperformed the S&P 500 over the past 25 years. Build a valuable collection that appreciates over time while enjoying aesthetic pleasure.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🎓 Expert Guidance</h4>
-                    <p>Access our team of art advisors, market analysts, and curators. Get personalized recommendations and insights to make informed decisions.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🤝 Direct Artist Connection</h4>
-                    <p>Meet the creators behind the art. Attend virtual studio visits, artist talks, and exclusive events that deepen your appreciation and understanding.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>📊 Portfolio Tracking</h4>
-                    <p>Monitor your collection's value with our advanced analytics dashboard. Track market trends, get valuation updates, and manage your art investments.</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>🌟 Community & Prestige</h4>
-                    <p>Join an elite community of collectors, attend exclusive events, and gain recognition as a patron of the arts. Build your legacy.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Life Transformation Section -->
-        <section class="life-change">
-            <div class="life-change-content">
-                <h2>Transform Your Life Through Art</h2>
-                <p>Joining ARTÉHAUS isn't just about buying art—it's about embracing a lifestyle of culture, sophistication, and meaningful investment. Here's what changes when you become part of our community:</p>
                 
-                <div class="transformation-grid">
-                    <div class="transformation-card">
-                        <h3>🏡 Elevate Your Space</h3>
-                        <p>Transform your home or office into a gallery. Impress guests, inspire creativity, and create an environment that reflects your refined taste and success.</p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="buyerPhone" required placeholder="+1 (555) 123-4567">
                     </div>
-                    <div class="transformation-card">
-                        <h3>💰 Build Wealth</h3>
-                        <p>Diversify your portfolio with tangible assets. Art provides inflation protection, tax benefits, and the potential for significant appreciation over time.</p>
-                    </div>
-                    <div class="transformation-card">
-                        <h3>🧠 Expand Your Mind</h3>
-                        <p>Engage with diverse perspectives, cultures, and ideas. Art collecting broadens your worldview and stimulates intellectual growth.</p>
-                    </div>
-                    <div class="transformation-card">
-                        <h3>🎯 Create Legacy</h3>
-                        <p>Build a collection that tells your story. Pass down valuable assets and cultural heritage to future generations while supporting living artists.</p>
-                    </div>
-                    <div class="transformation-card">
-                        <h3>🌐 Global Network</h3>
-                        <p>Connect with like-minded collectors, artists, and cultural leaders worldwide. Attend exclusive events and build relationships that transcend borders.</p>
-                    </div>
-                    <div class="transformation-card">
-                        <h3>❤️ Make Impact</h3>
-                        <p>Support artists directly. Your purchases enable creators to continue their work, fostering cultural development and artistic innovation.</p>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <select id="buyerCountry" required>
+                            <option value="">Select Country...</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IT">Italy</option>
+                            <option value="ES">Spain</option>
+                            <option value="JP">Japan</option>
+                            <option value="CN">China</option>
+                            <option value="OTHER">Other</option>
+                        </select>
                     </div>
                 </div>
 
-                <div style="margin-top: 4rem;">
-                    <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="scrollToJourney()">Begin Your Journey Today</a>
+                <hr class="form-divider">
+
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" id="buyerPassword" required minlength="8" placeholder="Minimum 8 characters">
+                    <p class="helper-text">Must contain at least 8 characters, including uppercase, lowercase, and numbers</p>
                 </div>
-            </div>
+                
+                <div class="form-group">
+                    <label>Confirm Password *</label>
+                    <input type="password" id="buyerConfirmPassword" required minlength="8" placeholder="Re-enter your password">
+                </div>
+
+                <hr class="form-divider">
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="buyerAgreement" required>
+                        <label for="buyerAgreement" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            I agree to the <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, 
+                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Auction Rules</a>, and 
+                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Privacy Policy</a>. *
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem;">Create Account</button>
+                
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
+                    Already have an account? 
+                    <a href="javascript:void(0)" onclick="navigateTo('login')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Sign In</a>
+                </p>
+            </form>
         </section>
+    </div>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value">$2.4M</div>
-                    <div class="stat-label">Total Sales</div>
+    <!-- SELLER SIGN UP PAGE -->
+    <div id="seller-signup" class="page-section">
+        <section class="form-section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
+            <h2>Artist Registration</h2>
+            <p class="subtitle">Join our exclusive community of artists and start selling your artwork</p>
+            
+            <form onsubmit="registerSeller(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" id="sellerFirstName" required placeholder="John">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" id="sellerLastName" required placeholder="Doe">
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">847</div>
-                    <div class="stat-label">Artworks Sold</div>
+                
+                <div class="form-group">
+                    <label>Artist/Studio Name *</label>
+                    <input type="text" id="artistName" required placeholder="Your professional name or studio">
+                    <p class="helper-text">This will be displayed on your artist profile</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">156</div>
-                    <div class="stat-label">Active Artists</div>
+                
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="sellerEmail" required placeholder="your.email@example.com">
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">50K+</div>
-                    <div class="stat-label">Collectors</div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="sellerPhone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Country *</label>
+                        <select id="sellerCountry" required>
+                            <option value="">Select Country...</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IT">Italy</option>
+                            <option value="ES">Spain</option>
+                            <option value="JP">Japan</option>
+                            <option value="CN">China</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">85</div>
-                    <div class="stat-label">Countries</div>
+
+                <hr class="form-divider">
+
+                <div class="form-group">
+                    <label>Artist Statement *</label>
+                    <textarea id="artistStatement" required placeholder="Tell us about your artistic vision, style, and what inspires your work..."></textarea>
+                    <p class="helper-text">Minimum 100 words. This will be featured on your artist profile.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">4.9★</div>
-                    <div class="stat-label">Average Rating</div>
+                
+                <div class="form-group">
+                    <label>Years of Experience *</label>
+                    <select id="yearsExperience" required>
+                        <option value="">Select...</option>
+                        <option value="0-2">0-2 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
                 </div>
-            </div>
+
+                <div class="form-group">
+                    <label>Portfolio URL</label>
+                    <input type="url" id="portfolioUrl" placeholder="https://yourportfolio.com">
+                </div>
+
+                <hr class="form-divider">
+
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" id="sellerPassword" required minlength="8" placeholder="Minimum 8 characters">
+                </div>
+                
+                <div class="form-group">
+                    <label>Confirm Password *</label>
+                    <input type="password" id="sellerConfirmPassword" required minlength="8" placeholder="Re-enter your password">
+                </div>
+
+                <hr class="form-divider">
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="sellerAgreement" required>
+                        <label for="sellerAgreement" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            I agree to the <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Seller Agreement</a>, 
+                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Terms & Conditions</a>, and 
+                            <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700;">Commission Structure</a>. 
+                            I understand that my application will be reviewed within 5-7 business days. *
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 2rem;">Submit Application</button>
+                
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
+                    Already have an account? 
+                    <a href="javascript:void(0)" onclick="navigateTo('login')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Sign In</a>
+                </p>
+            </form>
         </section>
+    </div>
 
-        <!-- Final CTA -->
-        <section class="section" style="text-align: center;" id="journey-section">
-            <div style="background: var(--color-white); padding: 5rem 3rem; box-shadow: var(--shadow-xl); border: 2px solid var(--color-brushed-gold);">
-                <h2 style="font-size: 3.5rem; margin-bottom: 2rem; color: var(--color-midnight-black);">Ready to Start Your Journey?</h2>
-                <p style="font-size: 1.2rem; color: var(--color-stone-gray); margin-bottom: 3rem; line-height: 1.8;">Join thousands of collectors who have discovered the joy of art ownership. Registration is free, and your first bid is just moments away.</p>
-                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="javascript:void(0)" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="navigateTo('register')">Register as Buyer</a>
-                    <a href="javascript:void(0)" class="btn-accent" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="navigateTo('seller-signup')">Apply as Artist</a>
+    <!-- LOGIN PAGE -->
+    <div id="login" class="page-section">
+        <section class="form-section">
+            <a href="javascript:void(0)" class="back-button" onclick="goBack()">← Back</a>
+            <h2>Sign In</h2>
+            <p class="subtitle">Welcome back! Sign in to access your account</p>
+            
+            <form onsubmit="loginUser(event)">
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="loginEmail" required placeholder="your.email@example.com">
                 </div>
-            </div>
+                
+                <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe" style="text-transform: none; font-weight: 400; font-size: 0.9rem;">
+                            Remember me for 30 days
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
+                
+                <p style="text-align: center; margin-top: 2rem; color: var(--color-stone-gray);">
+                    <a href="javascript:void(0)" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Forgot your password?</a>
+                </p>
+
+                <hr class="form-divider">
+                
+                <p style="text-align: center; color: var(--color-stone-gray);">
+                    Don't have an account? 
+                    <a href="javascript:void(0)" onclick="navigateTo('register')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Register as Buyer</a>
+                    or
+                    <a href="javascript:void(0)" onclick="navigateTo('seller-signup')" style="color: var(--color-brushed-gold); font-weight: 700; text-decoration: none;">Apply as Artist</a>
+                </p>
+            </form>
         </section>
     </div>
 
@@ -1026,13 +818,6 @@
                 <h4>For Sellers</h4>
                 <a href="javascript:void(0)" onclick="navigateTo('seller-signup')">Sell Your Art</a>
                 <a href="javascript:void(0)" onclick="navigateTo('policies')">Seller Fees</a>
-                <a href="javascript:void(0)">Success Stories</a>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <a href="javascript:void(0)" onclick="navigateTo('policies')">Terms & Conditions</a>
-                <a href="javascript:void(0)" onclick="navigateTo('policies')">Auction Rules</a>
-                <a href="javascript:void(0)" onclick="navigateTo('policies')">Privacy Policy</a>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
@@ -1042,7 +827,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 ARTÉHAUS. All rights reserved. Final decisions rest with ARTÉHAUS.</p>
+            <p>© 2024 ARTÉHAUS. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1074,11 +859,84 @@
             }
         }
 
-        function scrollToJourney() {
-            const journeySection = document.getElementById('journey-section');
-            if (journeySection) {
-                journeySection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `<strong style="font-size: 1.2rem; font-weight: 800;">${type === 'success' ? '✓' : '✗'}</strong> ${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 4000);
+        }
+
+        function registerBuyer(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('buyerPassword').value;
+            const confirmPassword = document.getElementById('buyerConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match!', 'error');
+                return;
             }
+            
+            const buyerData = {
+                firstName: document.getElementById('buyerFirstName').value,
+                lastName: document.getElementById('buyerLastName').value,
+                email: document.getElementById('buyerEmail').value,
+                phone: document.getElementById('buyerPhone').value,
+                country: document.getElementById('buyerCountry').value,
+                type: 'buyer',
+                registeredAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('user', JSON.stringify(buyerData));
+            showNotification('Registration successful! Welcome to ARTÉHAUS.');
+            
+            setTimeout(() => navigateTo('login'), 2000);
+        }
+
+        function registerSeller(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('sellerPassword').value;
+            const confirmPassword = document.getElementById('sellerConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match!', 'error');
+                return;
+            }
+            
+            const sellerData = {
+                firstName: document.getElementById('sellerFirstName').value,
+                lastName: document.getElementById('sellerLastName').value,
+                artistName: document.getElementById('artistName').value,
+                email: document.getElementById('sellerEmail').value,
+                phone: document.getElementById('sellerPhone').value,
+                country: document.getElementById('sellerCountry').value,
+                artistStatement: document.getElementById('artistStatement').value,
+                yearsExperience: document.getElementById('yearsExperience').value,
+                portfolioUrl: document.getElementById('portfolioUrl').value,
+                type: 'seller',
+                approved: false,
+                submittedAt: new Date().toISOString()
+            };
+            
+            localStorage.setItem('sellerApplication', JSON.stringify(sellerData));
+            showNotification('Application submitted successfully! Our team will review within 5-7 business days.');
+            
+            setTimeout(() => navigateTo('home'), 3000);
+        }
+
+        function loginUser(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            showNotification('Login successful! Welcome back.');
+            setTimeout(() => navigateTo('home'), 2000);
         }
 
         window.addEventListener('scroll', function() {
